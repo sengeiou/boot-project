@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>黑色星期三</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <!--页面内容样式-->
+    <script type="text/javascript">
+
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (clientWidth > 751) {
+                        var clientWidth = 750;
+                    }
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 20 + "px";
+                };
+            if (!doc.addEventListener) return;
+
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener("DOMContentLoaded", recalc, false);
+
+        })(document, window);
+    </script>
+    <link rel="stylesheet" th:href="@{/app/css/jinse_xinqisanself.css}">
+    <script th:src="@{/app/js/zepto.min.js}"></script>
+
+
+
+    <!--  <link rel="stylesheet" th:href="@{/css/login.min.css}">
+      <script th:src="@{/libs/jquery.min.js}"></script>-->
+
+    <!--    <link rel="stylesheet" href="css/login.min.css">
+        <script src="libs/vue.min.js"></script>-->
+</head>
+<body>
+<!--正文-->
+<div class="container">
+    <a href="/" class="goback"></a>
+    <h3 class="tac f36 colfff r-h3">金色星期三</h3>
+    <div class="banner f28 colfff tac bas100">凡做单亏损用户，均补贴全额手续费！</div>
+    <!-- 1 -->
+    <div class="row1">
+        <div class="row1-mn">
+            <div class="row1-mnc bas100">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper colfff">
+                        <div class="swiper-slide">
+                            <h3 class="f28 colfff r1-h3">EIA是什么？</h3>
+                            <h4 class="tac colfde787 f36 r1-h4">EIA是什么？</h4>
+                            <p class="colfde787 f28 r1-1p">
+                                EIA（Energy Information
+                                Administration）即美国能源信息署，是隶属于美国能源部的一个统计机构。EIA对信息进行独立的报道，不受政府影响，并为美国能源管理部门对相关能源政策的制定提供有力的数据支持。而我们通常所说的EIA数据主要指原油、天然气这些能源产品的储备报告。<br><br>
+                                公布时间：每周三晚间11:30
+                                </span></p>
+                        </div>
+                        <div class="swiper-slide">
+                            <h3 class="f28 colfff r1-h3-2">EIA对市场的影响</h3>
+                            <table class="tac r1-tb" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th>公布数据</th>
+                                    <th>公布数据</th>
+                                    <th>公布数据</th>
+                                    <th>公布数据</th>
+                                </tr>
+                                <tr>
+                                    <td>好于前期值<br>好于预期值</td>
+                                    <td>好于前期值<br>好于预期值</td>
+                                    <td>好于前期值<br>好于预期值</td>
+                                    <td>好于前期值<br>好于预期值</td>
+                                </tr>
+                                <tr>
+                                    <td>利空原油市场<br>理应单边下跌</td>
+                                    <td>利多原油市场<br>理应单边上涨</td>
+                                    <td>原油价格<br>先涨后跌</td>
+                                    <td>原油价格<br>先跌后涨</td>
+                                </tr>
+                            </table>
+                            <p class="colfde787 f24 r1-1p">原油库存的变化实际上反映了美国政府对油价的态度，一般来说原油价格走势与美元指数走势相反,与贵金属走势相同。</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <h3 class="f28 colfff r1-h3-2">如何提高EIA胜率</h3>
+                            <p class="colfde787 f28 r1-2p">1、关注API数据：过去一年中，API和EIA同向概率高达75.4%。<br>
+                                2、在EIA库存数据公布后根据数据终值交易：由于不确定性消除，投资者可根据利多利空信号相应进行交易做单。<br>
+                                3、根据综合行情交易：EIA库存数据仅为影响油价的因素之一，还需同时考虑宏观经济、国际突发事件等。时时关注直播室的老师分析，紧盯消息面变化，顺势而为，无疑能大大提高投资者交易的成功率。
+                            </p>
+                        </div>
+                        <div class="swiper-slide">
+                            <h3 class="f28 colfff r1-h3-3">上期行情回顾</h3>
+                            <p class="r1-img tac"><img src="/app/images/r1-img1.jpg"></p>
+                            <div class="clearfix r1-img1">
+                                <img class="fl" src="/app/images/r1-img2.jpg">
+                                <div class="fl r1-4 colfde787"><h3 class="f28">金牌级讲师：丁老师</h3>
+                                    <p class="f24">11月30日，OPEC冻产协议与EIA数据相继公布，且均整体利多，波动超70点，最终盈利314.5%， 实现完美收工！</p></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 2 -->
+    <div class="row2">
+        <div class="row2-mn bas100">
+            <h3 class="r2-h3 f36 colfde787 tac relative">往期EIA行情一览</h3>
+            <p class="r2-1p tac f20">收益翻倍的机会，一周仅此一次！</p>
+            <table cellpadding="0" cellspacing="0" class="tac r2-tb f20 col705e26">
+                <tr>
+                    <th>日期</th>
+                    <th>时间</th>
+                    <th>波动</th>
+                    <th>收益空间</th>
+                </tr>
+                <tr>
+                    <td class="colfff bakea4a43">11月30日</td>
+                    <td class="bakfff">22:30-03:15</td>
+                    <td class="bakfff">上涨329.70-343.80</td>
+                    <td class="bakfff">190.3%</td>
+                </tr>
+                <tr>
+                    <td class="colfff bak9b1107">11月23日</td>
+                    <td class="bakffeaea">22:15-23:45</td>
+                    <td class="bakffeaea">上涨325.71-332.71</td>
+                    <td class="bakffeaea">90.2%</td>
+                </tr>
+                <tr>
+                    <td class="colfff bakea4a43">11月16日</td>
+                    <td class="bakfff">23:30-00:00</td>
+                    <td class="bakfff">上涨306.00-315.12</td>
+                    <td class="bakfff">124.6%</td>
+                </tr>
+                <tr>
+                    <td class="colfff bak9b1107">11月9日</td>
+                    <td class="bakffeaea">00:00-01:00</td>
+                    <td class="bakffeaea">下跌312.86-303.62</td>
+                    <td class="bakffeaea">160.4%</td>
+                </tr>
+            </table>
+            <a href="javascript:;" class="fr f22 colfff r2-a tac">活动条款 >></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- 3 -->
+    <div class="clearfix row3 tac">
+        <a class="fl f30 colfff" href="http://app.jindinghui.com.cn/mine/contactUs">查看最新布局策略</a>
+        <a class="fr f30 colfff lingqu" href="javascript:void(0);">领取活动资格</a></div>
+</div>
+<!--正文-->
+<div class="r-cover"></div>
+<div class="r-pop">
+    <a class="rp-a bas100" href="javascript:;"></a>
+    <h3 class="f36 colfff tac rp-h3">活动规则：</h3>
+    <p class="rp-1p f24">
+        1、活动时间：12月20日00:00-1月20日00:00。<br>
+        2、在活动期间，通过APP注册开户并完成激活的用户即可领取活动资格（入金3万元及以上）。<br>
+        3、12月21日、12月28日、1月4日、1月11日、1月18日07:00-次日04:00，所有产品亏损的交易佣金（含建仓及平仓）由APP全额承担。<br>
+        4、返还佣金将在活动结束后的20个工作日内返还至开户绑定的银行卡中，因客户自身原因导致汇款不成功，或在活动期间有提现行为，则视作自动放弃活动权益。<br>
+        5、本次活动的最终解释权归APP所有，如有任何疑问，请与APP客服联系。
+    </p>
+    <p class="rp-2p"></p>
+</div>
+</body>
+<!--<script type="text/javascript" src="../js/WebViewJavascriptBridge.js"></script>-->
+<!--<script src="../js/swiper.min.js"></script>-->
+<script th:src="@{/app/js/WebViewJavascriptBridge.js}"></script>
+<script th:src="@{/app/js/swiper.min.js}"></script>
+<script type="text/javascript">
+    Zepto(function ($) {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 5000
+        });
+        $(".r2-a").tap(function () {
+            $(".r-cover").show();
+            $(".r-pop").show();
+        });
+        $(".rp-a").tap(function () {
+            $(".r-pop").hide();
+            $(".r-cover").hide();
+        });
+        $(".lingqu").tap(function (e) {
+            e.preventDefault();
+            window.WebViewJavascriptBridge.callHandler('attendActivity', 6, function (response) {
+                $(".lingqu").addClass('disnone');
+            });
+        });
+    })
+</script>
+
+</html>

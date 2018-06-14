@@ -1,0 +1,266 @@
+@charset "utf-8";
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    font-family: 'Arial', "Microsoft Yahei", "Helvetica Neue", "Hiragino Sans GB", "微软雅黑", sans-serif;
+    background: #fff;
+    margin: 0;
+    border: 0;
+    position: relative;
+}
+
+dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, p {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+h4, h5 {
+    font-weight: normal;
+}
+
+ol, ul, dl, dt, dd, p, h4 {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top
+}
+
+em, i {
+    font-style: normal
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 0.59rem;
+    line-height: 0.96rem;
+    color: #fff;
+    background: #e13a46;
+}
+
+.wrapper {
+    padding: 1rem;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: ""
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.relative {
+    position: relative
+}
+
+.absolute {
+    position: absolute
+}
+
+a:hover, a:link, a:active, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.block {
+    display: block
+}
+
+.auto {
+    margin: 0 auto
+}
+
+.tac {
+    text-align: center
+}
+
+.tal {
+    text-align: left
+}
+
+.tar {
+    text-align: right
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+/*主体样式*/
+a {
+    text-decoration: none
+}
+
+.col333, a.col333 {
+    color: #333
+}
+
+.col666, a.col666 {
+    color: #666
+}
+
+.col999, a.col999 {
+    color: #999 !important;
+}
+
+.colfff, a.colfff {
+    color: #fff !important;
+}
+
+.colye {
+    color: #fff100;
+}
+
+.f24 {
+    font-size: 0.64rem !important;
+}
+
+.f28 {
+    font-size: 0.75rem;
+}
+
+.f30 {
+    font-size: 0.8rem;
+}
+
+.f32 {
+    font-size: 0.85rem;
+}
+
+.f36 {
+    font-size: 0.96rem;
+}
+
+.mt20 {
+    margin-top: 0.53rem;
+}
+
+.mt30 {
+    margin-top: 0.8rem;
+}
+
+.mt60 {
+    margin-top: 1.6rem;
+}
+
+.mt70 {
+    margin-top: 1.81rem;
+}
+
+.ml10 {
+    margin-left: 0.27rem;
+}
+
+.mr10 {
+    margin-right: 0.27rem;
+}
+
+.bg100 {
+    background-size: 100% 100% !important;
+}
+
+.row1 {
+    padding: 13.87rem 1.73rem 0 1.73rem;
+    height: 10.8rem;
+    line-height: 1.07rem;
+    background: url(../images/bg1.jpg) center top no-repeat;
+}
+
+.row2 {
+    background: url(../images/bg2.jpg) repeat-x;
+    padding: 0.8rem 1.2rem;
+}
+
+.rowtit {
+    width: 10.75rem;
+    line-height: 2.16rem;
+    font-size: 0.96rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto;
+    background: url(../images/rowtit.png);
+    background-size: 100%;
+}
+
+.row2 dl {
+    margin-bottom: 0.8rem;
+}
+
+.row2 dt {
+    width: 7.04rem;
+}
+
+.row2 dd {
+    width: 10.13rem;
+}
+
+.row2 h2 {
+    font-size: 0.8rem;
+    color: #fff100;
+    margin-bottom: 0.53rem;
+}
+
+.row3 {
+    background: url(../images/bg3.jpg) repeat-x;
+    padding: 1.87rem 1.47rem 4.0rem 1.47rem;
+}
+
+.row3main i {
+    width: 6.11rem;
+    display: block;
+}
+
+.row3main .doc, .row3main .doc2 {
+    background: #147de0;
+    padding: 1.33rem 0.93rem;
+    border-radius: 0 0.27rem 0.27rem 0.27rem;
+}
+
+.row3main .doc2 {
+    border-radius: 0.27rem 0 0.27rem 0.27rem;
+}
+
+.row3main2 {
+    margin-top: -0.8rem;
+}
+
+.row3logo {
+    width: 7.76rem;
+    margin: 3.2rem auto 0.4rem auto;
+}
+
+.row3line {
+    width: 17.07rem;
+    margin: 0 auto;
+    background: url(../images/row3line.png) center center no-repeat;
+    background-size: 100%;
+}

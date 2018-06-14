@@ -1,0 +1,24 @@
+$ cd ~/.ssh
+$ ls
+authorized_keys2  id_dsa       known_hosts
+config            id_dsa.pub
+
+如果没有
+ssh-keygen 生成秘钥
+
+
+Linux公钥免密登录
+
+导入公钥
+公钥上传好以后，需要导入公钥
+[root@localhost ~]# cd /root
+[root@localhost ~]# mkdir .ssh
+[root@localhost ~]# cd .ssh
+[root@localhost .ssh]# rz
+[root@localhost .ssh]# cat id_rsa_2048.pub >> authorized_keys
+[root@localhost .ssh]# chmod 600 authorized_keys
+
+rm xxxxxxx_tx.pub 删除
+对文件授权
+[root@VM_146_6_centos .ssh]# chmod 700 /root/.ssh
+[root@VM_146_6_centos .ssh]# chmod 600  authorized_keys

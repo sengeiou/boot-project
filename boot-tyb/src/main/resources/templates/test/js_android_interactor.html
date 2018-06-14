@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <title>Carson</title>
+    <style>
+body{
+  font-size: 20px;
+}
+    </style>
+        <script>
+            function callAndroid(){
+                // 由于对象映射，所以调用jsCallback对象等于调用Android映射的对象
+
+                var jsonData='{\n' +
+                    '    "data": {\n' +
+                    '        "object": {\n' +
+                    '            "annvalue": "43",\n' +
+                    '            "autoid": "12",\n' +
+                    '            "badpers": 67,\n' +
+                    '            "createTime": 1526619446000,\n' +
+                    '            "day": "34",\n' +
+                    '            "goodpers": 56,\n' +
+                    '            "id": 1,\n' +
+                    '            "imageurl": "http://xzm1102207843.oss-cn-beijing.aliyuncs.com/tyb/home/live_sub_img2.png",\n' +
+                    '            "importence": "2",\n' +
+                    '            "name": "哈哈",\n' +
+                    '            "prevalue": "31",\n' +
+                    '            "question": "黄金正处”卧薪尝胆“时期 有望触及五年高点",\n' +
+                    '            "time": 1525576364000,\n' +
+                    '            "updataTime": 1526619446000\n' +
+                    '        }\n' +
+                    '    },\n' +
+                    '    "msg": "",\n' +
+                    '    "status": 0,\n' +
+                    '    "success": true\n' +
+                    '}';
+                var json = "{\"name\": \"zlove\", \"_dscbstub\": \"callback\"}"
+
+                _jsbridge.call("testAsync", jsonData);
+             }
+             function callback(result) {
+                alert("客户端返回的结果是：" + result)
+             }
+        </script>
+</head>
+<body>
+<!-- 点击按钮则调用callAndroid函数 -->
+<button type="button" id="button1" style="font-size:30px" onclick="callAndroid()">Call Android</button>
+</body>
+</html>

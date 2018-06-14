@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>关于投油宝</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+   <!-- <link href="../css/tyb_self.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/animate.min.css" rel="stylesheet" type="text/css">
+    <script src="../js/wow.min.js"></script>
+-->
+    <link th:href="@{/app/css/tyb_self.css}" rel="stylesheet">
+    <link th:href="@{/app/css/animate.min.css}" rel="stylesheet">
+    <script th:src="@{/app/js/wow.min.js}"></script>
+    <script language="javascript">
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 100,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    </script>
+    <!--页面内容样式-->
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (clientWidth > 751) {
+                        var clientWidth = 750;
+                    }
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 20 + "px";
+                };
+
+            if (!doc.addEventListener) return;
+
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener("DOMContentLoaded", recalc, false);
+
+        })(document, window);
+    </script>
+</head>
+<body>
+<div class="container overflow">
+    <!--row1-->
+    <div class="row1 bg100 wow animated flipInX" data-wow-duration="1000ms">
+        <p>
+            投油宝是上海聿烁金属有限公司精心打造的一款融合现货资讯、在线直播、在线交易的综合性金融服务、现货投资软件。公司总部位于我国的金融中心-上海，凭借多年行业积累、专业的管理机制，已成为该领域内投资交易额、品牌影响力全国排名前三的平台。</p>
+    </div>
+    <!--row2-->
+    <div class="row2 bg100 clearfix">
+        <div class="rowtit wow animated bounceInDown">我们的服务</div>
+        <dl class="clearfix mt30">
+            <dt class="fl wow animated bounceInRight">
+                <img src="/app/images/row2img1.png">
+             <!--   <img th:src="{images/row2img1.png}">-->
+            </dt>
+            <dd class="fr wow animated bounceInLeft">
+                <h2 class="mt20">全天候直播实时解盘</h2>
+                <p>数百人的技术支持团队、多年实盘经验的分析师22小时提供在线解盘直播服务，深度剖析市场热点资讯，讲解实用投资战法。</p>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt class="fr wow animated bounceInLeft"><img src="/app/images/row2img2.png"></dt>
+            <dd class="fl wow animated bounceInRight">
+                <h2 class="mt20">「投油宝研究所」独家内参</h2>
+                <p>特设「投油宝研究所」，汇聚国内外金融业界的知名分析师及市场研究员，早晚研报提前预告行情走势。</p>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt class="fl wow animated bounceInRight"><img src="/app/images/row2img3.png"></dt>
+            <dd class="fr wow animated bounceInLeft">
+                <h2>1V1专属投资顾问24H在线</h2>
+                <p>所有注册会员均可免费享受1V1助理服务。无论是APP使用问题，还是投资困惑，均可得到一手解答。同时针对老师喊单提供及时提醒服务，助你随时掌握盘面走势，把握市场动态。</p>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt class="fr wow animated bounceInLeft"><img src="/app/images/row2img4.png"></dt>
+            <dd class="fl wow animated bounceInRight">
+                <h2 class="mt20">三大交易中心一键开户</h2>
+                <p>对接大连再生、 新华上海贵金属、上海石油化工三家国资交易中心，选择更多，秒速开户，服务更周到。</p>
+            </dd>
+        </dl>
+    </div>
+    <!--row3-->
+    <div class="row3 bg100">
+        <div class="rowtit wow animated bounceInDown">我们的优势</div>
+        <div class="row3main mt60 wow animated bounceInLeft">
+            <h2 class="clearfix"><i class="fl"><img src="/app/images/row3img1.png"></i><span
+                    class="f30 colye fr mr10 mt60">银行三方托管确保资金安全</span></h2>
+            <p class="doc">【投油宝】与国内超过10家银行建立资金三方托管合作，所有交易均在正规交易平台进行，杜绝代客理财现象，保障客户资金安全。</p>
+        </div>
+        <div class="row3main row3main2 wow animated bounceInRight">
+            <h2 class="clearfix"><i class="fr"><img src="/app/images/row3img2.png"></i><span
+                    class="f30 colye fl ml10 mt70">资深研究团队提升投资成功率</span></h2>
+            <p class="doc2">投油宝专业研究团队分析师多数拥有近十年从业经验，为投资者提供从投资入门、行情解析、操作建议等全方位的交易服务。喊单成功率逾九成，有效降低会员持单风险！</p>
+        </div>
+        <div class="wow animated bounceInUp">
+            <div class="row3logo"><img src="/app/images/row3logo.png"></div>
+            <div class="row3line tac">投油宝 领先的现货投资服务商</div>
+        </div>
+    </div>
+</div>
+<!--正文-->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>登陆成功</title>
+    <link th:href="@{/css/base.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+</head>
+<body>
+<!--<h1 th:inline="text">Hello.v.2</h1>-->
+<!--<p th:text="${user}"></p>-->
+
+<div>
+    <span th:text="${login_user}"></span>  您已经登录成功
+</div>
+</body>
+</html>

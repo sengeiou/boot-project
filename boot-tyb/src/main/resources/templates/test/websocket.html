@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>webSocket</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/sockjs.min.js}"></script>
+</head>
+<body>
+<!--<h1 th:inline="text">Hello.v.2</h1>-->
+<!--<p th:text="${user}"></p>-->
+
+<div  id="head">
+    webSocket消息推送
+</div>
+<div  id="msg">
+</div>
+</body>
+
+
+<script type="text/javascript">
+    $(function(){
+        var websocket;
+        if ('WebSocket' in window) {
+            alert("WebSocket");
+            websocket = new WebSocket("ws://localhost:8083/veg");
+        } else if ('MozWebSocket' in window) {
+            alert("MozWebSocket");
+            websocket = new MozWebSocket("ws://veg");
+        } else {
+            alert("SockJS");
+            websocket = new SockJS("http://localhost:8083/com/veg");
+        }
+        websocket.onopen = function (evnt) {
+            $("#head").html("连接服务器成功!")
+            send();
+        };
+        websocket.onmessage = function (evnt) {
+            $("#msg").html($("#msg").html() + "<br/>" + evnt.data);
+        };
+        websocket.onerror = function (evnt) {
+        };
+        websocket.onclose = function (evnt) {
+            $("#head").html("与服务器断开了链接!")
+        }
+        function send(){
+            if (websocket != null) {
+
+                websocket.send("客户端请求");
+            } else {
+                alert('未与服务器链接.');
+            }
+        }
+    });
+</script>
+</html>

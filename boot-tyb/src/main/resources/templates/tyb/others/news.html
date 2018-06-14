@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>实时快讯</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-orientation" content="portrait">
+  <!--  <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/dropload.css" rel="stylesheet" type="text/css">-->
+    <link th:href="@{/app/css/common.css}" rel="stylesheet">
+    <link th:href="@{/app/css/dropload.css}" rel="stylesheet">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (clientWidth > 641) {
+                        var clientWidth = 640;
+                    }
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 20 + "px";
+                };
+
+            if (!doc.addEventListener) return;
+
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener("DOMContentLoaded", recalc, false);
+
+        })(document, window);
+    </script>
+</head>
+<body>
+<section class="content">
+    <section class="lst1-hints tac f20 disnone"></section>
+    <section class="lst1-hints-down disnone"></section>
+    <section class="m-page">
+        <ul class="lst-style1 js-List">
+            <li class="clearfix" data-id="208107">
+                <p class="lst-time fl tac f20 colccc">
+                    15:43
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">中国商务部 : 中方愿意与欧方交流沟通，妥善解决钢铁产业面临的问题</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208106">
+                <p class="lst-time fl tac f20 colccc">
+                    15:43
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">中国商务部：敦促欧盟尽早纠正错误做法，将采取措施维护中国企业的权益</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208105">
+                <p class="lst-time fl tac f20 colccc">
+                    15:42
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">中国商务部：对欧方在钢铁领域表现的贸易保护主义倾向表示高度关注</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208104">
+                <p class="lst-time fl tac f20 colccc">
+                    15:42
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">中国商务部官员就欧盟对华热轧板卷采取最终反倾销措施发表谈话</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208103">
+                <p class="lst-time fl tac f20 colccc">
+                    15:36
+                </p>
+                <div class="lst-sdc fl relative">
+                    <h4><a class="col333 f24" href="javascript:void(0);">【新华社：买家不再“抢”房 卖家不再“坐地起价”】</a></h4>
+                    <p class="col666 f24">
+                        新华记者近日走访北京、广州、上海、厦门、成都、河北等地发现，新政出台后，不少二手房中介门店的业务量大幅下滑，购房者从火烧眉毛似的找房、‘抢’房，到心平气和地议价和观望，业主的报价也开始有所松动，不再“坐地起价”。</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208102">
+                <p class="lst-time fl tac f20 colccc">
+                    15:35
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">【金银播报】上海黄金交易所黄金T+D周四（4月6日）午盘收盘上涨0.03%，报280.24元/克<br/>【金银播报】上海黄金交易所白银T+D周四（4月6日）午盘收盘下跌0.02%，报4147.00元/千克
+                    </p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208101">
+                <p class="lst-time fl tac f20 colccc">
+                    15:28
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">交易员：德拉吉发表讲话后，宏观基金抛售欧元兑美元</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208100">
+                <p class="lst-time fl tac f20 colccc">
+                    15:25
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">据外媒：中国财政部计划4月7日发行100亿元人民币91天期债券</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix on" data-id="208099">
+                <p class="lst-time fl tac f20 colccc">
+                    15:21
+                </p>
+                <div class="lst-sdc fl relative">
+                    <p class="col666 f24">
+                        郑商所：为配合白糖期权上市，4月18日当晚所有合约不进行夜盘交易；4月19日8:55-9:00为所有期货合约、白糖期权合约的集合竞价时间，当晚恢复夜盘交易</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+            <li class="clearfix" data-id="208098">
+                <p class="lst-time fl tac f20 colccc">
+                    15:18
+                </p>
+                <div class="lst-sdc fl relative">
+                    <h4><a class="col333 f24" href="javascript:void(0);">【服务雄安新区 北京新机场2019年下半年通航】</a></h4>
+                    <p class="col666 f24">6日讯，
+                        从大兴机场办公室了解到，目前北京新机场建设进展顺利，将于2019年下半年通航。北京大兴国际机场建设大兴区筹备办公室副主任赵建国表示，大兴机场的建设和雄安新区的规划发展相辅相成，雄安新区“发展高端高新产业”和“扩大开放新高地”的定位，密集的人力与商务往来，高端制造业产品的运输，都与新机场的定位与功能不谋而合。</p>
+                    <div class="lst-rad absolute"></div>
+                </div>
+            </li>
+        </ul>
+        <section class="errors-text slideDown disnone">
+            <span class="f24">加载失败</span>
+        </section>
+    </section>
+</section>
+<!--<script src="../js/zepto.min.js"></script>
+<script src="../js/dropload.min.js"></script>
+<script src="../js/socket.io.js"></script>
+<script src="../js/zepto.cookie.min.js"></script>-->
+<script th:src="@{/app/js/zepto.min.js}"></script>
+<script th:src="@{/app/js/dropload.min.js}"></script>
+<script th:src="@{/app/js/socket.io.js}"></script>
+<script th:src="@{/app/js/zepto.cookie.min.js}"></script>
+<script>
+    $.fn.cookie('realNums', 0);
+
+    function connect_socket(token) {
+        var socket = io.connect('192.168.83.221:8080', {
+            query: 'token=' + token
+        });
+
+        socket.on('connect', function () {
+            console.log('authenticated');
+            socket.on('news:rnMsg', function (data) {
+                var nums = $.fn.cookie('realNums');
+                nums++;
+                $.fn.cookie('realNums', nums);
+                var content = '<p>' + nums + '条新消息不可错过！下拉立即刷新<span class="lst1-hints-icon"></span></p>';
+                $('.lst1-hints').html(content);
+                $('.lst1-hints').show();
+                $('.lst1-hints-down').show();
+            });
+        }).on('disconnect', function () {
+            console.log('disconnected');
+        });
+    }
+
+    $.ajax({
+        url: 'http://192.168.83.221:8080/login',
+        data: {
+            username: 'jdh_app',
+            password: '123456'
+        },
+        dataType: 'jsonp',
+        jsonpCallback: 'receive'
+    });
+
+    function receive(result) {
+        connect_socket(result.token);
+    }
+
+    Zepto(function () {
+        // 每页展示10个
+        var pageSize = 10;
+        var number = 1;
+        $('.content').dropload({
+            scrollArea: window,
+            distance: 100,
+            autoLoad: true,
+            domUp: {
+                domClass: 'dropload-up',
+                domRefresh: '<div class="dropload-refresh">↓下拉刷新-实时快讯</div>',
+                domUpdate: '<div class="dropload-update">↑释放更新-实时快讯</div>',
+                domLoad: '<div class="dropload-load"><span class="loading"></span>加载中-实时快讯...</div>'
+            },
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">↑上拉加载更多-实时快讯</div>',
+                domLoad: '<div class="dropload-load"><span class="loading"></span>加载中-实时快讯...</div>',
+                domNoData: '<div class="dropload-noData">没有更多数据-实时快讯</div>'
+            },
+            loadUpFn: function (me) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/news/getRealtimeNews',
+                    data: {number: 1, pageSize: pageSize},
+                    dataType: 'json',
+                    success: function (data) {
+                        var result = '';
+                        if (data.length == 0) {
+                            result = '<div class="no-data"><div class="no-data-icon"></div><p class="f28 tac">暂无数据，请稍后尝试刷新</p></div>';
+                        } else {
+                            result = '<ul class="lst-style1 js-List">';
+                            for (var i = 0; i < data.length; i++) {
+                                var news = data[i];
+                                if (news.importance == 3) {
+                                    result += '<li class="clearfix on" data-id="' + news.autoid + '">';
+                                } else {
+                                    result += '<li class="clearfix" data-id="' + news.autoid + '">';
+                                }
+                                result += '<p class="lst-time fl tac f20 colccc">' + news.time;
+                                if (news.day != '') {
+                                    result += '<br>' + news.day;
+                                }
+                                result += '</p><div class="lst-sdc fl relative">';
+                                if (news.title != '') {
+                                    result += '<h4><a class="col333 f24" href="javascript:void(0);">' + news.title + '</a></h4>';
+                                }
+                                result += '<p class="col666 f24">' + news.content + '</p><div class="lst-rad absolute"></div></div></li>';
+                            }
+                            result += '</ul>';
+                        }
+                        $('.m-page').html(result);
+                        $('.lst1-hints').hide();
+                        $('.lst1-hints-down').hide();
+                        $.fn.cookie('realNums', 0);
+                        number = 1;
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                        // 解锁
+                        me.unlock();
+                        me.noData(false);
+                    },
+                    error: function (xhr, type) {
+                        $('.errors-text').show();
+                        setTimeout(function () {
+                            $('.errors-text').hide();
+                        }, 1500);
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            },
+            loadDownFn: function (me) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/news/getRealtimeNews',
+                    data: {number: number + 1, pageSize: pageSize},
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.length == 0) {
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        } else {
+                            var result = '';
+                            for (var i = 0; i < data.length; i++) {
+                                var news = data[i];
+                                if ($('li[data-id="' + news.autoid + '"]').length == 0) {
+                                    if (news.importance == 3) {
+                                        result += '<li class="clearfix on" data-id="' + news.autoid + '">';
+                                    } else {
+                                        result += '<li class="clearfix" data-id="' + news.autoid + '">';
+                                    }
+                                    result += '<p class="lst-time fl tac f20 colccc">' + news.time;
+                                    if (news.day != '') {
+                                        result += '<br>' + news.day;
+                                    }
+                                    result += '</p><div class="lst-sdc fl relative">';
+                                    if (news.title != '') {
+                                        result += '<h4><a class="col333 f24" href="javascript:void(0);">' + news.title + '</a></h4>';
+                                    }
+                                    result += '<p class="col666 f24">' + news.content + '</p><div class="lst-rad absolute"></div></div></li>';
+                                }
+                            }
+                            number++;
+                            $('.js-List').append(result);
+                        }
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                    },
+                    error: function (xhr, type) {
+                        $('.errors-text').show();
+                        setTimeout(function () {
+                            $('.errors-text').hide();
+                        }, 1500);
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            },
+            threshold: 50
+        });
+    });
+</script>
+</body>
+</html>

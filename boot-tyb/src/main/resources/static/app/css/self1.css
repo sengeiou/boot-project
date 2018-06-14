@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/*common*/
+html {
+    -webkit-text-size-adjust: none
+}
+
+body {
+    font-family: 'Arial', "Microsoft Yahei", "Helvetica Neue", "Hiragino Sans GB", "微软雅黑", sans-serif;
+    margin: 0;
+    border: 0;
+}
+
+dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, p {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+ol, ul, dl, dt, dd, p, h4 {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+h3, h4 {
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top
+}
+
+em, i {
+    font-style: normal
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 0.62rem;
+    color: #fff;
+    line-height: 1.12rem;
+    background: #fff6da url(../images/banner1.jpg) center top no-repeat;
+    background-size: contain;
+}
+
+.wrapper {
+    padding: 0 0.56rem;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: ""
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.relative {
+    position: relative
+}
+
+.absolute {
+    position: absolute
+}
+
+.disnone {
+    display: none !important;
+}
+
+a:hover, a:link, a:active, a:visited {
+    text-decoration: none;
+}
+
+.block {
+    display: block
+}
+
+.disnone {
+    display: none
+}
+
+.auto {
+    margin: 0 auto
+}
+
+.tac {
+    text-align: center
+}
+
+.tal {
+    text-align: left
+}
+
+.tar {
+    text-align: right
+}
+
+.colred {
+    color: #c42225;
+}
+
+.colye {
+    color: #f6f137 !important;
+}
+
+.f16 {
+    font-size: 0.5rem;
+}
+
+.f18 {
+    font-size: 0.56rem;
+}
+
+.f20 {
+    font-size: 0.62rem;
+}
+
+.f22 {
+    font-size: 0.69rem;
+}
+
+.f24 {
+    font-size: 0.75rem;
+}
+
+.f28 {
+    font-size: 0.88rem;
+}
+
+.banner {
+    color: #4f1c06;
+    line-height: 1.19rem;
+    padding: 8.38rem 0 5.2rem 0;
+}
+
+.row1, .row2 {
+    border: 0.06rem #c42426 solid;
+    background: #fff8e4;
+    padding: 2.03rem 0 0.47rem 0.12rem;
+}
+
+.row1-tit, .row2-tit {
+    width: 12.25rem;
+    line-height: 1.69rem;
+    padding-bottom: 0.09rem;
+    top: -0.88rem;
+    left: 50%;
+    margin-left: -6.12rem;
+    text-align: center;
+    font-size: 1.0rem;
+    color: #f9ec44;
+    font-family: "造字工房悦黑（非商用）";
+    background: url(../images/rowtit.png);
+    background-size: cover;
+}
+
+.row1 li {
+    width: 5.69rem;
+    float: left;
+    margin: 0 0.25rem 1.12rem 0.25rem;
+}
+
+.row1 li img {
+    width: 5.0rem;
+    height: 5.03rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.row1 li h3 {
+    width: 5.06rem;
+    line-height: 1.06rem;
+    margin: 0.62rem auto 0.38rem auto;
+    background: url(../images/row1btb1.png);
+    background-size: 100% 100%;
+}
+
+.row1 li h4 {
+    width: 5.69rem;
+    line-height: 1.12rem;
+    margin: 0 auto;
+    background: url(../images/row1btb2.png);
+    background-size: 100% 100%;
+}
+
+.row1 li.ml65 {
+    margin-left: 2.03rem;
+}
+
+.row1 li.ml80 {
+    margin-left: 2.5rem;
+}
+
+.row1 p {
+    color: #c47920
+}
+
+.row2 {
+    margin-top: 2.06rem;
+}
+
+.row2 ul {
+    width: 10.94rem;
+    margin-left: 3.28rem;
+    background: url(../images/row2line.png) 2.5rem 0.62rem no-repeat;
+    background-size: 0.66rem 13.16rem;
+}
+
+.row2 li {
+    float: left;
+    margin-bottom: 0.78rem;
+}
+
+.row2 em {
+    float: left;
+    color: #c42225;
+    font-size: 0.62rem;
+    line-height: 1.72rem;
+}
+
+.row2 p {
+    color: #eb8723;
+    font-size: 0.88rem;
+    border: 1px #d08c66 solid;
+    background: #fff4d6;
+    float: left;
+    line-height: 1.66rem;
+    padding: 0 0.78rem 0 0.47rem;
+    margin-left: 1.94rem;
+    box-shadow: 0 0.09rem 0.25rem #e0c6aa;
+}
+
+.row2 i {
+    width: 0.41rem;
+    height: 0.19rem;
+    background: url(../images/row2sjx.png) no-repeat;
+    background-size: 100%;
+    display: block;
+    bottom: -0.19rem;
+    left: 50%;
+    margin-left: -0.19rem;
+}
+
+.row2-btn {
+    width: 11.88rem;
+    line-height: 2.38rem;
+    font-size: 1.0rem;
+    color: #f9ec44;
+    font-weight: bold;
+    background: url(../images/btn1.png);
+    background-size: 100%;
+    display: block;
+    margin: 0.62rem auto;
+}
+
+.footer {
+    color: #c42225;
+    margin: 0.56rem 0;
+}
+

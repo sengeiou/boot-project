@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>测试JS</title>
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link th:href="@{/css/base.css}" rel="stylesheet" />
+    <link th:href="@{/css/app_reset.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+
+    <!--<link href="../static/css/base.css" rel="stylesheet" />-->
+    <!--<script type="text/javascript" src="../static/js/jquery-1.12.4.min.js"></script>-->
+</head>
+<body>
+<div>
+
+    <p th:text="${testUser.name}" class="user-name"></p>
+    <p th:text="${testUser.sex}"></p>
+    <div id="name"></div>
+    <div id="sex">JsBridge</div>
+</div>
+
+<input type="button" value="点击调用java代码"
+       onclick="window.jsCallJava.localMethods('html发送数据')"/><br/>
+
+</body>
+
+
+<script>
+    $('#name').text('哈哈哈');
+
+    function javacalljs(){
+        window.alert('响应安卓无参方法')
+        // document.getElementById("content").innerHTML = "<br>JAVA调用了JS的无参函数";
+    }
+    function javacalljswith(arg){
+        window.alert('响应安卓无有参方法' +　JSON.stringify(arg))
+        // document.getElementById("content").innerHTML = ("<br>"+arg);
+        // var parse = JSON.parse(arg);
+        // window.alert(JSON.stringify(arg))
+    }
+    // _jsbridge.call()
+//    $("#test1").text("Hello world!");
+</script>
+</html>
