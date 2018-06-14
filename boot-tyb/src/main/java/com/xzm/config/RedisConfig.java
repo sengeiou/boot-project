@@ -18,7 +18,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * Time：22:51
  * 码云：http://git.oschina.net/jnyqy
  * ========================
- * 我们首先使用cmd命令进入到Redis解压目录并且执行start /b  redis-server.exe redis.windows.conf
+ * 我们首先使用cmd命令进入到Redis解压目录并且执行start /b  redis-server.exe redis.windows.txt.conf
  * 让服务后台运行
  * 在执行的命令前加上start /b，比如start /b run.bat。就相当于Linux下的run.sh &。
  * <p>
@@ -27,7 +27,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * <p>
  * 2. 在进入redis的安装目录
  * <p>
- * 3. 输入：redis-server --service-install redis.windows.conf --loglevel verbose ( 安装redis服务 )
+ * 3. 输入：redis-server --service-install redis.windows.txt.conf --loglevel verbose ( 安装redis服务 )
  * <p>
  * 4.  输入：redis-server --service-start ( 启动服务 )
  * <p>

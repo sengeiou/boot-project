@@ -29,10 +29,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 //        HibernateJpaAutoConfiguration.class})
 @SpringBootApplication
-public class JavaSpringBootApplication {
+public class TybApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JavaSpringBootApplication.class, args);
+        SpringApplication.run(TybApplication.class, args);
 
 //		SpringApplication newRun= new SpringApplication(SpringApplication.class);
 //		newRun.setBannerMode(Banner.Mode.OFF);

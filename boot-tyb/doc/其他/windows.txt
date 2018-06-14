@@ -1,0 +1,7 @@
+netstat -ano，列出所有端口的情况 比如是49157，首先找到它。
+
+netstat -aon|findstr "49157" 加入PID
+
+tasklist|findstr "2720"，回车，
+查看是哪个进程或者程序占用了2720端口，结果是：svchost.exe
+
