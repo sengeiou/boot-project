@@ -2,8 +2,11 @@ package com.xzm.config;
 
 import com.xzm.common.interceptor.SessionInterceptor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * ========================
@@ -23,8 +26,11 @@ public class SessionConfiguration extends WebMvcConfigurerAdapter {
 //       registry.addInterceptor(new HandshakeInterceptor());
     }
 
-
-//    @Bean
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        super.configureMessageConverters(converters);
+    }
+    //    @Bean
 //    public ViewResolver springThymeleafViewResolver() {
 //
 //            ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
