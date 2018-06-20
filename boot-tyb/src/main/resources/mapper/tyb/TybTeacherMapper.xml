@@ -250,4 +250,11 @@
             <include refid="query_test_where2"/>
         </where>
     </select>
+    <select id="selectTeacherByPrimaryKey" resultType="integer"
+            parameterType="integer">
+        select count(1)
+        from tyb_teacher
+        where id = #{id}
+    </select>
+
 </mapper>

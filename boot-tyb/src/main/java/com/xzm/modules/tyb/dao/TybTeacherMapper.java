@@ -18,6 +18,8 @@ public interface TybTeacherMapper {
     int updateByPrimaryKeySelective(TybTeacher record);
 
     int updateByPrimaryKey(TybTeacher record);
+    
+    int selectTeacherByPrimaryKey(Integer id);
 
     List<TybTeacher> selectTeacherList();
 

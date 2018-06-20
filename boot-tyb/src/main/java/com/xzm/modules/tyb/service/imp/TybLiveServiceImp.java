@@ -1,5 +1,6 @@
 package com.xzm.modules.tyb.service.imp;
 import com.xzm.common.entity.ServerResponse;
+import com.xzm.common.exception.RRException;
 import com.xzm.modules.tyb.dao.*;
 import com.xzm.modules.tyb.pojo.*;
 import com.xzm.modules.tyb.service.TybLiveService;
@@ -9,6 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Id;
 import java.util.List;
 
 @Service
@@ -94,6 +96,11 @@ public class TybLiveServiceImp implements TybLiveService {
 //            Integer teacherId = item.getTeacherId();
 //            logger.debug("====查询用户老师ID==" + teacherId);
 //        });
+        int count = tybTeacherMapper.selectTeacherByPrimaryKey(teacherId);
+        logger.debug("===查询老师数量===" + count);
+        if(count<0){
+            throw new RRException("老师不存在", 600001);
+        }
         TybTeacher tybTeacher = tybTeacherMapper.selectByPrimaryKey(teacherId);
         TybTeacherDetailVo teacherDetailVo = new TybTeacherDetailVo();
         TybTeacherDetailVo.TeacherDetail teacherDetail = new TybTeacherDetailVo.TeacherDetail();
