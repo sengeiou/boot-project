@@ -4,6 +4,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -38,4 +40,12 @@ public class TybApplication {
 //		newRun.setBannerMode(Banner.Mode.OFF);
 //		newRun.run(args);
     }
+
+//    @Override
+//    protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
+//        final DispatcherServlet dispatcherServlet = (DispatcherServlet)
+//                super.createDispatcherServlet(servletAppContext);
+//        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+//        return dispatcherServlet;
+//    }
 }

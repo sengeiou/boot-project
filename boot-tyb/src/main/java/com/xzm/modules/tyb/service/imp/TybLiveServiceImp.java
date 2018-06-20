@@ -98,7 +98,8 @@ public class TybLiveServiceImp implements TybLiveService {
 //        });
         int count = tybTeacherMapper.selectTeacherByPrimaryKey(teacherId);
         logger.debug("===查询老师数量===" + count);
-        if(count<0){
+        if(count<1){
+            logger.debug("===查询老师数量xxxx===" + count);
             throw new RRException("老师不存在", 600001);
         }
         TybTeacher tybTeacher = tybTeacherMapper.selectByPrimaryKey(teacherId);

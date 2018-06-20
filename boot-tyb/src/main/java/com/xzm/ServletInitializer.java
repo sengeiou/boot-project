@@ -10,7 +10,15 @@
 //
 //	@Override
 //	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-//		return application.sources(JavaSpringBootApplication.class);
+//		return application.sources(TybApplication.class);
 //	}
+//
+////    @Override
+////    protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
+////        final DispatcherServlet dispatcherServlet = (DispatcherServlet)
+////                super.createDispatcherServlet(servletAppContext);
+////        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+////        return dispatcherServlet;
+////    }
 //
 //}
