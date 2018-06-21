@@ -2,23 +2,16 @@ package com.xzm.modules.tyb.config;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-//import com.example.demo.core.ret.RetCode;
-//import com.example.demo.core.ret.RetResult;
-//import com.example.demo.core.ret.ServiceException;
-import com.sun.corba.se.spi.activation.Server;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.exception.RRException;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
-
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.rpc.ServiceException;
 import java.io.IOException;
 
 /**
@@ -77,6 +70,9 @@ public class GlobalExceptionResolver {
 //        result.setCode(RetCode.INTERNAL_SERVER_ERROR).setMsg("服务器打酱油了，请稍后再试~");
 //        logger.error(e.getMessage(), e);
 //        responseResult(response, result);
+        ServerResponse<Object> serverResponse =
+                ServerResponse.createByErrorCodeMessage(404,"找不到"+e.getMessage());
+        responseResult(response,serverResponse);
     }
 
 //
