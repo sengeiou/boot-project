@@ -18,13 +18,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 
 //@ImportResource({"classpath:spring.xml"}) 可以代替传统的xml配置
-@EnableWebSocket // 允许WebSocket
-@EnableSwagger2 //开启Swagger文档
+@EnableWebSocket // 允许WebSocketSw
 @EnableScheduling//开启定时任务
 // mapper 接口类扫描包配置 com.xzm.modules.tyb.dao
 //@MapperScan(basePackages = {"com.xzm.modules.tyb.dao",
 //        "com.xzm.modules.sys.dao","com.xzm.modules.test.dao"})
-@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
+//@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
 //@Import({DynamicDataSourceConfig.class})
 //@EnableJpaRepositories(basePackages="com.xzm", entityManagerFactoryRef="emf")
 //@EnableJpaRepositories(repositoryBaseClass = JpaRepositoryFactoryBean.class)
