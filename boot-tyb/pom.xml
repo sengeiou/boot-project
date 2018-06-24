@@ -143,10 +143,17 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <!--引入 spring.boot test -->
+     <!--   <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.2.0</version>
+        </dependency>-->
+
+        <!-- Spring Boot Mybatis 依赖 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.1.1</version>
+            <version>${mybatis-spring-boot}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -159,6 +166,27 @@
             <artifactId>mybatis-ehcache</artifactId>
             <version>1.1.0</version>
         </dependency>
+        <!--单表通用增删改查，文档地址  源码地址：https://github.com/abel533/Mapper
+            文档地址： https://mapperhelper.github.io
+            使用文档 https://github.com/abel533/Mapper/wiki-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+   <!--     <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.4.2</version>
+        </dependency>-->
+        <!--单表通用增删改查，文档地址  源码地址：https://github.com/abel533/Mapper
+    文档地址： https://mapperhelper.github.io
+    使用文档 https://github.com/abel533/Mapper/wiki-->
+     <!--   <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>-->
         <!--
         MyBatis提供了拦截器接口，我们可以实现自己的拦截器，
         将其作为一个plugin装入到SqlSessionFactory中。
@@ -207,12 +235,7 @@
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
         </dependency>
-        <!-- Spring Boot Mybatis 依赖 -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis-spring-boot}</version>
-        </dependency>
+
 
         <!--QueryDSL是一个Java语言编写的通用查询框架，
         专注于通过JavaAPI方式构建安全的SQL查询。QueryDSL可以应用到NoSQL数据库上，
