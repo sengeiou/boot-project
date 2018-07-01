@@ -86,10 +86,10 @@ public class ApiController {
     private  void  test(){
         log.info("随机数测试输出：");
         log.info("随机字符串 : " + blogProperties.getValue());
-        log.info("随机int : " + blogProperties.getNumber());
-        log.info("随机long : " + blogProperties.getBignumber());
-        log.info("随机10以下 : " + blogProperties.getTest1());
-        log.info("随机10-20 : " + blogProperties.getTest2());
+//        log.info("随机int : " + blogProperties.getNumber());
+//        log.info("随机long : " + blogProperties.getBignumber());
+//        log.info("随机10以下 : " + blogProperties.getTest1());
+//        log.info("随机10-20 : " + blogProperties.getTest2());
 
     }
 

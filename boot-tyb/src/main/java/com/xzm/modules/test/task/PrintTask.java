@@ -1,5 +1,6 @@
 package com.xzm.modules.test.task;
 
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.util.Date;
  * 码云：http://git.oschina.net/jnyqy
  * ========================
  */
+@EnableScheduling//开启定时任务
 @Component
 public class PrintTask {
 

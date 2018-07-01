@@ -1,6 +1,8 @@
 package com.xzm.modules.test.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,26 +11,43 @@ import org.springframework.stereotype.Component;
  * @date 16/5/5 下午12:16.
  * @blog http://blog.didispace.com
  */
-@Component
+@Configuration
+
+/**
+ * //@ConfigurationProperties("com.didispace.blog.name")
+ * 配合
+ <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+
+ */
 public class BlogProperties {
 
     @Value("${com.didispace.blog.name}")
     private String name;
+
     @Value("${com.didispace.blog.title}")
     private String title;
+
     @Value("${com.didispace.blog.desc}")
     private String desc;
 
     @Value("${com.didispace.blog.value}")
     private String value;
-    @Value("${com.didispace.blog.number}")
-    private Integer number;
-    @Value("${com.didispace.blog.bignumber}")
-    private Long bignumber;
-    @Value("${com.didispace.blog.test1}")
-    private Integer test1;
-    @Value("${com.didispace.blog.test2}")
-    private Integer test2;
+
+//    @Value("${com.didispace.blog.numbers}")
+//    private Integer number;
+//
+//    @Value("${com.didispace.blog.bignumber}")
+//    private Long bignumber;
+//
+//    @Value("${com.didispace.blog.test1}")
+//    private Integer test1;
+//
+//    @Value("${com.didispace.blog.test2}")
+//    private Integer test2;
 
     public String getName() {
         return name;
@@ -62,35 +81,35 @@ public class BlogProperties {
         this.value = value;
     }
 
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public Long getBignumber() {
-        return bignumber;
-    }
-
-    public void setBignumber(Long bignumber) {
-        this.bignumber = bignumber;
-    }
-
-    public Integer getTest1() {
-        return test1;
-    }
-
-    public void setTest1(Integer test1) {
-        this.test1 = test1;
-    }
-
-    public Integer getTest2() {
-        return test2;
-    }
-
-    public void setTest2(Integer test2) {
-        this.test2 = test2;
-    }
+//    public Integer getNumber() {
+//        return number;
+//    }
+//
+//    public void setNumber(Integer number) {
+//        this.number = number;
+//    }
+//
+//    public Long getBignumber() {
+//        return bignumber;
+//    }
+//
+//    public void setBignumber(Long bignumber) {
+//        this.bignumber = bignumber;
+//    }
+//
+//    public Integer getTest1() {
+//        return test1;
+//    }
+//
+//    public void setTest1(Integer test1) {
+//        this.test1 = test1;
+//    }
+//
+//    public Integer getTest2() {
+//        return test2;
+//    }
+//
+//    public void setTest2(Integer test2) {
+//        this.test2 = test2;
+//    }
 }

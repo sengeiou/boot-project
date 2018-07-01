@@ -3,6 +3,8 @@ package com.xzm;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -41,11 +43,17 @@ public class TybApplication {
 //		newRun.run(args);
     }
 
-//    @Override
+    //    @Override
 //    protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
 //        final DispatcherServlet dispatcherServlet = (DispatcherServlet)
 //                super.createDispatcherServlet(servletAppContext);
 //        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
 //        return dispatcherServlet;
 //    }
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
+        c.setIgnoreUnresolvablePlaceholders(true);
+        return c;
+    }
 }
