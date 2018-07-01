@@ -6,8 +6,8 @@ import com.xzm.modules.tyb.pojo.TybTeacher;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-//@Mapper
-public interface TybTeacherMapper  extends Mapper {
+//@Mapper extends Mapper
+public interface TybTeacherMapper  {
     int deleteByPrimaryKey(Integer id);
 
     int insert(TybTeacher record);

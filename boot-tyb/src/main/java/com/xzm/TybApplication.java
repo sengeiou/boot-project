@@ -23,12 +23,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 // mapper 接口类扫描包配置 com.xzm.modules.tyb.dao
 //@MapperScan(basePackages = {"com.xzm.modules.tyb.dao",
 //        "com.xzm.modules.sys.dao","com.xzm.modules.test.dao"})
-//@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
+@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
 //@Import({DynamicDataSourceConfig.class})
 //@EnableJpaRepositories(basePackages="com.xzm", entityManagerFactoryRef="emf")
 //@EnableJpaRepositories(repositoryBaseClass = JpaRepositoryFactoryBean.class)
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 //        HibernateJpaAutoConfiguration.class})
+@EnableSwagger2
 @SpringBootApplication
 public class TybApplication {
 
