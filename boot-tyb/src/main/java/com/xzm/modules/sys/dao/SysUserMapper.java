@@ -15,7 +15,7 @@ import java.util.List;
  * @url www.chenlintech.com
  * @date 2017年8月8日 下午3:26:05
  */
-//@Mapper
+@Mapper
 public interface SysUserMapper extends BaseMapper<SysUserEntity> {
 
 	SysUserEntity getByUserName(String username);

@@ -18,14 +18,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Configuration类中的方法成员变量是@Value注解，方法上的注解是@Bean
  * Component类中的方法和成员变量没有任何限制
  */
-
+//@tk.mybatis.spring.annotation.MapperScan(basePackages = {"com.xzm.modules.*.dao"}, sqlSessionFactoryRef = "sqlSessionFactoryBean")
 //@ImportResource({"classpath:spring.xml"}) 可以代替传统的xml配置
 @EnableWebSocket // 允许WebSocketSw
 @EnableScheduling//开启定时任务
 // mapper 接口类扫描包配置 com.xzm.modules.tyb.dao
 //@MapperScan(basePackages = {"com.xzm.modules.tyb.dao",
 //        "com.xzm.modules.sys.dao","com.xzm.modules.test.dao"})
-@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
+//@MapperScan(basePackages = {"com.xzm.modules.*.dao"})
 //@Import({DynamicDataSourceConfig.class})
 //@EnableJpaRepositories(basePackages="com.xzm", entityManagerFactoryRef="emf")
 //@EnableJpaRepositories(repositoryBaseClass = JpaRepositoryFactoryBean.class)
