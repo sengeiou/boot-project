@@ -12,3 +12,6 @@
 src/test/
 .idea
 boot-parent.iml
+boot-common/src/test/
+boot-test/src/test/
+boot-web/src/test/
