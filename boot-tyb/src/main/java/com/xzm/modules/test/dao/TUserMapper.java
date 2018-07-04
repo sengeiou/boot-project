@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 //@Repository
-@Mapper
+//@Mapper
 public interface TUserMapper {
     long countByExample(TUserExample example);
 

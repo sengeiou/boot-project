@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by 10412 on 2016/12/2.
  */
-@Mapper
+//@Mapper
 public interface TestUserMapper  //mapper接口，相当于dao接口
 {
     //用户信息综合查询

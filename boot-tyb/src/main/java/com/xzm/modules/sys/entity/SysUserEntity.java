@@ -1,5 +1,6 @@
 package com.xzm.modules.sys.entity;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
@@ -20,6 +21,7 @@ public class SysUserEntity implements Serializable {
 	/**
 	 * 用户id
 	 */
+	@Id
 	private Long userId;
 	
 	/**
