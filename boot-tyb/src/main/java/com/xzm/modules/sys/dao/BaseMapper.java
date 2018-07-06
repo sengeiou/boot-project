@@ -16,7 +16,7 @@ import java.util.List;
  * @url www.chenlintech.com
  * @date 2017年8月12日 下午12:23:18
  */
-public interface BaseMapper<T>  {
+public interface BaseMapper<T>   {
 	
 	/**
 	 * 新增

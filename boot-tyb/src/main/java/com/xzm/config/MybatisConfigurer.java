@@ -37,7 +37,7 @@ public class MybatisConfigurer {
         pageHelper.setProperties(properties);
 
         //添加插件
-        factory.setPlugins(new Interceptor[]{});
+        factory.setPlugins(new Interceptor[]{pageHelper});
 
 
         //添加XML目录
