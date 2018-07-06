@@ -33,7 +33,7 @@ import tk.mybatis.mapper.common.special.InsertListMapper;
  * int deleteByCondition(Object condition); 根据Condition条件删除数据
  *
  */
-@org.apache.ibatis.annotations.Mapper
+//@org.apache.ibatis.annotations.Mapper
 public interface Mapper<T> extends BaseMapper<T>,
         ConditionMapper<T>, IdsMapper<T>, InsertListMapper<T> {
 }

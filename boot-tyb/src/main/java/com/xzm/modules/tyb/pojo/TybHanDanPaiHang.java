@@ -1,7 +1,4 @@
 package com.xzm.modules.tyb.pojo;
-
-import lombok.Data;
-
 import java.util.Date;
 
 //@Data

@@ -3,7 +3,7 @@ package com.xzm.modules.sys.dao;
 
 import com.xzm.common.entity.Page;
 import com.xzm.common.entity.Query;
-import com.xzm.modules.common.dao.Mapper;
+//import com.xzm.modules.common.dao.Mapper;
 
 
 import java.util.List;
