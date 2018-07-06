@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 //@Mapper extends Mapper
 //@Mapper
-public interface TybTeacherMapper  {
+public interface TybTeacherMapper extends Mapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(TybTeacher record);
