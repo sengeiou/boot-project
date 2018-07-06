@@ -6,6 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -16,7 +17,7 @@ import java.util.Date;
  * @email sunlightcs@gmail.com
  * @date 2017/9/21 22:21
  */
-//@ConfigurationProperties(prefix = "tyb.jwt")
+@ConfigurationProperties(prefix = "tyb.jwt")
 @Component
 public class JwtUtils {
     private Logger logger = LoggerFactory.getLogger(getClass());
