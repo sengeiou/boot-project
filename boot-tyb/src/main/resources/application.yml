@@ -60,10 +60,10 @@ spring:
     active: test
 
 #springMVC 配置路径
-#  mvc:
-#    view:
-#      suffix: .jsp
-#      prefix: /WEB-INF/jsp/
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
 #      views-name:
 
 #mybatis:
