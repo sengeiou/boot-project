@@ -1,7 +1,6 @@
 //package com.xzm.config;
 //
 //import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.web.servlet.ViewResolver;
 //import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -23,15 +22,15 @@
 // */
 //@Configuration//用来定义 DispatcherServlet 应用上下文中的 bean
 //@EnableWebMvc
-//@ComponentScan("com.xzm")
-//public class WebConfig extends WebMvcConfigurerAdapter {
+////@ComponentScan("com.xzm")
+//public class WebMVCConfig extends WebMvcConfigurerAdapter {
 //
 //    @Bean
 //    public ViewResolver viewResolver() {
 //        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 //        resolver.setPrefix("/WEB-INF/");
 //        resolver.setSuffix(".jsp");
-////        resolver.setViewNames("jsps/*");
+//        resolver.setViewNames("jsps/*");
 //        resolver.setOrder(2);
 //        return resolver;
 //    }
@@ -43,7 +42,6 @@
 //        templateResolver.setPrefix("/WEB-INF/");
 //        templateResolver.setSuffix(".html");
 //        templateResolver.setCharacterEncoding("utf-8");
-//
 //        templateResolver.setCacheable(false);
 //        return templateResolver;
 //    }

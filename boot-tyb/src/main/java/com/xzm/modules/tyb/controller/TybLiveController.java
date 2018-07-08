@@ -8,6 +8,8 @@ import com.xzm.modules.tyb.service.TybLiveService;
 import com.xzm.modules.tyb.service.TybZiXunService;
 import com.xzm.modules.tyb.vo.LiveTopVo;
 import com.xzm.modules.tyb.vo.TybImportantMessageVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 直播首页
  */
+@Api("直播首页")
 @RestController
 @RequestMapping(value = "/tyb/live")
 public class TybLiveController {
@@ -32,6 +35,7 @@ public class TybLiveController {
     /**
      * 直播室首页数据
      */
+    @ApiOperation("首页三个直播室")
     @GetMapping("selectLiveTopList")
     public ServerResponse selectLiveTopList() {
 //        String topList1 = redisService.get("TopList");
@@ -44,6 +48,7 @@ public class TybLiveController {
     /**
      * 获取单个老师排行
      */
+    @ApiOperation("获取单个老师排行")
     @GetMapping("selectHanDanByPrimaryKey")
     public ServerResponse selectHanDanByPrimaryKey(@RequestParam Integer id) {
         ServerResponse serverResponse = liveService.selectHanDanByPrimaryKey(id);
@@ -52,6 +57,7 @@ public class TybLiveController {
     /**
      * 获取老师列表
      */
+    @ApiOperation("获取人气老师列表")
     @GetMapping("selectTeacherList")
     public ServerResponse selectTeacherList(@RequestParam(defaultValue = "1") int pageNum,
                                             @RequestParam(defaultValue = "5") int pageSize,
@@ -64,6 +70,7 @@ public class TybLiveController {
     /**
      *根据老师ID查询老师详情
      */
+    @ApiOperation("根据老师ID查询老师详情")
     @GetMapping("selectTeacherByTeacherId")
     public ServerResponse selectTeacherByTeacherId(@RequestParam(value = "access_token") String access_token,
                                                    @RequestParam(value = "phone",required = false) String phone,
@@ -73,6 +80,7 @@ public class TybLiveController {
     /**
      * 获取老师喊单排行
      */
+    @ApiOperation("获取老师喊单排行")
     @GetMapping("selectHanDanList")
     public ServerResponse selectHanDanList(@RequestParam(defaultValue = "1") int pageNum,
                                            @RequestParam(defaultValue = "5") int pageSize) {
@@ -86,6 +94,7 @@ public class TybLiveController {
      *
      * @param type 1财经要闻 2研究报告 3独家解读 4市场动态
      */
+    @ApiOperation("获取咨询新闻列表")
     @GetMapping("selectZiXunList")
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int pageNum,
                                           @RequestParam(defaultValue = "5") int pageSize,
@@ -100,6 +109,7 @@ public class TybLiveController {
     /**
      *获取重要消息
      */
+    @ApiOperation("获取重要消息")
     @GetMapping("selectImportantMessage")
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int id) {
 

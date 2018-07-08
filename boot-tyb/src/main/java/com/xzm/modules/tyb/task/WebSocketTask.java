@@ -3,6 +3,7 @@ package com.xzm.modules.tyb.task;
 import com.xzm.common.utils.JSONUtils;
 import com.xzm.modules.tyb.bean.HangQing;
 import com.xzm.modules.tyb.websocket.SocketServer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import java.util.Random;
 /**
  * 模拟webSocket 定时推送
  */
+@EnableScheduling//开启定时任务
 @Component
 public class WebSocketTask {
 
@@ -48,6 +50,7 @@ public class WebSocketTask {
      */
     @Scheduled(initialDelay = 1000 * 10, fixedDelay = 1000 * 5)
     public void initialDelay() throws Exception {
+//        System.out.println("====第一次被调用前的延时==");
         int randomNum = getRandomNum(-2, 2);
         int randomLast = getRandomNum(120, 135);
         int randomSwingRate = getRandomNum(30, 40);
@@ -77,7 +80,7 @@ public class WebSocketTask {
 //        System.out.println("执行测试initialDelay时间："+ new Date(System.currentTimeMillis()));
     }
 
-    public static int getRandomNum(int smallistNum, int BiggestNum) {
+    private static int getRandomNum(int smallistNum, int BiggestNum) {
         Random random = new Random();
         return (Math.abs(random.nextInt()) % (BiggestNum - smallistNum + 1)) + smallistNum;
     }

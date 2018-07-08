@@ -1,15 +1,9 @@
 package com.xzm;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
@@ -20,8 +14,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 //@tk.mybatis.spring.annotation.MapperScan(basePackages = {"com.xzm.modules.*.dao"}, sqlSessionFactoryRef = "sqlSessionFactoryBean")
 //@ImportResource({"classpath:spring.xml"}) 可以代替传统的xml配置
-@EnableWebSocket // 允许WebSocketSw
-@EnableScheduling//开启定时任务
 // mapper 接口类扫描包配置 com.xzm.modules.tyb.dao
 //@MapperScan(basePackages = {"com.xzm.modules.tyb.dao",
 //        "com.xzm.modules.sys.dao","com.xzm.modules.test.dao"})
@@ -31,7 +23,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableJpaRepositories(repositoryBaseClass = JpaRepositoryFactoryBean.class)
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 //        HibernateJpaAutoConfiguration.class})
-@EnableSwagger2
 @SpringBootApplication
 public class TybApplication {
 

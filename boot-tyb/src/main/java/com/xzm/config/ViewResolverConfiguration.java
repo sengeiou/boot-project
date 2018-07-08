@@ -20,7 +20,7 @@
 //        jspViewResolver.setSuffix(".jsp");
 //        jspViewResolver.setViewClass(JstlView.class);
 ////通过ViewNames属性来实现，通过请求中返回的视图名称匹配其采用哪个对应的视图解析器处理，从而找到对应prefix下的页面
-//        jspViewResolver.setViewNames("jsp/*");
+//        jspViewResolver.setViewNames("/jsp/*");
 //        jspViewResolver.setOrder(10);
 ////开发时不启用缓存，改动即可生效
 //        jspViewResolver.setCache(false);
