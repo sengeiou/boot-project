@@ -48,3 +48,17 @@ service tomcat8 start和service tomcat8 stop命令来启动和停止tomcat服务
 SpringBoot部署war 
 在Tomcat的server.xml下可以配置一下节点试试
 <Context docBase="deom" path="" reloadable="false" source="org.eclipse.jst.jee.server:项目名"/>
+
+centos6启动方式
+# 启动sshd服务
+service sshd start
+# 设置sshd服务开机启动
+chkconfig sshd start
+centos7启动方式
+# 开启服务
+systemctl start sshd.service
+# 设置开机启动
+systemctl enable sshd.service
+
+# 查看内核版本
+uname -r 
