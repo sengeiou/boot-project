@@ -35,6 +35,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@ApiImplicitParams：多个请求参数
 
 //开启Swagger文档
+@EnableSwagger2
 @Configuration
 public class Swagger2 {
     private  boolean enable;
