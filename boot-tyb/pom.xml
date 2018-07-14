@@ -228,13 +228,13 @@
         <!--</dependency>-->
         <!-- 与springboot整合的分页插件 -->
         <!-- 热部署模块 -->
-        <dependency>
+
+        <!--swagger 接口Api文档-->
+        <dependency><!--    <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
-        </dependency>
-        <!--swagger 接口Api文档-->
-        <dependency>
+            <optional>true</optional> &lt;!&ndash; 这个需要为 true 热部署才有效 &ndash;&gt;
+        </dependency>-->
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.6.1</version>

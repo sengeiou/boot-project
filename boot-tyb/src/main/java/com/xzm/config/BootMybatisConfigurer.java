@@ -72,7 +72,7 @@ public class BootMybatisConfigurer {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
 //        factory.setTypeAliasesPackage(ProjectConstant.MODEL_PACKAGE);
-        factory.setTypeAliasesPackage("com.xzm.modules.*.pojo");
+        factory.setTypeAliasesPackage("com.xzm.modules.tyb.pojo");
         // 添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         factory.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));

@@ -2,14 +2,13 @@ package com.xzm.modules.tyb.dao;
 
 
 import com.xzm.modules.tyb.pojo.TybZiXun;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * 新闻咨询
  */
-@Mapper
+//@Mapper
 public interface TybZiXunMapper {
     int deleteByPrimaryKey(Integer id);
 

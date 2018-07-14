@@ -1,9 +1,8 @@
 package com.xzm.modules.tyb.dao;
 
 import com.xzm.modules.tyb.pojo.TybImportantMessage;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
+//@Mapper
 public interface TybImportantMessageMapper {
     int deleteByPrimaryKey(Integer id);
 

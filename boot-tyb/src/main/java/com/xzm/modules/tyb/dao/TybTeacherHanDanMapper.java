@@ -1,12 +1,11 @@
 package com.xzm.modules.tyb.dao;
 
 import com.xzm.modules.tyb.pojo.TybTeacherHanDan;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface TybTeacherHanDanMapper {
     int deleteByPrimaryKey(Integer id);
 

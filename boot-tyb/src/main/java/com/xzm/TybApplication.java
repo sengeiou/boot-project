@@ -1,10 +1,12 @@
 package com.xzm;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
+//import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * 直白的说Component包含了Configuration的所用注解：

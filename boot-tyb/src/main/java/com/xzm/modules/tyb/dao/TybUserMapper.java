@@ -2,10 +2,9 @@ package com.xzm.modules.tyb.dao;
 
 
 import com.xzm.modules.tyb.pojo.TybUser;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
+//@Mapper
 public interface TybUserMapper {
     int checkUserValid(String phone);
 
