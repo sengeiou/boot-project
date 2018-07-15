@@ -11,6 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -20,9 +21,9 @@ public class TybLiveServiceImp extends AbstractService<TybTeacher> implements Ty
     private TybHanDanPaiHangMapper handanPaiHangMapper;
     @Autowired
     private  TybLiveTopMapper LiveTopMapper;
-    @Autowired
+    @Resource
     private TybImportantMessageMapper importantMessageMapper;
-    @Autowired
+    @Resource
     private TybTeacherMapper tybTeacherMapper;
     @Autowired
     private TybUserGenDanMapper tybUserGenDanMapper;
