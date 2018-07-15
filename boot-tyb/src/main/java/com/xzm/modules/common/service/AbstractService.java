@@ -3,15 +3,18 @@ package com.xzm.modules.common.service;
 //import com.example.demo.core.ret.ServiceException;
 import com.xzm.common.exception.RRException;
 import com.xzm.modules.common.dao.Mapper;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.exceptions.TooManyResultsException;
-import org.springframework.beans.factory.annotation.Autowired;
-//import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Condition;
 
-//import javax.xml.rpc.ServiceException;
+import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+
+//import tk.mybatis.mapper.common.Mapper;
+//import javax.xml.rpc.ServiceException;
 
 /**
  * @Description: 基于通用MyBatis Mapper插件的Service接口的实现
@@ -19,9 +22,9 @@ import java.util.List;
  * @date 2018/4/18 11:28
  */
 public abstract class AbstractService<T> implements Service<T> {
-
-	@Autowired
-	protected Mapper<T> mapper;
+	public Log logger = LogFactory.getLog(getClass());
+	@Resource
+	public Mapper<T> mapper;
 
 	/**
 	 * 	当前泛型真实类型的Class

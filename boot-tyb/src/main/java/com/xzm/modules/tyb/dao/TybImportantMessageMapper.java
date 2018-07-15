@@ -3,7 +3,7 @@ package com.xzm.modules.tyb.dao;
 import com.xzm.modules.tyb.pojo.TybImportantMessage;
 
 //@Mapper
-public interface TybImportantMessageMapper {
+public interface TybImportantMessageMapper   {
     int deleteByPrimaryKey(Integer id);
 
     int insert(TybImportantMessage record);

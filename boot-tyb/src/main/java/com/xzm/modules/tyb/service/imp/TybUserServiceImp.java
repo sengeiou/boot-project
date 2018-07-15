@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.service.imp;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.utils.RegexUtils;
+import com.xzm.modules.common.service.AbstractService;
 import com.xzm.modules.tyb.constants.Constants;
 import com.xzm.modules.tyb.dao.TybTeacherHanDanMapper;
 import com.xzm.modules.tyb.dao.TybUserGenDanMapper;
@@ -28,7 +29,7 @@ import java.util.List;
 //import org.springframework.util.ObjectUtils;
 
 @Service
-public class TybUserServiceImp implements TybUserService {
+public class TybUserServiceImp  extends AbstractService<TybUser> implements TybUserService {
     private static final Log logger = LogFactory.getLog(TybUserServiceImp.class);
     @Autowired
     private TybUserMapper userMapper;

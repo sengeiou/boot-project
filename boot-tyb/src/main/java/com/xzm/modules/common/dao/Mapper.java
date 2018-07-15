@@ -6,12 +6,12 @@ import tk.mybatis.mapper.common.IdsMapper;
 import tk.mybatis.mapper.common.special.InsertListMapper;
 
 /**
- * @Description: 定制版MyBatis Mapper插件接口，如需其他接口参考官方文档自行添加。
  * @author 张瑶
+ * @Description: 定制版MyBatis Mapper插件接口，如需其他接口参考官方文档自行添加。
  * @date 2018/4/22 21:15
- *
+ * <p>
  * 通用Mapper常用方法:
- *
+ * <p>
  * 等号的CRUD:
  * List<T> select(T record); 根据实体中的属性值进行查询，查询条件使用等号
  * T selectByPrimaryKey(Object key); 根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号
@@ -24,15 +24,16 @@ import tk.mybatis.mapper.common.special.InsertListMapper;
  * int updateByPrimaryKeySelective(T record); 根据主键更新属性不为null的值
  * int delete(T record); 根据实体属性作为条件进行删除，查询条件使用等号
  * int deleteByPrimaryKey(Object key); 根据主键字段进行删除，方法参数必须包含完整的主键属性
- *
+ * <p>
  * 条件的CRUD:
  * List<T> selectByCondition(Object condition); 根据Condition条件进行查询
  * int selectCountByCondition(Object condition); 根据Condition条件进行查询总数
  * int updateByCondition(@Param("record") T record, @Param("example") Object condition); 根据Condition条件更新实体record包含的全部属性，null值会被更新
  * int updateByConditionSelective(@Param("record") T record, @Param("example") Object condition); 根据Condition条件更新实体record包含的不是null的属性值
  * int deleteByCondition(Object condition); 根据Condition条件删除数据
- *
  */
+//@org.apache.ibatis.annotations.Mapper
+//@MapperScan
 //@org.apache.ibatis.annotations.Mapper
 public interface Mapper<T> extends BaseMapper<T>,
         ConditionMapper<T>, IdsMapper<T>, InsertListMapper<T> {
