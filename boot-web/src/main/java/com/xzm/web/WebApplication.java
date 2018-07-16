@@ -25,10 +25,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //        HibernateJpaAutoConfiguration.class})
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.xzm"})
-public class BootApplication {
+public class WebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
 
 //		SpringApplication newRun= new SpringApplication(SpringApplication.class);
 //		newRun.setBannerMode(Banner.Mode.OFF);

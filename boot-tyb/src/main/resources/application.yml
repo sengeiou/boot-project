@@ -101,8 +101,7 @@ server:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-#    port: 8888
     port: 8084
     connection-timeout: 5000
+#   context-path: /tyb
 # 配置全局url前缀
-#    context-path: /tyb
