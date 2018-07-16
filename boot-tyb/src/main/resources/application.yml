@@ -76,9 +76,9 @@ spring:
 pagehelper:
     helperDialect: mysql
     reasonable: false
-    supportMethodsArguments: true
     params: count=countSql
     page-size-zero: true
+    support-methods-arguments: true
 #tyb:
 #    # APP模块，是通过jwt认证的，如果要使用APP模块，则需要修改【加密秘钥】
 #    jwt:
@@ -87,13 +87,6 @@ pagehelper:
 #        # token有效时长，7天，单位秒
 #        expire: 604800
 #        header: token
-#
-## 分页配置
-#pagehelper:
-#  helper-dialect: mysql
-#  reasonable: true
-#  support-methods-arguments: true
-#  params: count=countSql
 
 # Tomcat
 server:
@@ -101,7 +94,7 @@ server:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-    port: 8084
+    port: 8083
     connection-timeout: 5000
 #   context-path: /tyb
 # 配置全局url前缀
