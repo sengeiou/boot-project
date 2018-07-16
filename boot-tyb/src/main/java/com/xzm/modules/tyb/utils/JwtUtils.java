@@ -24,7 +24,7 @@ public class JwtUtils {
     @Value("${tyb.jwt.secret}")
     private String secret;
     @Value("${tyb.jwt.expire}")
-    private long expire;
+    private String expire;
     @Value("${tyb.jwt.header}")
     private String header;
 
@@ -34,7 +34,7 @@ public class JwtUtils {
     public String generateToken(long userId) {
         Date nowDate = new Date();
         //过期时间
-        Date expireDate = new Date(nowDate.getTime() + expire * 1000);
+        Date expireDate = new Date(nowDate.getTime() + Long.parseLong(expire) * 1000);
 
         return Jwts.builder()
                 .setHeaderParam("typ", "JWT")
@@ -73,11 +73,11 @@ public class JwtUtils {
         this.secret = secret;
     }
 
-    public long getExpire() {
+    public String getExpire() {
         return expire;
     }
 
-    public void setExpire(long expire) {
+    public void setExpire(String expire) {
         this.expire = expire;
     }
 
