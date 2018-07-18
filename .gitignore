@@ -1,7 +1,7 @@
 
 #.gitignore
 .idea
-boot-parent.iml
+boot-project.iml
 boot-project.iml
 boot-common/src/test/
 boot-sys/src/test/
