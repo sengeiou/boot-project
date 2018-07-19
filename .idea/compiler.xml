@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-common" />
+        <module name="boot-jdt" />
         <module name="boot-sys" />
         <module name="boot-test" />
         <module name="boot-web" />
@@ -15,6 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot-common" target="1.8" />
+      <module name="boot-jdt" target="1.8" />
       <module name="boot-project" target="1.8" />
       <module name="boot-sys" target="1.8" />
       <module name="boot-test" target="1.8" />
