@@ -4,7 +4,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/boot-xhb/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-system/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-sys/pom.xml" />
       </list>
     </option>
   </component>
