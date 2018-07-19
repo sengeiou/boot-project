@@ -75,6 +75,17 @@ public abstract class AbstractService<T> implements Service<T> {
 		}
 	}
 
+//	private  void  test(){
+//		try {
+//			T model = modelClass.newInstance();
+//			Field field = modelClass.getDeclaredField(fieldName);
+//			field.setAccessible(true);
+//			field.set(model, value);
+//			return mapper.selectOne(model);
+//		} catch (ReflectiveOperationException e) {
+//			throw new RRException(e.getMessage(), e);
+//		}
+//	}
 	@Override
 	public List<T> selectListBy(String fieldName, Object value)  {
 		try {
