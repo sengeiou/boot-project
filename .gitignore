@@ -1,10 +1,10 @@
 
 #.gitignore
 .idea
+/*.iml
 boot-common/src/test/
 boot-sys/src/test/
 boot-test/src/test/
 boot-web/src/test/
-/*.iml
 boot-xhb/src/test/
 src/test/
