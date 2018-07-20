@@ -22,7 +22,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!--<relativePath/>-->  <!-- lookup parent from repository  <relativePath></relativePath>-->
     </parent>
     <properties>
         <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
@@ -30,9 +30,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
-        <mybatis-ehcache.version></mybatis-ehcache.version>
+        <mybatis-ehcache.version>1.1.0</mybatis-ehcache.version>
         <pagehelper-spring-boot.version>1.2.5</pagehelper-spring-boot.version>
         <tk.mybatis-spring-boot.version>2.0.1</tk.mybatis-spring-boot.version>
+        <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
+        <druid-springboot.version>1.1.0</druid-springboot.version> <!--1.1.0--> <!--1.0.4-->
         <querydsl.version>4.1.4</querydsl.version>
         <springfox-swagger2.version>2.6.1</springfox-swagger2.version>
         <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
@@ -44,22 +46,20 @@
         <httpclient-version>4.5.3</httpclient-version>
         <jwt.version>0.7.0</jwt.version>
         <spring.version>4.3.7</spring.version>
-        <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
-        <mybatis-springboot.version>1.3.0</mybatis-springboot.version>
-
         <mysql-connector.version>5.1.21</mysql-connector.version>
         <druid.version>1.0.4</druid.version>
-        <druid-springboot.version>1.1.0</druid-springboot.version> <!--1.1.0--> <!--1.0.4-->
         <fastjson.version>1.2.31</fastjson.version>
         <!--<slf4j.version>1.7.7</slf4j.version>-->
         <log4j.version>1.2.17</log4j.version>
-
         <javax.websocket-api.version>1.0</javax.websocket-api.version>
         <javaee-api.version>7.0</javaee-api.version>
         <jstl.version>1.2</jstl.version>
         <jsp-api.version>2.2</jsp-api.version>
         <servlet-api.version>3.1.0</servlet-api.version> <!--boot项目默认引用3.1.0--> <!--2.5-->
     </properties>
+  <!--  <dependencyManagement>
+
+    </dependencyManagement>-->
     <dependencyManagement>
         <dependencies>
             <!-- springboot支持web组件 -->
@@ -121,11 +121,11 @@
                 <version>${javax.websocket-api.version}</version>
                 <scope>provided</scope>
             </dependency>
-         <!--   <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-websocket</artifactId>
-                <version>${spring.version}</version>
-            </dependency>-->
+            <!--   <dependency>
+                   <groupId>org.springframework</groupId>
+                   <artifactId>spring-websocket</artifactId>
+                   <version>${spring.version}</version>
+               </dependency>-->
             <!--核心是@ServerEndpoint这个注解。这个注解是Javaee标准里的注解，
             tomcat7以上已经对其进行了实现，如果是用传统方法使用tomcat发布项目，
             只要在pom文件中引入javaee标准即可使用-->
@@ -192,7 +192,7 @@
             <dependency>
                 <groupId>org.mybatis.caches</groupId>
                 <artifactId>mybatis-ehcache</artifactId>
-                <version>1.1.0</version>
+                <version>${mybatis-ehcache.version}</version>
             </dependency>
 
             <!--   如果是通用Mapper引入了则无需重复引入
@@ -364,4 +364,80 @@
         </dependencies>
     </dependencyManagement>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <proc>none</proc>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.5.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!--	 这是spring boot devtool plugin 热部署插件-->
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--&lt;!&ndash;fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart &ndash;&gt;-->
+            <!--<fork>true</fork>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!-- test generator 自动生成代码插件 -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/mybatis-generator-config.xml
+                    </configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
+
+            <!--该插件可以生成querysdl需要的查询对象，执行mvn compile即可-->
+            <!--<plugin>-->
+            <!--<groupId>com.mysema.maven</groupId>-->
+            <!--<artifactId>apt-maven-plugin</artifactId>-->
+            <!--<version>1.1.3</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<goals>-->
+            <!--<goal>process</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+            <!--<outputDirectory>target/generated-sources/java</outputDirectory>-->
+            <!--<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>-->
+            <!--</configuration>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
 </project>

@@ -1,4 +1,4 @@
-package com.xzm.web.controller;
+package com.xzm.jdt.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,8 +1,7 @@
-package com.xzm.web;
+package com.xzm.jdt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -24,7 +23,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 //        HibernateJpaAutoConfiguration.class})
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.xzm"})
+//@ComponentScan(basePackages = {"com.xzm"})
 public class JDTApplication {
 
     public static void main(String[] args) {
