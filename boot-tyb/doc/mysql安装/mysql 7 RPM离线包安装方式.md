@@ -3,6 +3,8 @@ rpm -qa|grep mariadb         //查询出已安装的mariadb
 yum -y remove 文件名 
 查看所有mysql文件相关  7以上
 rpm -qa|grep -i mysql
+[root@localhost rc.d]# cd /var/lib/
+[root@localhost lib]# rm -rf mysql/
 删除
 rpm -ev MySQL-client-5.5.25a-1.rhel5
 如果提示错误
