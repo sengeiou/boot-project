@@ -44,7 +44,7 @@ cat /var/log/mysqld.log | grep password
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'xzm123456';修改密码 一句话
 set global validate_password_policy=0; 设置安全级别
-alter user 'root'@'localhost' identified by 'xzm348701'; #设置root的密码为Mysql@123456
+alter user 'root'@'localhost' identified by 'xzm123456'; #设置root的密码为Mysql@123456
 use mysql;
 update user set user.Host='%' where user.User='root';
 flush privileges;
