@@ -29,6 +29,7 @@ source /etc/profile
 
 # 把tomcat的脚本文件拷一份到/etc/init.d目录
 cp /usr/local/java/apache-tomcat-8.5.23/bin/catalina.sh /etc/init.d/tomcat8
+重命名之后用这句
 cp /usr/local/tomcat8/bin/catalina.sh /etc/init.d/tomcat8
 # 并把改脚本授权给所有用户执行
 chmod 755 /etc/init.d/tomcat8
