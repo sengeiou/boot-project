@@ -11,7 +11,7 @@ b.安装用来配置mysql的yum源的rpm包
 - rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
 
 - 或 yum localinstall -y mysql57-community-release-el6-9.noarch.rpm
-
+#方式二
 ##2.安装mysql
 yum install mysql-community-server
 
