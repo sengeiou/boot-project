@@ -66,6 +66,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
+                <version>1.5.2.RELEASE</version>
             </dependency>
             <!-- springboot支持tomcat组件 -->
             <!--使用外置Tomcat部署的时候，需要将嵌入式容器调整为provided级别。-->

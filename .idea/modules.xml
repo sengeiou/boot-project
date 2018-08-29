@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/boot-tyb/boot-tyb.iml" filepath="$PROJECT_DIR$/boot-tyb/boot-tyb.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-web/boot-web.iml" filepath="$PROJECT_DIR$/boot-web/boot-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-xhb/boot-xhb.iml" filepath="$PROJECT_DIR$/boot-xhb/boot-xhb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-xhb/boot-xhb.iml" filepath="$PROJECT_DIR$/boot-xhb/boot-xhb.iml" />
     </modules>
   </component>
 </project>
