@@ -24,3 +24,6 @@ vi /etc/profile                  进入profile文件的编辑模式 （可以通
  export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 
   source /etc/profile 使配置生效
+  
+  
+  /usr/local/java/jdk/jdk1.8.0_181
