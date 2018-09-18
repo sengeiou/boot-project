@@ -122,3 +122,5 @@ UPDATE  employee SET  salary=salary+3000 WHERE name='校长';
 # # 更新要注意的问题 将校长降级为班主任 同时薪水也降低为6000    这条语句暂时有点问题
 # UPDATE  employee SET  name='班主任',salary='6000',birthday='1988-06' WHERE name='校长';
 # UPDATE  WHERE id=1;
+
+
