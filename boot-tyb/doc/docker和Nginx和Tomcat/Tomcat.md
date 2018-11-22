@@ -28,7 +28,7 @@ source /etc/profile
 ##将Tomcat配置为服务  
 
 # 把tomcat的脚本文件拷一份到/etc/init.d目录
-cp /usr/local/java/apache-tomcat-8.5.23/bin/catalina.sh /etc/init.d/tomcat8
+cp /usr/local/apache-tomcat-8.5.23/bin/catalina.sh /etc/init.d/tomcat8
 重命名之后用这句
 cp /usr/local/tomcat8/bin/catalina.sh /etc/init.d/tomcat8
 # 并把改脚本授权给所有用户执行
@@ -39,7 +39,7 @@ vi /etc/init.d/tomcat8
 在文件头最上面
 #chkconfig: 2345 10 90
 #description: tomcat8 service
-export JAVA_HOME=/usr/local/jdk1.8.0_161
+export JAVA_HOME=/usr/local/jdk8
 export CATALINA_HOME=/usr/local/tomcat8
 使用chkconfig --add命令添加服务	  
 chkconfig --add tomcat8
