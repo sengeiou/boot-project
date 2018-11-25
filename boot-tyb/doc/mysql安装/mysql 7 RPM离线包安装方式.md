@@ -38,17 +38,16 @@ cat /var/log/mysqld.log | grep password
 2）使用root登录
 #mysql -u root -p
 
-3）修改密码 UPDATE user SET password = PASSWORD('xzm348701') WHERE user = 'xuzongmeng';
-mysql>set password for root@localhost = password('xzm348701');
+3）修改密码 UPDATE user SET password = PASSWORD('xzm123456') WHERE user = 'xuzongmeng';
+mysql>set password for root@localhost = password('xzm123456');
 4）修改安全级别
 mysql> set global validate_password_policy=0;//0最低，1中级，2最强验证级别
 5）创建普通用户：
 create user ‘jirauser’ identified by ‘jiara123a’
 用户jirauser，密码jira123a
 五、授权远程连接
-mysql>GRANT ALL PRIVILEGES ON . TO ‘root’@’%’ IDENTIFIED BY ‘xzm348701’ WITH GRANT OPTION;
-
-grant all privileges  on *.* to root@'%' identified by "xzm348701";
+mysql>GRANT ALL PRIVILEGES ON . TO ‘root’@’%’ IDENTIFIED BY ‘xzm123456’ WITH GRANT OPTION;
+grant all privileges  on *.* to root@'%' identified by "xzm123456";
 flush privileges;
 
 GRANT ALL PRIVILEGES ON *.* TO root@"172.16.16.152" IDENTIFIED BY "xzm348701" WITH GRANT OPTION;
