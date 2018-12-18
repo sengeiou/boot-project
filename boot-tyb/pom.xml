@@ -37,6 +37,9 @@
         <commons-lang-version>2.6</commons-lang-version>
         <httpclient-version>4.5.3</httpclient-version>
         <jwt.version>0.7.0</jwt.version>
+
+        <mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
+        <mybatisplus.version>2.2.0</mybatisplus.version>
     </properties>
 
     <dependencies>
@@ -170,6 +173,16 @@
             <version>1.1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatisplus-spring-boot-starter</artifactId>
+            <version>${mybatisplus.spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
      <!--   如果是通用Mapper引入了则无需重复引入
         <dependency>
             <groupId>org.mybatis</groupId>
