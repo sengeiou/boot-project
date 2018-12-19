@@ -16,6 +16,7 @@
         <module>boot-xhb</module>
         <module>boot-sys</module>
         <module>boot-jdt</module>
+        <module>boot-dp</module>
     </modules>
 
     <parent>
