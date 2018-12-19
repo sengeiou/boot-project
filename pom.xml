@@ -16,7 +16,10 @@
         <module>boot-xhb</module>
         <module>boot-sys</module>
         <module>boot-jdt</module>
+        <!--分割-->
         <module>boot-dp</module>
+        <module>boot-single</module>
+        <module>boot-SSM</module>
     </modules>
 
     <parent>

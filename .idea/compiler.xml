@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boot-web" />
         <module name="dp" />
+        <module name="JavaSpringBoot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="boot-web" target="1.8" />
       <module name="boot-xhb" target="1.8" />
       <module name="dp" target="1.8" />
+      <module name="JavaSpringBoot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
