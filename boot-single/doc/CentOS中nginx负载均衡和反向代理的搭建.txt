@@ -1,0 +1,243 @@
+CentOS中nginx负载均衡和反向代理的搭建
+原创 2016年04月03日 03:51:41 标签：jdk /centos /nginx /负载均衡 /vim 1166
+1: 修改centos命令行启动（减少内存占用）：
+vim /etc/inittab     id:5:initdefault:  --> 修改5为3
+若要界面启动使用 startx
+1
+2
+3
+2：安装jdk
+1)解压：jdk-7u55-linux-i586.tar.gz
+       [root@localhost jdk]# tar -zxvf jdk-7u55-linux-i586.tar.gz
+2)复制：[root@localhost jdk]# cp -rf jdk1.7.0_55/ /usr/local/jdk
+  授权：[root@localhost jdk]# cd /usr/local/jdk
+       [root@localhost jdk]# chmod u+x jdk/
+3)配置环境；[root@localhost bin]# vim /etc/profile
+  最后面插入：export JAVA_HOME=/usr/local/jdk/jdk1.7.0_79
+            export PATH=$JAVA_HOME/bin:$PATH
+4)刷新配置文件：source /etc/profile
+
+    验证：java   javac
+
+
+3：安装tomcat
+    1)解压：tar -zxvf
+    2)授权：chmod u+x/usr/local/tomcats/tomcat1/apache-tomcat-7.0.47/bin
+    3)启动：进入tomcat目录bin 目录后： ./startup.sh
+    4)开放端口：vim  /etc/sysconfig/iptables
+    5)关闭防火墙：chkconfig iptables off
+    6)重启防火墙： service iptables restart
+    7)修改端口号：vim conf/server.xml
+    8)查看进程：ps aux | grep tomcat
+
+4：安装nginx
+    1)安装环境：
+              yum -y install gcc-c++
+              yum -y install pcre pcre-devel
+              yum -y install zlib zlib-devel
+              yum -y install openssl openssl-devel
+
+    2)解压：tar -zxvf nginx-1.8.0.tar.gz
+
+    3)创建安装目录：[root@localhost local]# mkdir -p nginx
+                  [root@localhost local]# cd nginx/
+                  [root@localhost nginx]# pwd
+                    /usr/local/nginx
+
+    4)创建临时目录：var]# mkdir -p temp/nginx
+    5)进入目录：cd nginx-1.8.0/
+    6)修改参数：
+
+
+            ./configure \
+            --prefix=/usr/local/nginx \
+            --pid-path=/var/run/nginx/nginx.pid \
+            --lock-path=/var/lock/nginx.lock \
+            --error-log-path=/var/log/nginx/error.log \
+            --http-log-path=/var/log/nginx/access.log \
+            --with-http_gzip_static_module \
+            --http-client-body-temp-path=/var/temp/nginx/client \
+            --http-proxy-temp-path=/var/temp/nginx/proxy \
+            --http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+            --http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+            --http-scgi-temp-path=/var/temp/nginx/scgi
+
+
+    7)编译安装：
+        make
+        make install
+
+    8)启动: cd /usr/local/nginx/sbin/
+	      ./nginx
+		  cd /usr/local/nginx/sbin/   ./nginx
+    9)查看进程：ps aux | grep nginx
+    10)快速停止：./nginx -s stop
+    11)完整停止：./nginx  -s quit  此方式停止步骤是待nginx进程处理任务完毕进行停止。推荐使用
+    12)重启: ./nginx -s quit
+            ./nginx
+    13)重新加载配置文件： ./nginx -s reload
+
+5:配置虚拟主机：
+    1、nginx支持的三种虚拟主机的配置：
+            基于ip的虚拟主机
+            基于域名的虚拟主机
+            基于端口的虚拟主机
+
+    2、nginx配置文件的结构: 每个service就是一个虚拟主机
+
+......
+            events{
+                ......
+            }
+
+            http{
+                .......
+                server{
+                    ......
+                }
+
+                server{
+                    ......
+                }
+            }
+
+    3、基于ip的虚拟主机配置：
+        修改配置文件： vim /usr/local/nginx/nginx-1.8.0/conf/nginx.conf
+
+ server{
+                listen 80;
+                server_name 192.168.31.88;
+
+                location / {
+                    root html;
+                    index index.html index.htm;
+                }
+            }
+
+    4、基于域名的虚拟主机配置：
+        修改配置文件：vim /usr/local/nginx/nginx-1.8.0/conf/nginx.conf
+
+server{
+                listen 80;
+                server_name www.nginxdns1.com;
+
+                location / {
+                    root html_dns1;
+                    index index.html index.htm;
+                }
+            }
+
+            server{
+                listen 80;
+                server_name www.nginxdns2.com;
+
+                location / {
+                    root html_dns2;
+                    index index.html index.htm;
+                }
+            }
+
+    5、基于端口的虚拟主机配置:
+        修改配置文件：vim /usr/local/nginx/nginx-1.8.0/conf/nginx.conf
+
+        监听端口：netstat -an | grep 80
+
+           server{
+                listen 88;
+                server_name 192.168.31.88;
+
+                location / {
+                    root html_port1;
+                    index index.html index.htm;
+                }
+            }
+
+            server{
+                listen 89;
+                server_name 192.168.31.88;
+
+                location / {
+                    root html_port2;
+                    index index.html index.htm;
+                }
+            }
+
+6、nginx 反向代理：
+修改hosts：# nginx反向代理环境测试
+            192.168.31.88 www.nginxproxy1.com
+            192.168.31.88 www.nginxproxy2.com
+
+开启不同虚拟机中的两台tomcat：192.168.31.88：8080 和 192.168.31.89:8081
+修改配置文件：
+
+            #代理tomcat1服务器
+            upstream  tomcat_server1{
+                server  192.168.31.89:8081;
+            }
+
+            #代理tomcat2服务器
+            upstream tomcat_server2{
+                server 192.168.31.88:8080;
+            }
+
+            #配置虚拟主机：
+            server{
+                listen 80;
+                server_name www.nginxproxy1.com;
+
+                location / {
+                    #root html_port1;
+
+                    proxy_pass http://tomcat_server1;
+                    index index.html index.htm;
+                }
+            }
+
+            server{
+                listen 80;
+                server_name www.nginxproxy2.com;
+
+                location / {
+                    #root html_port2;
+                    proxy_pass http://tomcat_server2;
+                    index index.html index.htm;
+                }
+            }
+
+7、nginx 负载均衡：
+    修改hosts :# nginx负载均衡环境测试
+                 192.168.31.88 www.nginxbalance.com
+
+    开启不同虚拟机中的两台tomcat：192.168.31.88：8080 和 192.168.31.89:8081
+    修改配置文件：
+
+            #代理tomcat2服务器
+            upstream tomcat_server_pool{
+                server 192.168.31.88:8080 weight=1;
+                server 192.168.31.89:8081 weight=1;
+            }
+
+            #配置虚拟主机：
+            server{
+                listen 80;
+                server_name www.nginxbalance.com;
+
+                location / {
+                    #root html_port1;
+
+                    proxy_pass http://tomcat_server_pool;
+                    index index.html index.htm;
+                }
+            }
+
+hosts文件配置：
+1:nginx基于域名环境测试
+192.168.31.88 www.nginxdns1.com
+192.168.31.88 www.nginxdns2.com
+
+2:nginx反向代理环境测试
+192.168.31.88 www.nginxproxy1.com
+192.168.31.88 www.nginxproxy2.com
+
+3:nginx负载均衡环境测试
+192.168.31.88 www.nginxbalance.com

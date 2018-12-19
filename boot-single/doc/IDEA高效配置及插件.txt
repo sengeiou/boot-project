@@ -1,0 +1,4 @@
+1.代码提示不区分大小写  将Case sensitive completion 设置为None就可以了
+2.开启自动 import 包的功能
+3.左侧项目显示类方法
+4.代码段折叠
