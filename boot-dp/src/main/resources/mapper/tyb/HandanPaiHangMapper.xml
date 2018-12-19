@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.chenlin.dp.modules.tyb.dao.HandanPaiHangMapper">
+
+    <select id="listHandanPaiHang" resultType="net.chenlin.dp.modules.tyb.entity.HandanPaiHangEntity" flushCache="true">
+        SELECT
+            `id`,
+            `title`,
+            `productType`,
+            `orderTime`,
+            `point`,
+            `profit`,
+            `create_time`,
+            `updata_time`
+        FROM
+            handan_pai_hang
+        ORDER BY
+            id DESC
+    </select>
+
+    <insert id="saveHandanPaiHang">
+        INSERT INTO handan_pai_hang (
+            `title`,
+            `productType`,
+            `orderTime`,
+            `point`,
+            `profit`,
+            `create_time`,
+            `updata_time`
+        )
+        VALUES (
+            #{title},
+            #{producttype},
+            #{ordertime},
+            #{point},
+            #{profit},
+            #{createTime},
+            #{updataTime}
+        )
+    </insert>
+
+    <select id="getHandanPaiHangById" resultType="net.chenlin.dp.modules.tyb.entity.HandanPaiHangEntity">
+        SELECT
+            `id`,
+            `title`,
+            `productType`,
+            `orderTime`,
+            `point`,
+            `profit`,
+            `create_time`,
+            `updata_time`
+        FROM
+            handan_pai_hang
+        WHERE
+            id = #{id}
+    </select>
+
+    <update id="updateHandanPaiHang">
+        UPDATE handan_pai_hang
+        <set>
+            <if test="title != null">`title` = #{title},</if>
+            <if test="producttype != null">`productType` = #{producttype},</if>
+            <if test="ordertime != null">`orderTime` = #{ordertime},</if>
+            <if test="point != null">`point` = #{point},</if>
+            <if test="profit != null">`profit` = #{profit},</if>
+            <if test="createTime != null">`create_time` = #{createTime},</if>
+            <if test="updataTime != null">`updata_time` = #{updataTime}</if>
+        </set>
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="batchRemove">
+        DELETE
+        FROM
+        handan_pai_hang
+        WHERE
+        id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
+
+</mapper>
