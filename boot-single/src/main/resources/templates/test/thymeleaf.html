@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello thymeleaf!</title>
+    <link th:href="@{/css/base.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+
+    <!--<link href="../static/css/base.css" rel="stylesheet" />-->
+    <!--<script type="text/javascript" src="../static/js/jquery-1.12.4.min.js"></script>-->
+</head>
+<body>
+<!--<h1 th:inline="text">Hello.v.2</h1>-->
+<!--<p th:text="${user}"></p>-->
+
+<div>
+  <!--推荐一个好方法,把设置里面的
+  Editor->Inspections->Thymeleaf->Expression variables validation后面的勾去掉-->
+    来到了SpringBoot  thymeleaf
+    <p th:text="${testUser.name}" class="user-name"></p>
+    <p th:text="${testUser.sex}"></p>
+    <div id="name"></div>
+    <div id="sex">xxxxx</div>
+</div>
+</body>
+
+<script>
+    $('#name').text('哈哈哈');
+
+//    $("#test1").text("Hello world!");
+</script>
+</html>

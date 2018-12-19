@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzm.modules.tyb.dao.TybUserKaiHuMapper" >
+  <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="platform_code" property="platformCode" jdbcType="VARCHAR" />
+    <result column="platform_name" property="platformName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, id_card, phone, platform_code, platform_name, create_time, updata_time
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyb_user_kai_hu
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tyb_user_kai_hu
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+    insert into tyb_user_kai_hu (id, user_name, id_card, 
+      phone, platform_code, platform_name, 
+      create_time, updata_time)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{platformCode,jdbcType=VARCHAR}, #{platformName,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu">
+    insert into tyb_user_kai_hu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="platformCode != null" >
+        platform_code,
+      </if>
+      <if test="platformName != null" >
+        platform_name,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updataTime != null" >
+        updata_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="platformCode != null" >
+        #{platformCode,jdbcType=VARCHAR},
+      </if>
+      <if test="platformName != null" >
+        #{platformName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updataTime != null" >
+        #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+    update tyb_user_kai_hu
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="platformCode != null" >
+        platform_code = #{platformCode,jdbcType=VARCHAR},
+      </if>
+      <if test="platformName != null" >
+        platform_name = #{platformName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updataTime != null" >
+        updata_time = #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+    update tyb_user_kai_hu
+    set user_name = #{userName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      platform_code = #{platformCode,jdbcType=VARCHAR},
+      platform_name = #{platformName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updata_time = #{updataTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectUserKaiHuInfoByPhone" parameterType="string" resultMap="BaseResultMap">
+     select
+     <include refid="Base_Column_List" />
+     from tyb_user_kai_hu
+     where phone = #{phone,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tyb_user_kai_hu
+    where phone = #{phone,jdbcType=VARCHAR}
+    and id_card= #{idCard,jdbcType=VARCHAR}
+    and platform_code= #{platformCode,jdbcType=VARCHAR}
+  </select>
+</mapper>
