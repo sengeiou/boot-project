@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/boot-system/pom.xml" />
         <option value="$PROJECT_DIR$/boot-sys/pom.xml" />
+        <option value="$PROJECT_DIR$/../System/pom.xml" />
+        <option value="$PROJECT_DIR$/System/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-dp/pom.xml" />
       </list>
     </option>
   </component>
