@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" filepath="$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" filepath="$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-common/boot-common.iml" filepath="$PROJECT_DIR$/boot-common/boot-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-jdt/boot-jdt.iml" filepath="$PROJECT_DIR$/boot-jdt/boot-jdt.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-project.iml" filepath="$PROJECT_DIR$/boot-project.iml" />

@@ -61,7 +61,7 @@ service mysqld stop
 mysqld_safe --user=root --skip-grant-tables
 mysql -u root
 use mysql
-update user set password=password("xzm348701") where user="root";
+update user set password=password("xzm123456") where user="root";
 flush privileges;
 
 4、允许远程访问设置
