@@ -56,52 +56,62 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- spring核心包 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- AOP begin -->
@@ -126,6 +136,7 @@
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
     </dependency>
 
     <!--mybatis spring 插件 -->
@@ -155,16 +166,19 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
     <!-- log end -->
 
@@ -202,14 +216,17 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>net.sf.json-lib</groupId>
@@ -306,6 +323,7 @@
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
+      <version>${com.google.gson.version}</version>
     </dependency>
 
 
@@ -341,8 +359,17 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
-      <scope>test</scope>
     </dependency>
+
+
+    <!--Spring-test -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
 
     <!-- springframework  redis缓存-->
     <dependency>
@@ -380,6 +407,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
+      <version>1.2.8</version>
     </dependency>
 
     <dependency>
@@ -418,20 +446,20 @@
 
       <!--tomcat7插件-->
       <!--https://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/run-mojo.html-->
-      <!--<plugin>-->
-        <!--<groupId>org.apache.tomcat.maven</groupId>-->
-        <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
-        <!--<version>${tomcat7-maven-plugin.version}</version>-->
-        <!--<configuration>-->
-          <!--<path>${tomcat-path.version}</path>-->
-          <!--<port>${tomcat-port.version}</port>-->
-          <!--<uriEncoding>${tomcat-uri-encoding.version}</uriEncoding>-->
-          <!--<url>http://localhost:8080/manager/text</url>-->
-          <!--<server>tomcat7</server>-->
-          <!--<username>admin</username>-->
-          <!--<password>admin</password>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>${tomcat7-maven-plugin.version}</version>
+        <configuration>
+          <path>${tomcat-path.version}</path>
+          <port>${tomcat-port.version}</port>
+          <uriEncoding>${tomcat-uri-encoding.version}</uriEncoding>
+          <url>http://localhost:8080/manager/text</url>
+          <server>tomcat7</server>
+          <username>admin</username>
+          <password>admin</password>
+        </configuration>
+      </plugin>
 
     </plugins>
 
