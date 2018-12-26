@@ -25,11 +25,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <version>1.5.7.RELEASE</version>
         <!--<relativePath/>-->  <!-- lookup parent from repository  <relativePath></relativePath>-->
     </parent>
     <properties>
-        <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.2.RELEASE</version>
+            <version>1.5.7.RELEASE</version>
         </dependency>
         <!-- springboot支持tomcat组件 -->
         <!--使用外置Tomcat部署的时候，需要将嵌入式容器调整为provided级别。-->
