@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.controller;
 
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.plugins.pagination.PageHelper;
+//import com.github.pagehelper.PageHelper;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.utils.JSONUtils;
 import com.xzm.modules.common.service.RedisService;

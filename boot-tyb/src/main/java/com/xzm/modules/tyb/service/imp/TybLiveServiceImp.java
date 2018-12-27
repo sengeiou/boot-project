@@ -1,7 +1,7 @@
 package com.xzm.modules.tyb.service.imp;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.exception.RRException;
-import com.xzm.modules.common.service.AbstractService;
+//import com.xzm.modules.common.service.AbstractService;
 import com.xzm.modules.tyb.dao.*;
 import com.xzm.modules.tyb.pojo.*;
 import com.xzm.modules.tyb.service.TybLiveService;

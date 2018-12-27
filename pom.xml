@@ -40,7 +40,8 @@
         <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
         <druid-springboot.version>1.1.0</druid-springboot.version> <!--1.1.0--> <!--1.0.4-->
         <querydsl.version>4.1.4</querydsl.version>
-        <springfox-swagger2.version>2.6.1</springfox-swagger2.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2-springboot.version>1.8.8</springfox-swagger2-springboot.version>
         <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
         <!--以下两项需要如果不配置，解析themleaft 会有问题-->
         <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
@@ -51,7 +52,7 @@
         <jwt.version>0.7.0</jwt.version>
         <spring.version>4.3.7</spring.version>
         <mysql-connector.version>5.1.21</mysql-connector.version>
-        <druid.version>1.0.4</druid.version>
+        <druid.version>1.0.5</druid.version>
         <!--<fastjson.version>1.2.31</fastjson.version>-->
         <fastjson.version>1.2.8</fastjson.version>
         <!--<slf4j.version>1.7.7</slf4j.version>-->
@@ -316,6 +317,12 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-swagger2.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>${springfox-swagger2-springboot.version}</version>
+        </dependency>
         <!--Lombok-->
 
         <!-- <dependency>
@@ -406,6 +413,9 @@
             <artifactId>spring-boot-starter-redis</artifactId>
             <version>${redis-spring-boot.version}</version> <!--1.4.5.RELEASE-->
         </dependency>
+
+
+
 
     </dependencies>
 
