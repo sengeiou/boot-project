@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.dao;
 
 //import com.xzm.modules.common.dao.Mapper;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xzm.modules.tyb.pojo.TybTeacher;
 //import org.apache.ibatis.annotations.Mapper;
 //import org.apache.ibatis.annotations.Mapper;
@@ -13,10 +14,10 @@ import java.util.List;
 /**
  * extends Mapper<TybTeacher>
  */
-public interface TybTeacherMapper  {
+public interface TybTeacherMapper  extends BaseMapper<TybTeacher> {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(TybTeacher record);
+//    int insert(TybTeacher record);
 
     int insertSelective(TybTeacher record);
 

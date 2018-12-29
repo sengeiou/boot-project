@@ -1,4 +1,5 @@
 package com.xzm.modules.tyb.service.imp;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.exception.RRException;
 //import com.xzm.modules.common.service.AbstractService;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TybLiveServiceImp extends AbstractService<TybTeacher> implements TybLiveService {
+public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> implements TybLiveService {
     private  Log logger = LogFactory.getLog(getClass());
     @Autowired
     private TybHanDanPaiHangMapper handanPaiHangMapper;

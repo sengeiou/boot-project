@@ -1,16 +1,17 @@
 package com.xzm.modules.tyb.dao;
 
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xzm.modules.tyb.pojo.TybUser;
 import org.apache.ibatis.annotations.Param;
 
 //@Mapper
-public interface TybUserMapper {
+public interface TybUserMapper extends BaseMapper<TybUser> {
     int checkUserValid(String phone);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(TybUser record);
+//    int insert(TybUser record);
 
     int insertSelective(TybUser record);
 
