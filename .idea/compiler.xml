@@ -6,16 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot-common" />
-        <module name="boot-jdt" />
-        <module name="boot-sys" />
-        <module name="boot-test" />
-        <module name="boot-tyb" />
         <module name="boot-web" />
-        <module name="boot-xhb" />
-        <module name="demo" />
         <module name="dp" />
-        <module name="JavaSpringBoot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +22,7 @@
       <module name="boot-tyb" target="1.8" />
       <module name="boot-web" target="1.8" />
       <module name="boot-xhb" target="1.8" />
-      <module name="demo" target="1.8" />
+      <module name="demo" target="1.7" />
       <module name="dp" target="1.8" />
       <module name="JavaSpringBoot" target="1.8" />
     </bytecodeTargetLevel>
