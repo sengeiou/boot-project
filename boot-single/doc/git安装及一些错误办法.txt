@@ -1,0 +1,40 @@
+http://git-scm.com/download
+yum install curl-devel expat-devel gettext-devel \
+  openssl-devel zlib-devel
+
+$ tar -zxf git-1.7.2.2.tar.gz
+$ cd git-1.7.2.2
+$ make prefix=/usr/local all
+$ sudo make prefix=/usr/local install
+使用命令：yum remove git卸载git
+
+
+
+
+一般是 /usr/local 一般一个软件是要复制多个文件到不同的地方，包括可执行文件 ，文档， 配置文件。
+通过yum安装的软件包，可以通过 rpm -ql 软件包名   来查询这个软件包具体都复制到了哪些文件到哪些地方。
+
+
+单个文件拉取
+只获取一个文件的话，可以用
+git clone -n git://github.com/twbs/bootstrap.git --depth 1
+cd bootstrap
+git checkout HEAD README.md
+
+# 恢复被删除的分支
+因此，如果我们知道删除分支时的散列值，在已知提交的散列值的情况下恢复某个分支：
+git branch <branch_name> <hash_val>
+如果我们不知道想要恢复的分支的散列值，可以用reflog命令将它找出来。如：
+git reflog
+
+git branch <branch_name> HEAD@{4}
+
+git分支切换
+cd i-icbc-film
+ls
+git fetch
+git branch
+git checkout resease/1.0.2 -JDEK
+git branch
+cd ..
+ls

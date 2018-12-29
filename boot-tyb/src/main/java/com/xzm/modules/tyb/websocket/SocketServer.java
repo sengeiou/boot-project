@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.websocket;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
@@ -12,13 +13,14 @@ import java.util.Map;
 /**
  * ws://127.0.0.1:8083/tyb/socketServer/121
  */
+@EnableWebSocket // 允许WebSocketSw
 @ServerEndpoint(value = "/tyb/socketServer/{userid}")
 @Component
 public class SocketServer {
 
 	private Session session;
-	private static Map<String,Session> sessionPool = new HashMap<String,Session>();
-	private static Map<String,String> sessionIds = new HashMap<String,String>();
+	private static Map<String,Session> sessionPool = new HashMap<>();
+	private static Map<String,String> sessionIds = new HashMap<>();
 
 	/**
 	 * 用户连接时触发

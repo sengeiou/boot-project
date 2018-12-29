@@ -5,13 +5,20 @@ import com.xzm.modules.tyb.pojo.TybHanDanPaiHang;
 import com.xzm.modules.tyb.vo.*;
 
 /**
- * 直播
+ * 直播 extends IService<TybTeacher>
  */
-public interface TybLiveService {
+public interface TybLiveService  {
     ServerResponse<TybHanDanPaiHang> selectHanDanByPrimaryKey(Integer id);
+
     ServerResponse<HandanPaiHangListVo> selectHanDanList();
+
     ServerResponse<LiveTopVo> selectLiveTopList();
+
     ServerResponse<TybImportantMessageVo> selectImportantMessageById(Integer id);
+
     ServerResponse<TybTeacherVo> selectTeacherList(String access_token, String phone);
-    ServerResponse<TybTeacherDetailVo> selectTeacherByTeacherId(String access_token, String phone, Integer teacherId);
+
+    ServerResponse<TybTeacherDetailVo> selectTeacherByTeacherId(String access_token,
+                                                                String phone,
+                                                                Integer teacherId);
 }

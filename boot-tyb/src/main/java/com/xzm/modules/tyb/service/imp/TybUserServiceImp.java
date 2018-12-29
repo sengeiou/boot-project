@@ -1,4 +1,5 @@
 package com.xzm.modules.tyb.service.imp;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.utils.RegexUtils;
 import com.xzm.modules.tyb.constants.Constants;
@@ -18,25 +19,24 @@ import com.xzm.modules.tyb.vo.TybUserKaiHuInfoVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
-
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 //import org.springframework.util.ObjectUtils;
 
 @Service
-public class TybUserServiceImp implements TybUserService {
+public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> implements TybUserService {
     private static final Log logger = LogFactory.getLog(TybUserServiceImp.class);
-    @Autowired
+    @Resource
     private TybUserMapper userMapper;
-    @Autowired
+    @Resource
     private TybUserGenDanMapper userGenDanMapper;
-    @Autowired
+    @Resource
     private TybTeacherHanDanMapper teacherHanDanMapper;
-    @Autowired
+    @Resource
     private TybUserKaiHuMapper userKaiHuMapper;
 
     /**

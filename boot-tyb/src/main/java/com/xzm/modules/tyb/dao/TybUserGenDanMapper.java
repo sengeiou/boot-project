@@ -4,7 +4,9 @@ import com.xzm.modules.tyb.pojo.TybUserGenDan;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+//@Mapper
 @Mapper
+
 public interface TybUserGenDanMapper {
     int deleteByPrimaryKey(Integer id);
 

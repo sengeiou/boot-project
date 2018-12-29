@@ -28,7 +28,8 @@ source /etc/profile
 ##将Tomcat配置为服务  
 
 # 把tomcat的脚本文件拷一份到/etc/init.d目录
-cp /usr/local/java/apache-tomcat-8.5.23/bin/catalina.sh /etc/init.d/tomcat8
+cp /usr/local/apache-tomcat-8.5.23/bin/catalina.sh /etc/init.d/tomcat8
+重命名之后用这句
 cp /usr/local/tomcat8/bin/catalina.sh /etc/init.d/tomcat8
 # 并把改脚本授权给所有用户执行
 chmod 755 /etc/init.d/tomcat8
@@ -38,7 +39,7 @@ vi /etc/init.d/tomcat8
 在文件头最上面
 #chkconfig: 2345 10 90
 #description: tomcat8 service
-export JAVA_HOME=/usr/local/jdk1.8.0_161
+export JAVA_HOME=/usr/local/jdk8
 export CATALINA_HOME=/usr/local/tomcat8
 使用chkconfig --add命令添加服务	  
 chkconfig --add tomcat8
@@ -48,3 +49,17 @@ service tomcat8 start和service tomcat8 stop命令来启动和停止tomcat服务
 SpringBoot部署war 
 在Tomcat的server.xml下可以配置一下节点试试
 <Context docBase="deom" path="" reloadable="false" source="org.eclipse.jst.jee.server:项目名"/>
+
+centos6启动方式
+# 启动sshd服务
+service sshd start
+# 设置sshd服务开机启动
+chkconfig sshd start
+centos7启动方式
+# 开启服务
+systemctl start sshd.service
+# 设置开机启动
+systemctl enable sshd.service
+
+# 查看内核版本
+uname -r 

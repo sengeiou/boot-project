@@ -5,31 +5,483 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xzm</groupId>
-    <artifactId>boot-parent</artifactId>
+    <artifactId>boot-project</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>boot-tyb</module>
         <module>boot-web</module>
         <module>boot-common</module>
         <module>boot-test</module>
+        <module>boot-xhb</module>
+        <module>boot-sys</module>
+        <module>boot-jdt</module>
+        <!--分割-->
+        <module>boot-dp</module>
+        <module>boot-single</module>
+        <module>boot-SSM</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>1.5.7.RELEASE</version>
+        <!--<relativePath/>-->  <!-- lookup parent from repository  <relativePath></relativePath>-->
     </parent>
     <properties>
+        <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
+        <mybatis-ehcache.version>1.1.0</mybatis-ehcache.version>
+        <pagehelper-spring-boot.version>1.2.5</pagehelper-spring-boot.version>
+        <tk.mybatis-spring-boot.version>2.0.1</tk.mybatis-spring-boot.version>
+        <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
+        <druid-springboot.version>1.1.0</druid-springboot.version> <!--1.1.0--> <!--1.0.4-->
+        <querydsl.version>4.1.4</querydsl.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2-springboot.version>1.8.8</springfox-swagger2-springboot.version>
+        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
+        <!--以下两项需要如果不配置，解析themleaft 会有问题-->
+        <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>
+        <shiro-version>1.3.2</shiro-version>
+        <commons-lang-version>2.6</commons-lang-version>
+        <httpclient-version>4.5.3</httpclient-version>
+        <jwt.version>0.7.0</jwt.version>
+        <spring.version>4.3.7</spring.version>
+        <mysql-connector.version>5.1.21</mysql-connector.version>
+        <!--<fastjson.version>1.2.31</fastjson.version>-->
+        <fastjson.version>1.2.8</fastjson.version>
+        <!--<slf4j.version>1.7.7</slf4j.version>-->
+        <log4j.version>1.2.17</log4j.version>
+        <javax.websocket-api.version>1.0</javax.websocket-api.version>
+        <javaee-api.version>7.0</javaee-api.version>
+        <jstl.version>1.2</jstl.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <servlet-api.version>3.1.0</servlet-api.version> <!--boot项目默认引用3.1.0--> <!--2.5-->
+
+
+
+        <!-- dp lib versions -->
+        <java-version>1.8</java-version>
+        <mybatis-springboot-version>1.3.0</mybatis-springboot-version>
+        <mysql-version>5.1.38</mysql-version>
+        <druid-version>1.1.2</druid-version>
+        <commons-lang-version>2.6</commons-lang-version>
+        <commons-fileupload-version>1.3.1</commons-fileupload-version>
+        <commons-io-version>2.5</commons-io-version>
+        <commons-codec-version>1.10</commons-codec-version>
+        <commons-configuration-version>1.10</commons-configuration-version>
+        <aspect-version>1.8.10</aspect-version>
+        <shiro-version>1.3.2</shiro-version>
+        <quartz-version>2.2.3</quartz-version>
+        <httpclient-version>4.5.3</httpclient-version>
+        <nekohtml-version>1.9.22</nekohtml-version>
+        <velocity-version>1.7</velocity-version>
+
+        <!--boot ssm-->
+        <!-- spring版本号 -->
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <!-- mybatis版本号 -->
+        <mybatis.version>3.2.6</mybatis.version>
+        <!-- log4j日志文件管理包版本 -->
+        <slf4j.version>1.7.7</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <!-- jackson包版本 -->
+        <jackson.version>2.5.0</jackson.version>
+        <com.google.gson.version>2.7</com.google.gson.version>
+
+
+
+        <tomcat-port.version>8083</tomcat-port.version>
+        <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
+        <tomcat-path.version>/</tomcat-path.version>
+        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
     </properties>
+  <!--  <dependencyManagement>
+
+    </dependencyManagement>-->
+    <!--<dependencyManagement>-->
+
+    <!--</dependencyManagement>-->
     <dependencies>
         <!-- springboot支持web组件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.5.7.RELEASE</version>
+        </dependency>
+        <!-- springboot支持tomcat组件 -->
+        <!--使用外置Tomcat部署的时候，需要将嵌入式容器调整为provided级别。-->
+        <!--   <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-tomcat</artifactId>
+               <scope>provided</scope>
+           </dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--springboot mysql  jpa-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- spring boot tomcat jsp 支持开启 -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <!--servlet支持开启-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+        </dependency>
+        <!-- jstl 支持开启 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <!--spring Socket-->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>${javax.websocket-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--   <dependency>
+               <groupId>org.springframework</groupId>
+               <artifactId>spring-websocket</artifactId>
+               <version>${spring.version}</version>
+           </dependency>-->
+        <!--核心是@ServerEndpoint这个注解。这个注解是Javaee标准里的注解，
+        tomcat7以上已经对其进行了实现，如果是用传统方法使用tomcat发布项目，
+        只要在pom文件中引入javaee标准即可使用-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--但使用springboot的内置tomcat时，就不需要引入javaee-api了，
+        spring-boot已经包含了。使用springboot的websocket功能首先引入springboot组件。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <!-- alibaba的druid数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid-springboot.version}</version>
+            <!--1.1.0-->
+        </dependency>
+        <!-- fastjson依赖添加-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version> <!--1.2.31-->
+        </dependency>
+        <!--官方推荐模板 thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <!--<version>${thymeleaf.version}</version>-->
+        </dependency>
+        <!-- 引入freeMarker的依赖包. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <!--     ==== Spring Boot Mybatis 依赖 开始======-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper-spring-boot.version}</version>  <!--1.2.5-->
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>tk.mybatis</groupId>-->
+            <!--<artifactId>mapper-spring-boot-starter</artifactId>-->
+            <!--<version>${tk.mybatis-spring-boot.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.mybatis.caches</groupId>
+            <artifactId>mybatis-ehcache</artifactId>
+            <version>${mybatis-ehcache.version}</version>
+        </dependency>
+
+        <!--   如果是通用Mapper引入了则无需重复引入
+           <dependency>
+               <groupId>org.mybatis</groupId>
+               <artifactId>mybatis</artifactId>
+               <version>3.4.0</version>
+           </dependency>-->
+        <!--     ==== Spring Boot Mybatis 依赖 结束======-->
+
+        <!--MyBatis 及 插件依赖-->
+        <!--<dependency>-->
+        <!--<groupId>org.mybatis</groupId>-->
+        <!--<artifactId>mybatis-spring</artifactId>-->
+        <!--<version>1.3.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.mybatis</groupId>-->
+        <!--<artifactId>mybatis</artifactId>-->
+        <!--<version>3.4.5</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>tk.mybatis</groupId>-->
+        <!--<artifactId>mapper</artifactId>-->
+        <!--<version>3.4.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.github.pagehelper</groupId>-->
+        <!--<artifactId>pagehelper</artifactId>-->
+        <!--<version>4.2.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--</dependency>-->
+        <!--单表通用增删改查，文档地址  源码地址：https://github.com/abel533/Mapper
+            文档地址： https://mapperhelper.github.io
+            使用文档 https://github.com/abel533/Mapper/wiki-->
+        <!--单表通用增删改查，文档地址  源码地址：https://github.com/abel533/Mapper
+    文档地址： https://mapperhelper.github.io
+    使用文档 https://github.com/abel533/Mapper/wiki-->
+        <!--
+        MyBatis提供了拦截器接口，我们可以实现自己的拦截器，
+        将其作为一个plugin装入到SqlSessionFactory中。
+        Github上有位开发者写了一个分页插件，我觉得使用起来还可以，挺方便的。
+        Github项目地址： https://github.com/pagehelper/Mybatis-PageHelper
+     -->
+        <!--<dependency>-->
+        <!--<groupId>com.github.pagehelper</groupId>-->
+        <!--<artifactId>pagehelper</artifactId>-->
+        <!--<version>4.1.0</version>-->
+        <!--</dependency>-->
+        <!--spring分页插件 也可以用到springboot中-->
+        <!--<dependency>-->
+        <!--<groupId>com.github.pagehelper</groupId>-->
+        <!--<artifactId>pagehelper</artifactId>-->
+        <!--<version>4.1.6</version>-->
+        <!--</dependency>-->
+        <!-- 与springboot整合的分页插件 -->
+        <!-- 热部署模块 -->
+
+        <!--swagger 接口Api文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>${springfox-swagger2-springboot.version}</version>
+        </dependency>
+        <!--Lombok-->
+
+        <!-- <dependency>
+             <groupId>org.projectlombok</groupId>
+             <artifactId>lombok</artifactId>
+             <version>1.16.10</version>
+         </dependency>-->
+
+
+        <!--QueryDSL是一个Java语言编写的通用查询框架，
+        专注于通过JavaAPI方式构建安全的SQL查询。QueryDSL可以应用到NoSQL数据库上，
+        QueryDSL查询框架可以在任何支持的ORM框架或者SQL平台上以一种通用的API方式来构建SQL。
+        目前QueryDSL支持的平台包扣JPA、JDO、SQL、Java Collections、RDF、Lucene、
+        Hibernate Serch、MongoDB等。-->
+        <!--<dependency>-->
+        <!--<groupId>com.querydsl</groupId>-->
+        <!--<artifactId>querydsl-jpa</artifactId>-->
+        <!--<version>${querydsl.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.querydsl</groupId>-->
+        <!--<artifactId>querydsl-apt</artifactId>-->
+        <!--<version>${querydsl.version}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+
+        <!-- 添加缓存支持 -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; 添加Redis缓存支持 &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-redis</artifactId>-->
+        <!--<version>1.4.3.RELEASE</version>-->
+        <!--</dependency>-->
+        <!--jackson序列化-->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.12</version>
+        </dependency>
+        <!--aop切面处理-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!--shiro安全权限-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro-version}</version>
+        </dependency>
+        <!--常用的工具类-->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang-version}</version>
+        </dependency>
+        <!--网络请求-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient-version}</version><!--$NO-MVN-MAN-VER$-->
+        </dependency>
+        <!--jwt Token认证-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
+        <!--&lt;!&ndash;springboot redis&ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.shiro</groupId>-->
+        <!--<artifactId>shiro-spring-boot-web-starter</artifactId>-->
+        <!--<version>1.4.0-RC2</version>-->
+        <!--</dependency>-->
+
+        <!--redis缓存-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+            <version>${redis-spring-boot.version}</version> <!--1.4.5.RELEASE-->
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <proc>none</proc>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.5.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!--	 这是spring boot devtool plugin 热部署插件-->
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--&lt;!&ndash;fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart &ndash;&gt;-->
+            <!--<fork>true</fork>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!-- test generator 自动生成代码插件 -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/mybatis-generator-config.xml
+                    </configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
+
+            <!--该插件可以生成querysdl需要的查询对象，执行mvn compile即可-->
+            <!--<plugin>-->
+            <!--<groupId>com.mysema.maven</groupId>-->
+            <!--<artifactId>apt-maven-plugin</artifactId>-->
+            <!--<version>1.1.3</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<goals>-->
+            <!--<goal>process</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+            <!--<outputDirectory>target/generated-sources/java</outputDirectory>-->
+            <!--<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>-->
+            <!--</configuration>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
 </project>

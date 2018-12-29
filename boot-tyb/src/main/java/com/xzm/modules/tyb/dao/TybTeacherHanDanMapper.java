@@ -5,8 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
 @Mapper
+
+//@Mapper
 public interface TybTeacherHanDanMapper {
     int deleteByPrimaryKey(Integer id);
 

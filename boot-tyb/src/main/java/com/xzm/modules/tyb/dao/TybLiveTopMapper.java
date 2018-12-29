@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 //@Mapper
+@Mapper
+
 public interface TybLiveTopMapper {
     int deleteByPrimaryKey(Integer id);
 

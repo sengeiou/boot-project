@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzm.modules.tyb.dao.TybLiveTopMapper">
+    <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.liveTop">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="live_url" property="liveUrl" jdbcType="VARCHAR"/>
+        <result column="dian_zan_count" property="dianZanCount" jdbcType="INTEGER"/>
+        <result column="ad_text" property="adText" jdbcType="VARCHAR"/>
+        <result column="ad_url" property="adUrl" jdbcType="VARCHAR"/>
+        <result column="online_count" property="onlineCount" jdbcType="INTEGER"/>
+        <result column="handan_rate" property="handanRate" jdbcType="REAL"/>
+        <result column="ying_li" property="yingLi" jdbcType="REAL"/>
+        <result column="main_img" property="mainImg" jdbcType="VARCHAR"/>
+        <result column="sub_img" property="subImg" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, title, live_url, dian_zan_count, ad_text, ad_url, online_count, handan_rate,
+        ying_li, main_img, sub_img, create_time, updata_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from tyb_live_Top
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectLiveTopList" resultMap="BaseResultMap">
+         select
+        <include refid="Base_Column_List"/>
+         from tyb_live_Top
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from tyb_live_Top
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+        insert into tyb_live_Top (id, title, live_url,
+                                  dian_zan_count, ad_text, ad_url,
+                                  online_count, handan_rate, ying_li,
+                                  main_img, sub_img, create_time,
+                                  updata_time)
+        values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{liveUrl,jdbcType=VARCHAR},
+                                        #{dianZanCount,jdbcType=INTEGER}, #{adText,jdbcType=VARCHAR},
+                                        #{adUrl,jdbcType=VARCHAR},
+                                        #{onlineCount,jdbcType=INTEGER}, #{handanRate,jdbcType=REAL},
+                                        #{yingLi,jdbcType=REAL},
+                                        #{mainImg,jdbcType=VARCHAR}, #{subImg,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP},
+                #{updataTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+        insert into tyb_live_Top
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="liveUrl != null">
+                live_url,
+            </if>
+            <if test="dianZanCount != null">
+                dian_zan_count,
+            </if>
+            <if test="adText != null">
+                ad_text,
+            </if>
+            <if test="adUrl != null">
+                ad_url,
+            </if>
+            <if test="onlineCount != null">
+                online_count,
+            </if>
+            <if test="handanRate != null">
+                handan_rate,
+            </if>
+            <if test="yingLi != null">
+                ying_li,
+            </if>
+            <if test="mainImg != null">
+                main_img,
+            </if>
+            <if test="subImg != null">
+                sub_img,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updataTime != null">
+                updata_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="liveUrl != null">
+                #{liveUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="dianZanCount != null">
+                #{dianZanCount,jdbcType=INTEGER},
+            </if>
+            <if test="adText != null">
+                #{adText,jdbcType=VARCHAR},
+            </if>
+            <if test="adUrl != null">
+                #{adUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="onlineCount != null">
+                #{onlineCount,jdbcType=INTEGER},
+            </if>
+            <if test="handanRate != null">
+                #{handanRate,jdbcType=REAL},
+            </if>
+            <if test="yingLi != null">
+                #{yingLi,jdbcType=REAL},
+            </if>
+            <if test="mainImg != null">
+                #{mainImg,jdbcType=VARCHAR},
+            </if>
+            <if test="subImg != null">
+                #{subImg,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updataTime != null">
+                #{updataTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+        update tyb_live_Top
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="liveUrl != null">
+                live_url = #{liveUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="dianZanCount != null">
+                dian_zan_count = #{dianZanCount,jdbcType=INTEGER},
+            </if>
+            <if test="adText != null">
+                ad_text = #{adText,jdbcType=VARCHAR},
+            </if>
+            <if test="adUrl != null">
+                ad_url = #{adUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="onlineCount != null">
+                online_count = #{onlineCount,jdbcType=INTEGER},
+            </if>
+            <if test="handanRate != null">
+                handan_rate = #{handanRate,jdbcType=REAL},
+            </if>
+            <if test="yingLi != null">
+                ying_li = #{yingLi,jdbcType=REAL},
+            </if>
+            <if test="mainImg != null">
+                main_img = #{mainImg,jdbcType=VARCHAR},
+            </if>
+            <if test="subImg != null">
+                sub_img = #{subImg,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updataTime != null">
+                updata_time = #{updataTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+        update tyb_live_Top
+        set title          = #{title,jdbcType=VARCHAR},
+            live_url       = #{liveUrl,jdbcType=VARCHAR},
+            dian_zan_count = #{dianZanCount,jdbcType=INTEGER},
+            ad_text        = #{adText,jdbcType=VARCHAR},
+            ad_url         = #{adUrl,jdbcType=VARCHAR},
+            online_count   = #{onlineCount,jdbcType=INTEGER},
+            handan_rate    = #{handanRate,jdbcType=REAL},
+            ying_li        = #{yingLi,jdbcType=REAL},
+            main_img       = #{mainImg,jdbcType=VARCHAR},
+            sub_img        = #{subImg,jdbcType=VARCHAR},
+            create_time    = #{createTime,jdbcType=TIMESTAMP},
+            updata_time    = #{updataTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../System" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/System" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-SSM" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-dp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-jdt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-single" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-sys" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-tyb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-xhb" charset="UTF-8" />
+  </component>
+</project>

@@ -1,6 +1,8 @@
 package com.xzm.modules.tyb.service.imp;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.common.exception.RRException;
+//import com.xzm.modules.common.service.AbstractService;
 import com.xzm.modules.tyb.dao.*;
 import com.xzm.modules.tyb.pojo.*;
 import com.xzm.modules.tyb.service.TybLiveService;
@@ -10,19 +12,19 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TybLiveServiceImp implements TybLiveService {
+public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> implements TybLiveService {
     private  Log logger = LogFactory.getLog(getClass());
     @Autowired
     private TybHanDanPaiHangMapper handanPaiHangMapper;
     @Autowired
     private  TybLiveTopMapper LiveTopMapper;
-    @Autowired
+    @Resource
     private TybImportantMessageMapper importantMessageMapper;
-    @Autowired
+    @Resource
     private TybTeacherMapper tybTeacherMapper;
     @Autowired
     private TybUserGenDanMapper tybUserGenDanMapper;

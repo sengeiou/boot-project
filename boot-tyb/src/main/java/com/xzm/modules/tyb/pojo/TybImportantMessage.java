@@ -1,8 +1,11 @@
 package com.xzm.modules.tyb.pojo;
 
+import javax.persistence.Id;
 import java.util.Date;
 
+//@Table(name = "sys_role")
 public class TybImportantMessage {
+    @Id
     private Integer id;
 
     private Date time;

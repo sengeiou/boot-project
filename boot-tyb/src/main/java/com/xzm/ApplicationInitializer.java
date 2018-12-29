@@ -16,8 +16,7 @@ public class ApplicationInitializer extends SpringBootServletInitializer {
     private final Logger logger = LoggerFactory.getLogger(GlobalExceptionResolver.class);
 
     @Override
-    public void onStartup(ServletContext container)
-            throws ServletException {
+    public void onStartup(ServletContext container) throws ServletException {
         logger.debug("===ApplicationInitializer==");
         AnnotationConfigWebApplicationContext dispatcherContext = new AnnotationConfigWebApplicationContext();
         DispatcherServlet dispatcherServlet = new DispatcherServlet(dispatcherContext);

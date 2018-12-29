@@ -1,0 +1,65 @@
+﻿﻿/*!*reset*!*/
+/*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {*/
+	/*margin: 0; padding: 0; list-style: none; font-size: 12px; font-family: "Arial", "sans-serif", "微软雅黑", "宋体", "Tahoma";*/
+/*}*/
+
+/*h1 {*/
+	/*font-size: 24px;*/
+/*}*/
+
+/*h2 {*/
+	/*font-size: 20px;*/
+/*}*/
+
+/*h3 {*/
+	/*font-size: 18px;*/
+/*}*/
+
+/*h4 {*/
+	/*font-size: 16px;*/
+/*}*/
+
+/*h5 {*/
+	/*font-size: 14px;*/
+/*}*/
+
+/*h6 {*/
+	/*font-size: 12px;*/
+/*}*/
+
+/*img {*/
+	/*vertical-align: middle; border: none 0*/
+/*}*/
+
+/*a {*/
+	/*cursor: pointer; text-decoration: none*/
+/*}*/
+
+/*!*表&表单*!*/
+/*table {*/
+	/*border-collapse: collapse; border-spacing: 0; border: 0*/
+/*}*/
+
+/*input, select {*/
+	/*vertical-align: middle*/
+/*}*/
+
+/*textarea {*/
+	/*resize: none*/
+/*}*/
+
+/*label {*/
+	/*vertical-align: middle*/
+/*}*/
+
+/*input:focus, textarea:focus {*/
+	/*outline: none*/
+/*}*/
+
+
+
+
+body{background: red}
+
+.user-name{background: greenyellow}
+

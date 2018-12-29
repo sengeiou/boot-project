@@ -1,7 +1,8 @@
 //package com.xzm.config;
 //
-////import com.example.demo.core.constant.ProjectConstant;
+//import com.github.pagehelper.PageHelper;
 //import com.xzm.common.constant.ProjectConstant;
+//import org.apache.ibatis.plugin.Interceptor;
 //import org.apache.ibatis.session.SqlSessionFactory;
 //import org.mybatis.spring.SqlSessionFactoryBean;
 //import org.springframework.context.annotation.Bean;
@@ -11,11 +12,12 @@
 //import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 //
 //import javax.sql.DataSource;
+//import java.util.Properties;
+//
+////import static com.company.project.core.ProjectConstant.*;
 //
 ///**
-// * @Description: Mybatis翻页插件配置和XML文件配置等
-// * @author 张瑶
-// * @date 2018/4/18 11:50
+// * Mybatis & Mapper & PageHelper 配置
 // */
 //@Configuration
 //public class MybatisConfigurer {
@@ -25,7 +27,20 @@
 //        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
 //        factory.setDataSource(dataSource);
 //        factory.setTypeAliasesPackage(ProjectConstant.MODEL_PACKAGE);
-//        // 添加XML目录
+//
+//        //配置分页插件，详情请查阅官方文档
+//        PageHelper pageHelper = new PageHelper();
+//        Properties properties = new Properties();
+//        properties.setProperty("pageSizeZero", "true");//分页尺寸为0时查询所有纪录不再执行分页
+//        properties.setProperty("reasonable", "true");//页码<=0 查询第一页，页码>=总页数查询最后一页
+//        properties.setProperty("supportMethodsArguments", "true");//支持通过 Mapper 接口参数来传递分页参数
+//        pageHelper.setProperties(properties);
+//
+//        //添加插件
+//        factory.setPlugins(new Interceptor[]{pageHelper});
+//
+//
+//        //添加XML目录
 //        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 //        factory.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
 //        return factory.getObject();
@@ -35,8 +50,17 @@
 //    public MapperScannerConfigurer mapperScannerConfigurer() {
 //        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
 //        mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactoryBean");
-////        mapperScannerConfigurer.setBasePackage(ProjectConstant.MAPPER_PACKAGE);
-//        mapperScannerConfigurer.setBasePackage("com.xzm.modules.*.dao");
+//        mapperScannerConfigurer.setBasePackage(ProjectConstant.MAPPER_PACKAGE);
+//
+//        //配置通用Mapper，详情请查阅官方文档
+//        Properties properties = new Properties();
+//        properties.setProperty("mappers", ProjectConstant.MAPPER_INTERFACE_REFERENCE);
+//        properties.setProperty("notEmpty", "false");//insert、update是否判断字符串类型!='' 即 test="str != null"表达式内是否追加 and str != ''
+//        properties.setProperty("IDENTITY", "MYSQL");
+//        mapperScannerConfigurer.setProperties(properties);
+//
 //        return mapperScannerConfigurer;
 //    }
+//
 //}
+//

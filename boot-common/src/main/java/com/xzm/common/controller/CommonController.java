@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "common")
-public class CommonController {
+public class CommonController extends AbstractController {
     @RequestMapping(value = "/index")
     public String index(HttpServletRequest request) {
         return "访问到了===commonController";

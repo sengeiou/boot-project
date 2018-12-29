@@ -1,12 +1,17 @@
 package com.xzm.modules.tyb.service;
 
+import com.baomidou.mybatisplus.service.IService;
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.modules.tyb.form.TybUserForm;
+import com.xzm.modules.tyb.pojo.TybUser;
 import com.xzm.modules.tyb.vo.TybTeacherHanDanVo;
 import com.xzm.modules.tyb.vo.TybUserInfoVo;
 import com.xzm.modules.tyb.vo.TybUserKaiHuInfoVo;
 
-public interface TybUserService {
+/**
+ * extends Service<TybUser>
+ */
+public interface TybUserService  extends IService<TybUser> {
 //    ServerResponse<String> checkUserValid(String phone);
     ServerResponse<String> login(String phone, String password);
     ServerResponse<String> register(TybUserForm user);

@@ -1,14 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
-#.idea/workspace.xml
-#boot-common/src/test/
-#boot-common/target/
-#boot-test/src/test/
-#boot-test/target/
-#Would skip repository boot-tyb/
-#boot-web/src/test/
-#boot-web/target/
 
 #.gitignore
-src/test/
 .idea
-boot-parent.iml
+/*.iml
+boot-common/src/test/
+boot-sys/src/test/
+boot-test/src/test/
+boot-web/src/test/
+boot-xhb/src/test/
+src/test/

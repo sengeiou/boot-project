@@ -1,0 +1,12 @@
+总之，package是把jar打到本项目的target下，
+而install时把target下的jar安装到本地仓库，供其他项目使用.
+
+
+总结就是
+package:只是在本项目中打成jar包
+install:安装jar包到本地仓库中，这时候可以供其它项目引入依赖
+
+
+
+执行 mvn package如果出现错误 可以尝试下
+mvn package -DskipTests 跳过测试命令

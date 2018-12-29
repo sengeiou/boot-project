@@ -30,11 +30,11 @@ public class SysPageController {
 //		logger.debug("==请求系统页面==login==");
 //		return "login";
 //	}
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String index() {
-//        logger.debug("======进入登录页面==111==");
-//        return "login";
-//    }
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+        logger.debug("======进入登录页面==111==");
+        return "login";
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {

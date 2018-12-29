@@ -1,8 +1,10 @@
 package com.xzm.modules.tyb.pojo;
 
+import javax.persistence.Id;
 import java.util.Date;
 
 public class TybTeacher {
+    @Id
     private Integer id;
 
     private String thumb;

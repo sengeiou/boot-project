@@ -6,6 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -16,14 +17,14 @@ import java.util.Date;
  * @email sunlightcs@gmail.com
  * @date 2017/9/21 22:21
  */
-//@ConfigurationProperties(prefix = "tyb.jwt")
+@ConfigurationProperties(value = "tyb.jwt")
 @Component
 public class JwtUtils {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Value("${tyb.jwt.secret}")
     private String secret;
     @Value("${tyb.jwt.expire}")
-    private long expire;
+    private String expire;
     @Value("${tyb.jwt.header}")
     private String header;
 
@@ -33,7 +34,7 @@ public class JwtUtils {
     public String generateToken(long userId) {
         Date nowDate = new Date();
         //过期时间
-        Date expireDate = new Date(nowDate.getTime() + expire * 1000);
+        Date expireDate = new Date(nowDate.getTime() + Long.parseLong(expire) * 1000);
 
         return Jwts.builder()
                 .setHeaderParam("typ", "JWT")
@@ -72,11 +73,11 @@ public class JwtUtils {
         this.secret = secret;
     }
 
-    public long getExpire() {
+    public String getExpire() {
         return expire;
     }
 
-    public void setExpire(long expire) {
+    public void setExpire(String expire) {
         this.expire = expire;
     }
 
