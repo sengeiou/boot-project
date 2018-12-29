@@ -5,14 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" filepath="$PROJECT_DIR$/boot-single/JavaSpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-common/boot-common.iml" filepath="$PROJECT_DIR$/boot-common/boot-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-jdt/boot-jdt.iml" filepath="$PROJECT_DIR$/boot-jdt/boot-jdt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-project.iml" filepath="$PROJECT_DIR$/boot-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-single/boot-single.iml" filepath="$PROJECT_DIR$/boot-single/boot-single.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot-parent.iml" filepath="$PROJECT_DIR$/boot-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-sys/boot-sys.iml" filepath="$PROJECT_DIR$/boot-sys/boot-sys.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-test/boot-test.iml" filepath="$PROJECT_DIR$/boot-test/boot-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-tyb/boot-tyb.iml" filepath="$PROJECT_DIR$/boot-tyb/boot-tyb.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-web/boot-web.iml" filepath="$PROJECT_DIR$/boot-web/boot-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-xhb/boot-xhb.iml" filepath="$PROJECT_DIR$/boot-xhb/boot-xhb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-SSM/demo.iml" filepath="$PROJECT_DIR$/boot-SSM/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-SSM/demo.iml" filepath="$PROJECT_DIR$/boot-SSM/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-dp/dp.iml" filepath="$PROJECT_DIR$/boot-dp/dp.iml" />
     </modules>
