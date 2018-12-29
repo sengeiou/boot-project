@@ -6,23 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo" />
         <module name="dp" />
-        <module name="JavaSpringBoot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot-common" target="1.8" />
       <module name="boot-jdt" target="1.8" />
       <module name="boot-project" target="1.8" />
+      <module name="boot-single" target="1.8" />
+      <module name="boot-SSM" target="1.7" />
       <module name="boot-sys" target="1.8" />
       <module name="boot-test" target="1.8" />
       <module name="boot-tyb" target="1.8" />
       <module name="boot-web" target="1.8" />
       <module name="boot-xhb" target="1.8" />
-      <module name="demo" target="1.7" />
       <module name="dp" target="1.8" />
-      <module name="JavaSpringBoot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

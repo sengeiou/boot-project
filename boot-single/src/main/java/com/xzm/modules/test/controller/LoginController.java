@@ -31,7 +31,6 @@ public class LoginController {
         logger.warn("登陆请求==warn==" + userEntity.getName() + "===" + userEntity.getPwd());
 //        System.out.println("登陆请求=xxxx==" + userEntity.getName() + "===" + userEntity.getPwd());
         model.addAttribute("login_user","徐宗萌");
-
         return "login";
     }
 

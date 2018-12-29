@@ -52,7 +52,6 @@
         <jwt.version>0.7.0</jwt.version>
         <spring.version>4.3.7</spring.version>
         <mysql-connector.version>5.1.21</mysql-connector.version>
-        <druid.version>1.0.5</druid.version>
         <!--<fastjson.version>1.2.31</fastjson.version>-->
         <fastjson.version>1.2.8</fastjson.version>
         <!--<slf4j.version>1.7.7</slf4j.version>-->
@@ -188,13 +187,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-        <!--&lt;!&ndash;引入druid最新maven依赖&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>com.alibaba</groupId>-->
-        <!--<artifactId>druid</artifactId>-->
-        <!--<version>1.0.29</version>-->
-        <!--</dependency>-->
-
         <!-- alibaba的druid数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -302,11 +294,7 @@
         <!-- 热部署模块 -->
 
         <!--swagger 接口Api文档-->
-        <dependency><!--    <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> &lt;!&ndash; 这个需要为 true 热部署才有效 &ndash;&gt;
-        </dependency>-->
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox-swagger2.version}</version>
@@ -414,9 +402,11 @@
             <version>${redis-spring-boot.version}</version> <!--1.4.5.RELEASE-->
         </dependency>
 
-
-
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

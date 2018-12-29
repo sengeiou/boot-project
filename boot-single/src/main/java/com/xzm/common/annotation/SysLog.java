@@ -1,5 +1,7 @@
 package com.xzm.common.annotation;
 
+import java.lang.annotation.*;
+
 /**
  * 系统日志注解
  *
