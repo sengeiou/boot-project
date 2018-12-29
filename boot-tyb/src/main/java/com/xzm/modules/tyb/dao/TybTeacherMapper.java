@@ -5,11 +5,12 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xzm.modules.tyb.pojo.TybTeacher;
 //import org.apache.ibatis.annotations.Mapper;
 //import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 //@Mapper extends Mapper
-//@Mapper
+@Mapper
 
 /**
  * extends Mapper<TybTeacher>

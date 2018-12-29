@@ -3,7 +3,9 @@ package com.xzm.modules.tyb.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xzm.modules.tyb.pojo.TybUser;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+@Mapper
 
 //@Mapper
 public interface TybUserMapper extends BaseMapper<TybUser> {

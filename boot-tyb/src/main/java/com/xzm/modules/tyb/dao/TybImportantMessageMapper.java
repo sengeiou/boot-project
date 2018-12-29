@@ -2,8 +2,9 @@ package com.xzm.modules.tyb.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xzm.modules.tyb.pojo.TybImportantMessage;
+import org.apache.ibatis.annotations.Mapper;
 
-//@Mapper
+@Mapper
 public interface TybImportantMessageMapper extends BaseMapper<TybImportantMessage> {
     int deleteByPrimaryKey(Integer id);
 
