@@ -31,7 +31,7 @@ public class SwaggerConfiguration {
         return new ApiInfoBuilder()
                 .title("swagger-bootstrap-ui RESTful APIs")
                 .description("swagger-bootstrap-ui")
-//                .termsOfServiceUrl("http://localhost:8999/")
+                 .termsOfServiceUrl("http://localhost:8999/")
                 .contact("developer@mail.com")
                 .version("1.0")
                 .build();
