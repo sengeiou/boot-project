@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>boot-sys</artifactId>
     <!--<description>sys</description>-->
-
+    <name>sys</name>
     <dependencies>
         <!--<dependency>-->
             <!--<groupId>com.xzm</groupId>-->

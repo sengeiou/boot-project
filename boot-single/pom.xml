@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xzm.main</groupId>
-    <artifactId>JavaSpringBoot</artifactId>
+    <artifactId>boot-single</artifactId>
     <version>1.0.1</version>
     <packaging>jar</packaging>
-    <name>JavaSpringBoot</name>
+    <name>single</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -74,10 +74,10 @@
             <scope>runtime</scope>
         </dependency>
         <!-- spring boot tomcat jsp 支持开启 -->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat.embed</groupId>-->
+            <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+        <!--</dependency>-->
         <!--servlet支持开启-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -129,6 +129,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
+
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

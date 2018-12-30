@@ -11,6 +11,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>boot-common</artifactId>
+    <name>common</name>
     <!--<description>common</description>-->
     <dependencies>
         <!--<dependency>-->

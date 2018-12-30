@@ -5,7 +5,7 @@
   <artifactId>demo</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>demo Maven Webapp</name>
+  <name>ssm</name>
   <parent>
     <artifactId>boot-project</artifactId>
     <groupId>com.xzm</groupId>
