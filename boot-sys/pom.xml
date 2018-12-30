@@ -12,6 +12,11 @@
     <!--<description>sys</description>-->
 
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>com.xzm</groupId>-->
+            <!--<artifactId>boot-web</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
         <!--shiro安全权限-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
