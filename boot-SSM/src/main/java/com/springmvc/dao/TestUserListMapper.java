@@ -1,6 +1,4 @@
 package com.springmvc.dao;
-
-
 import com.springmvc.entity.UserList;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
