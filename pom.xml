@@ -474,11 +474,11 @@
             <!--<version>3.4.2</version>-->
             <!--</dependency>-->
             <!--pagehelper分页-->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>4.2.1</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>com.github.pagehelper</groupId>-->
+                <!--<artifactId>pagehelper</artifactId>-->
+                <!--<version>4.2.1</version>-->
+            <!--</dependency>-->
 
 
         </dependencies>

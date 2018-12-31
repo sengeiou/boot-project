@@ -8,39 +8,73 @@ import java.io.Serializable;
  * Created by Vitelon on 2017-03-30
  * 用户实体类.
  */
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+
 public class Student implements Serializable {
+
+    public Student(String id, String username, String password, String sex) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.sex = sex;
+    }
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 用户ID
      */
-    @Getter
-    @Setter
+
     private String id;
     /**
      * 用户名
      */
-    @Getter
-    @Setter
+
     private String username;
     /**
      * 密码
      */
-    @Getter
-    @Setter
+
     private String password;
     /**
      * 姓名
      */
-    @Getter
-    @Setter
+
     private String sex;
 
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }

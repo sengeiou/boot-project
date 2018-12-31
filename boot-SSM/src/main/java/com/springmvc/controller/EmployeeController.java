@@ -1,12 +1,13 @@
 package com.springmvc.controller;
 
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+//import com.github.pagehelper.PageHelper;
+//import com.github.pagehelper.PageInfo;
 import com.springmvc.entity.Employee;
 import com.springmvc.entity.Msg;
 import com.springmvc.service.impl.EmployeeService;
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import net.sf.ehcache.constructs.web.PageInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
