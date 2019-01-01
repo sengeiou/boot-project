@@ -77,12 +77,11 @@ public class TestController {
 //        logger.info("查询55="+list.getUSex());
 //        logger.info("查询66="+list.getUAge());
         UserList list = testUserListServices.selectByPrimaryKey(6);
-        logger.info("查询11="+list.getUName());
-        logger.info("查询22="+list.getUName());
-        logger.info("查询33="+list.getUPassword());
-        logger.info("查询44="+list.getUPhonenumber());
-        logger.info("查询55="+list.getUSex());
-        logger.info("查询66="+list.getUAge());
+        logger.info("查询11="+list.getuName());
+        logger.info("查询33="+list.getuPassword());
+        logger.info("查询44="+list.getuPhonenumber());
+        logger.info("查询55="+list.getuSex());
+        logger.info("查询66="+list.getuSex());
         return "getUser";
     }
 

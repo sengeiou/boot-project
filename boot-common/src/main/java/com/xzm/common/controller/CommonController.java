@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping(value = "common")
+@RequestMapping(value = "/common")
 public class CommonController extends AbstractController {
     @RequestMapping(value = "/index")
     public String index(HttpServletRequest request) {
