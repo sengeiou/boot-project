@@ -1,6 +1,5 @@
 package com.xzm.modules.sys.entity;
 
-import lombok.Data;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -14,7 +13,6 @@ import java.sql.Timestamp;
  * @url www.chenlintech.com
  * @date 2017年8月14日 下午8:05:17
  */
-@Data
 public class SysLogEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

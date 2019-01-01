@@ -14,7 +14,7 @@ import java.util.List;
 public class TybZiXunServiceImp implements TybZiXunService {
 
     @Autowired
-    TybZiXunMapper ziXunMapper;
+    private TybZiXunMapper ziXunMapper;
 
     @Override
     public ServerResponse selectZiXunList(Integer type) {

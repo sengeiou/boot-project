@@ -4,12 +4,10 @@ package com.xzm.modules.test.pojo;
  * 分页bean
  */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+
 
 import java.util.List;
-@Data
-@AllArgsConstructor
+
 public class PageBean<T> {
     // 当前页
     private Integer currentPage = 1;

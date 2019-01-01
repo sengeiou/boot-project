@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping(value = "web")
+@RequestMapping(value = "/sys")
 public class SystemController {
     @RequestMapping(value = "/index")
     public String index(HttpServletRequest request) {

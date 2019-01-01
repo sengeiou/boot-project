@@ -1,7 +1,6 @@
 package com.xzm.modules.test.pojo;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,11 +14,13 @@ import java.io.Serializable;
  * 码云：http://git.oschina.net/jnyqy
  * ========================
  */
-@EqualsAndHashCode(callSuper = true)
+//@EqualsAndHashCode(callSuper = true)
 //@Data
 @Entity
 @Table(name = "t_user")
 public class UserEntity extends BaseEntity implements Serializable
+
+
 {
 
     @Id
@@ -38,6 +39,13 @@ public class UserEntity extends BaseEntity implements Serializable
 
     @Column(name = "t_pwd")
     private String pwd;
+
+    public UserEntity(String name, int age, String address, String pwd) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.pwd = pwd;
+    }
 
     public Long getId() {
         return id;

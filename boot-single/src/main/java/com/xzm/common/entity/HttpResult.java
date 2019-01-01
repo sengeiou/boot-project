@@ -1,12 +1,11 @@
 package com.xzm.common.entity;
 
-import lombok.Data;
 
 /**
  * Created by Administrator on 2016/8/29.
  */
-@Data
 public class HttpResult<T> {
+
 
     /**
      * result 用来模仿Date层数据结构

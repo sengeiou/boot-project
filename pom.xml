@@ -61,7 +61,7 @@
         <jwt.version>0.7.0</jwt.version>
         <spring.version>4.3.7</spring.version>
         <mysql-connector.version>5.1.21</mysql-connector.version>
-        <fastjson.version>1.2.8</fastjson.version>
+        <fastjson.version>1.2.31</fastjson.version>
         <log4j.version>1.2.17</log4j.version>
         <javax.websocket-api.version>1.0</javax.websocket-api.version>
         <javaee-api.version>7.0</javaee-api.version>

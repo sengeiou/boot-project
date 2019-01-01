@@ -1,9 +1,7 @@
 package com.xzm.modules.tyb.pojo;
 
-import lombok.Data;
 
 import java.util.Date;
-@Data
 public class TybUserKaiHu {
     private Integer id;
 

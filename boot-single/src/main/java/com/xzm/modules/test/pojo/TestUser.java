@@ -1,7 +1,5 @@
 package com.xzm.modules.test.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 /**
  * Created by xuzongmeng on 2017/8/15.
