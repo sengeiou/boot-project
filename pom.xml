@@ -107,14 +107,6 @@
         <tomcat-path.version>/</tomcat-path.version>
         <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
     </properties>
-    <!--  <dependencyManagement>
-
-      </dependencyManagement>-->
-    <!--<dependencyManagement>-->
-
-    <!--</dependencyManagement>-->
-
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
