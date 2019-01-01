@@ -1,6 +1,5 @@
 package com.xzm;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -30,9 +29,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = "com.xzm")
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages = "com.xzm")
-public class JavaSpringBootApplication {
+public class SingletApplication {
     public static void main(String[] args) {
-        SpringApplication.run(JavaSpringBootApplication.class, args);
+        SpringApplication.run(SingletApplication.class, args);
 //		SpringApplication newRun= new SpringApplication(SpringApplication.class);
 //		newRun.setBannerMode(Banner.Mode.OFF);
 //		newRun.run(args);

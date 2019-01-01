@@ -11,9 +11,7 @@
     <name>project</name>
     <modules>
         <module>boot-tyb</module>
-        <module>boot-web</module>
         <module>boot-common</module>
-        <module>boot-test</module>
         <module>boot-xhb</module>
         <module>boot-sys</module>
         <module>boot-jdt</module>
