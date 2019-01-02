@@ -1,8 +1,8 @@
 //package com.xzm.mapper;
 //
-//import com.xzm.modules.tyb.dao.TybTeacherHanDanMapper;
-//import com.xzm.modules.tyb.dao.TybTeacherMapper;
-//import com.xzm.modules.tyb.dao.TybUserGenDanMapper;
+//import TybTeacherHanDanMapper;
+//import TybTeacherMapper;
+//import TybUserGenDanMapper;
 //
 //import org.apache.ibatis.session.SqlSessionFactory;
 //import org.junit.Before;

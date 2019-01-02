@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybUserMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.TybUser">
+<mapper namespace="com.xzm.single.dao.TybUserMapper">
+    <resultMap id="BaseResultMap" type="com.xzm.single.pojo.TybUser">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
@@ -26,7 +26,7 @@
         from tyb_user
         where id = #{id,jdbcType=INTEGER}
     </select>
-    <select id="selectByUserNameAndPassWord" resultType="com.xzm.modules.tyb.pojo.TybUser" parameterType="map">
+    <select id="selectByUserNameAndPassWord" resultType="com.xzm.single.pojo.TybUser" parameterType="map">
         select
         <include refid="Base_Column_List"/>
         from tyb_user
@@ -34,7 +34,7 @@
         and password=#{password,jdbcType=VARCHAR}
 
     </select>
-    <select id="selectByUniqueKey" resultType="com.xzm.modules.tyb.pojo.TybUser" parameterType="string">
+    <select id="selectByUniqueKey" resultType="com.xzm.single.pojo.TybUser" parameterType="string">
         select <include refid="Base_Column_List"/>
         from tyb_user
         where phone=#{phone,jdbcType=VARCHAR}
@@ -44,7 +44,7 @@
         delete from tyb_user
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybUser">
+    <insert id="insert" parameterType="com.xzm.single.pojo.TybUser">
         insert into tyb_user (id, nick_name, phone,
                               password, phone_url, push_status,
                               create_time, updata_time)
@@ -52,7 +52,7 @@
                 #{password,jdbcType=VARCHAR}, #{phoneUrl,jdbcType=VARCHAR}, #{pushStatus,jdbcType=INTEGER},
                 #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybUser">
+    <insert id="insertSelective" parameterType="com.xzm.single.pojo.TybUser">
         insert into tyb_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -107,7 +107,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybUser">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.single.pojo.TybUser">
         update tyb_user
         <set>
             <if test="nickName != null">
@@ -134,7 +134,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybUser">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.single.pojo.TybUser">
         update tyb_user
         set nick_name   = #{nickName,jdbcType=VARCHAR},
             phone       = #{phone,jdbcType=VARCHAR},

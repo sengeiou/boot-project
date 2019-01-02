@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybLiveTopMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.liveTop">
+<mapper namespace="com.xzm.single.dao.TybLiveTopMapper">
+    <resultMap id="BaseResultMap" type="com.xzm.single.pojo.liveTop">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="title" property="title" jdbcType="VARCHAR"/>
         <result column="live_url" property="liveUrl" jdbcType="VARCHAR"/>
@@ -35,7 +35,7 @@
         delete from tyb_live_Top
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+    <insert id="insert" parameterType="com.xzm.single.pojo.liveTop">
         insert into tyb_live_Top (id, title, live_url,
                                   dian_zan_count, ad_text, ad_url,
                                   online_count, handan_rate, ying_li,
@@ -50,7 +50,7 @@
                 #{createTime,jdbcType=TIMESTAMP},
                 #{updataTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+    <insert id="insertSelective" parameterType="com.xzm.single.pojo.liveTop">
         insert into tyb_live_Top
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -135,7 +135,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.single.pojo.liveTop">
         update tyb_live_Top
         <set>
             <if test="title != null">
@@ -177,7 +177,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.liveTop">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.single.pojo.liveTop">
         update tyb_live_Top
         set title          = #{title,jdbcType=VARCHAR},
             live_url       = #{liveUrl,jdbcType=VARCHAR},

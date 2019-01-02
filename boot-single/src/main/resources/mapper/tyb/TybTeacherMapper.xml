@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybTeacherMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.TybTeacher">
+<mapper namespace="com.xzm.single.dao.TybTeacherMapper">
+    <resultMap id="BaseResultMap" type="com.xzm.single.pojo.TybTeacher">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="thumb" property="thumb" jdbcType="VARCHAR"/>
         <result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
@@ -58,7 +58,7 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
-    <select id="selectTeacherList" resultType="com.xzm.modules.tyb.pojo.TybTeacher">
+    <select id="selectTeacherList" resultType="com.xzm.single.pojo.TybTeacher">
         select
         <include refid="Base_Column_List"/>
         from tyb_teacher
@@ -69,7 +69,7 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
-    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybTeacher">
+    <insert id="insert" parameterType="com.xzm.single.pojo.TybTeacher">
         insert into tyb_teacher (id, thumb, teacher_name,
                                  dian_zan_count, hdcgl, profit,
                                  gen_dan_count, pin_zhong, cang_wei,
@@ -84,7 +84,7 @@
                 #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
     </insert>
 
-    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybTeacher">
+    <insert id="insertSelective" parameterType="com.xzm.single.pojo.TybTeacher">
         insert into tyb_teacher
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -176,7 +176,7 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybTeacher">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.single.pojo.TybTeacher">
         update tyb_teacher
         <set>
             <if test="thumb != null">
@@ -222,7 +222,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybTeacher">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.single.pojo.TybTeacher">
         update tyb_teacher
         set thumb          = #{thumb,jdbcType=VARCHAR},
             teacher_name   = #{teacherName,jdbcType=VARCHAR},
@@ -241,7 +241,7 @@
     </update>
 
 
-    <select id="selectTeacherListByIds" resultType="com.xzm.modules.tyb.pojo.TybTeacher"
+    <select id="selectTeacherListByIds" resultType="com.xzm.single.pojo.TybTeacher"
             parameterType="map">
         select
         <include refid="Base_Column_List"/>

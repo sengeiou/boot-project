@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybUserKaiHuMapper" >
-  <resultMap id="BaseResultMap" type="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+<mapper namespace="com.xzm.single.dao.TybUserKaiHuMapper" >
+  <resultMap id="BaseResultMap" type="com.xzm.single.pojo.TybUserKaiHu" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="id_card" property="idCard" jdbcType="VARCHAR" />
@@ -27,7 +27,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
 
-  <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+  <insert id="insert" parameterType="com.xzm.single.pojo.TybUserKaiHu" >
     insert into tyb_user_kai_hu (id, user_name, id_card, 
       phone, platform_code, platform_name, 
       create_time, updata_time)
@@ -36,7 +36,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
   </insert>
 
-  <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu">
+  <insert id="insertSelective" parameterType="com.xzm.single.pojo.TybUserKaiHu">
     insert into tyb_user_kai_hu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -92,7 +92,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzm.single.pojo.TybUserKaiHu" >
     update tyb_user_kai_hu
     <set >
       <if test="userName != null" >
@@ -120,7 +120,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybUserKaiHu" >
+  <update id="updateByPrimaryKey" parameterType="com.xzm.single.pojo.TybUserKaiHu" >
     update tyb_user_kai_hu
     set user_name = #{userName,jdbcType=VARCHAR},
       id_card = #{idCard,jdbcType=VARCHAR},
