@@ -1,6 +1,5 @@
 package com.xzm.tyb.dao;
 
-import com.xzm.modules.tyb.pojo.TybUserKaiHu;
 import com.xzm.tyb.pojo.TybUserKaiHu;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

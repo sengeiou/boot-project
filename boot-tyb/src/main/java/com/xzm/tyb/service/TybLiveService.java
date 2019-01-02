@@ -1,9 +1,7 @@
 package com.xzm.tyb.service;
-
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.modules.tyb.pojo.TybHanDanPaiHang;
-import com.xzm.modules.tyb.vo.*;
-
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.pojo.TybHanDanPaiHang;
+import com.xzm.tyb.vo.*;
 /**
  * 直播 extends IService<TybTeacher>
  */

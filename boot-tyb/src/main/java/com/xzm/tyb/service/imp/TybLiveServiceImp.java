@@ -1,13 +1,13 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.common.exception.RRException;
-//import com.xzm.modules.common.service.AbstractService;
-import com.xzm.modules.tyb.dao.*;
-import com.xzm.modules.tyb.pojo.*;
-import com.xzm.modules.tyb.service.TybLiveService;
-import com.xzm.modules.tyb.vo.*;
+
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.common.exception.RRException;
+import com.xzm.tyb.dao.*;
+import com.xzm.tyb.pojo.*;
+import com.xzm.tyb.service.TybLiveService;
+import com.xzm.tyb.vo.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
     @Autowired
     private TybHanDanPaiHangMapper handanPaiHangMapper;
     @Autowired
-    private  TybLiveTopMapper LiveTopMapper;
+    private TybLiveTopMapper LiveTopMapper;
     @Resource
     private TybImportantMessageMapper importantMessageMapper;
     @Resource
@@ -63,7 +63,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
      */
     @Override
     public ServerResponse<TybImportantMessageVo> selectImportantMessageById(Integer id) {
-        TybImportantMessage message = importantMessageMapper.selectByPrimaryKey(id);
+        TybImportantMessage message = importantMessageMapper.selectById(new TybImportantMessage(1));
         TybImportantMessageVo importantMessageVo = new TybImportantMessageVo();
         importantMessageVo.setObject(message);
         return ServerResponse.createBySuccess(importantMessageVo);

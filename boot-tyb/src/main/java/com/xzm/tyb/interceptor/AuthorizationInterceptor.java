@@ -1,9 +1,9 @@
 package com.xzm.tyb.interceptor;
 
 
-import com.xzm.common.exception.RRException;
-import com.xzm.modules.tyb.annotation.Login;
-import com.xzm.modules.tyb.utils.JwtUtils;
+import com.xzm.tyb.annotation.Login;
+import com.xzm.tyb.common.exception.RRException;
+import com.xzm.tyb.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

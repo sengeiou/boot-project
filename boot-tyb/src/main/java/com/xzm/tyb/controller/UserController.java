@@ -1,8 +1,9 @@
 package com.xzm.tyb.controller;
 
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.modules.tyb.form.TybUserForm;
-import com.xzm.modules.tyb.service.TybUserService;
+
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.form.TybUserForm;
+import com.xzm.tyb.service.TybUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

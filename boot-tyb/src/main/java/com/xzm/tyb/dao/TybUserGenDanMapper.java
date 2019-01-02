@@ -1,12 +1,11 @@
 package com.xzm.tyb.dao;
 
-import com.xzm.modules.tyb.pojo.TybUserGenDan;
 import com.xzm.tyb.pojo.TybUserGenDan;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 //@Mapper
-@Mapper
+//@Mapper
 
 public interface TybUserGenDanMapper {
     int deleteByPrimaryKey(Integer id);

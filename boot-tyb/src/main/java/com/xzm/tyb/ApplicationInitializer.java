@@ -1,6 +1,5 @@
 package com.xzm;
 
-import com.xzm.modules.tyb.config.GlobalExceptionResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -13,7 +12,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 @Order(1)
 public class ApplicationInitializer extends SpringBootServletInitializer {
-    private final Logger logger = LoggerFactory.getLogger(GlobalExceptionResolver.class);
+    private final Logger logger = LoggerFactory.getLogger(ApplicationInitializer.class);
 
     @Override
     public void onStartup(ServletContext container) throws ServletException {

@@ -1,6 +1,5 @@
 package com.xzm.tyb.dao;
 
-import com.xzm.modules.tyb.pojo.TybHanDanPaiHang;
 import com.xzm.tyb.pojo.TybHanDanPaiHang;
 import org.apache.ibatis.annotations.Mapper;
 

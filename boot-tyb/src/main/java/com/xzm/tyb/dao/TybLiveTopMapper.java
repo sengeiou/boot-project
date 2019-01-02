@@ -1,6 +1,5 @@
 package com.xzm.tyb.dao;
 
-import com.xzm.modules.tyb.pojo.liveTop;
 import com.xzm.tyb.pojo.liveTop;
 import org.apache.ibatis.annotations.Mapper;
 

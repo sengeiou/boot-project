@@ -1,10 +1,16 @@
 package com.xzm.tyb.pojo;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 //@Table(name = "sys_role")
-public class TybImportantMessage {
+public class TybImportantMessage implements Serializable {
+
+    public TybImportantMessage(Integer id) {
+        this.id = id;
+    }
+
     @Id
     private Integer id;
 

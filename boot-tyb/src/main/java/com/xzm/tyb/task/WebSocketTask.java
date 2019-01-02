@@ -1,8 +1,8 @@
 package com.xzm.tyb.task;
 
-import com.xzm.common.utils.JSONUtils;
-import com.xzm.modules.tyb.bean.HangQing;
-import com.xzm.modules.tyb.websocket.SocketServer;
+
+import com.xzm.tyb.bean.HangQing;
+import com.xzm.tyb.common.utils.JSONUtils;
 import com.xzm.tyb.websocket.SocketServer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;

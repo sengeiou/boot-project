@@ -1,6 +1,5 @@
 package com.xzm.tyb.vo;
 
-import com.xzm.modules.tyb.pojo.TybHanDanPaiHang;
 import com.xzm.tyb.pojo.TybHanDanPaiHang;
 
 import java.util.List;

@@ -2,13 +2,14 @@ package com.xzm.tyb.controller;
 
 //import com.baomidou.mybatisplus.plugins.pagination.PageHelper;
 //import com.github.pagehelper.PageHelper;
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.common.utils.JSONUtils;
-import com.xzm.modules.common.service.RedisService;
-import com.xzm.modules.tyb.service.TybLiveService;
-import com.xzm.modules.tyb.service.TybZiXunService;
-import com.xzm.modules.tyb.vo.LiveTopVo;
-import com.xzm.modules.tyb.vo.TybImportantMessageVo;
+
+import com.github.pagehelper.PageHelper;
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.common.utils.JSONUtils;
+import com.xzm.tyb.service.TybLiveService;
+import com.xzm.tyb.service.TybZiXunService;
+import com.xzm.tyb.vo.LiveTopVo;
+import com.xzm.tyb.vo.TybImportantMessageVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class LiveController  extends BaseController{
     @Autowired
     private TybZiXunService ziXunService;
     @Autowired
-    private RedisService redisService;
+//    private RedisService redisService;
     /**
      * 获取咨询新闻列表
      * @param type 1财经要闻 2研究报告 3独家解读 4市场动态
@@ -54,7 +55,7 @@ public class LiveController  extends BaseController{
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int id) {
         ServerResponse<TybImportantMessageVo> importantMessage = liveService.selectImportantMessageById(id);
         String json = JSONUtils.beanToJson(importantMessage);
-        redisService.set("importantMessage", json);
+//        redisService.set("importantMessage", json);
         return liveService.selectImportantMessageById(id);
     }
 
@@ -68,7 +69,7 @@ public class LiveController  extends BaseController{
 //        String topList1 = redisService.get("TopList");
         ServerResponse<LiveTopVo> topList = liveService.selectLiveTopList();
         String json = JSONUtils.beanToJson(topList);
-        redisService.set("TopList", json);
+//        redisService.set("TopList", json);
         return liveService.selectLiveTopList();
     }
 
@@ -91,7 +92,7 @@ public class LiveController  extends BaseController{
                                             @RequestParam(defaultValue = "5") int pageSize,
                                             @RequestParam String access_token,
                                             @RequestParam(value = "phone", required = false) String phone) {
-//        PageHelper.startPage(pageNum, pageSize);
+//       PageHelper.startPage(pageNum, pageSize);
         return liveService.selectTeacherList(access_token, phone);
     }
 

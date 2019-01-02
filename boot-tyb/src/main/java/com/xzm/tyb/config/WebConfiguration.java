@@ -3,7 +3,7 @@ package com.xzm.tyb.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.xzm.common.interceptor.SessionInterceptor;
+//import com.xzm.common.interceptor.SessionInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -104,7 +104,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**");
+//        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**");
 //       registry.addInterceptor(new HandshakeInterceptor());
     }
 

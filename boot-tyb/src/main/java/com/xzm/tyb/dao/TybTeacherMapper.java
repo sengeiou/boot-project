@@ -3,7 +3,6 @@ package com.xzm.tyb.dao;
 //import com.xzm.modules.common.dao.Mapper;
 //import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.modules.tyb.pojo.TybTeacher;
 //import org.apache.ibatis.annotations.Mapper;
 //import org.apache.ibatis.annotations.Mapper;
 import com.xzm.tyb.pojo.TybTeacher;

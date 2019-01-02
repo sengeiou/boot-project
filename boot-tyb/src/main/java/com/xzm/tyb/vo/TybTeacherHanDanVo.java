@@ -1,6 +1,5 @@
 package com.xzm.tyb.vo;
 
-import com.xzm.modules.tyb.pojo.TybTeacherHanDan;
 import com.xzm.tyb.pojo.TybTeacherHanDan;
 
 import java.util.List;

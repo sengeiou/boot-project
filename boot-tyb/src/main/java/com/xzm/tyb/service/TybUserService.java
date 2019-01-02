@@ -2,12 +2,13 @@ package com.xzm.tyb.service;
 
 //import com.baomidou.mybatisplus.service.IService;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.modules.tyb.form.TybUserForm;
-import com.xzm.modules.tyb.pojo.TybUser;
-import com.xzm.modules.tyb.vo.TybTeacherHanDanVo;
-import com.xzm.modules.tyb.vo.TybUserInfoVo;
-import com.xzm.modules.tyb.vo.TybUserKaiHuInfoVo;
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.form.TybUserForm;
+import com.xzm.tyb.pojo.TybUser;
+import com.xzm.tyb.vo.TybTeacherHanDanVo;
+import com.xzm.tyb.vo.TybUserInfoVo;
+import com.xzm.tyb.vo.TybUserKaiHuInfoVo;
+
 
 /**
  * extends Service<TybUser>

@@ -2,8 +2,9 @@ package com.xzm.tyb.config;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.common.exception.RRException;
+
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.common.exception.RRException;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;

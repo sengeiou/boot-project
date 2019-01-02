@@ -1,11 +1,12 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xzm.common.entity.ServerResponse;
-import com.xzm.modules.tyb.dao.TybZiXunMapper;
-import com.xzm.modules.tyb.pojo.TybZiXun;
-import com.xzm.modules.tyb.service.TybZiXunService;
-import com.xzm.modules.tyb.vo.ZiXunVo;
+
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.dao.TybZiXunMapper;
+import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.tyb.service.TybZiXunService;
+import com.xzm.tyb.vo.ZiXunVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
