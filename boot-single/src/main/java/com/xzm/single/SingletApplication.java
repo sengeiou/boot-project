@@ -1,4 +1,4 @@
-package com.xzm;
+package com.xzm.single;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +26,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableJpaRepositories(repositoryBaseClass = JpaRepositoryFactoryBean.class)
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 //        HibernateJpaAutoConfiguration.class})
-@ComponentScan(basePackages = "com.xzm")
+@ComponentScan(basePackages = "com.xzm.single")
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages = "com.xzm")
 public class SingletApplication {

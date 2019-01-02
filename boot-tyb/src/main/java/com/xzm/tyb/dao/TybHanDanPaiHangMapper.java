@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 //@Mapper
-@Mapper
+//@Mapper
 
 public interface TybHanDanPaiHangMapper {
     int deleteByPrimaryKey(Integer id);

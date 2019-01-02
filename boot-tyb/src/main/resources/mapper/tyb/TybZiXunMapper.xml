@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybZiXunMapper">
+<mapper namespace="com.xzm.tyb.dao.TybZiXunMapper">
     <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.TybZiXun">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="type" property="type" jdbcType="INTEGER"/>
@@ -23,7 +23,7 @@
     delete from tyb_zi_xun
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybZiXun">
+    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybZiXun">
     insert into tyb_zi_xun (id, type, title,
       description, url, create_time, 
       updata_time)
@@ -31,7 +31,7 @@
       #{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updataTime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybZiXun">
+    <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybZiXun">
         insert into tyb_zi_xun
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -80,7 +80,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybZiXun">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybZiXun">
         update tyb_zi_xun
         <set>
             <if test="type != null">
@@ -104,7 +104,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybZiXun">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.TybZiXun">
     update tyb_zi_xun
     set type = #{type,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},

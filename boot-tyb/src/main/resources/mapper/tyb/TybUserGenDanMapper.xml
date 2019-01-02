@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybUserGenDanMapper">
+<mapper namespace="com.xzm.tyb.dao.TybUserGenDanMapper">
     <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.TybUserGenDan">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="user_phone" property="userPhone" jdbcType="VARCHAR"/>
@@ -22,14 +22,14 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
-    <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybUserGenDan">
+    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
         insert into tyb_user_gen_dan (id, user_phone, teacher_id
         )
         values (#{id,jdbcType=INTEGER}, #{userPhone,jdbcType=VARCHAR}, #{teacherId,jdbcType=INTEGER}
         )
     </insert>
 
-    <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybUserGenDan">
+    <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
         insert into tyb_user_gen_dan
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -55,7 +55,7 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybUserGenDan">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
         update tyb_user_gen_dan
         <set>
             <if test="userPhone != null">
@@ -68,7 +68,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybUserGenDan">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
         update tyb_user_gen_dan
         set user_phone = #{userPhone,jdbcType=VARCHAR},
             teacher_id = #{teacherId,jdbcType=INTEGER}

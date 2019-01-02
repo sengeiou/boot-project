@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzm.modules.tyb.dao.TybImportantMessageMapper" >
+<mapper namespace="com.xzm.tyb.dao.TybImportantMessageMapper" >
   <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.TybImportantMessage" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="time" property="time" jdbcType="TIMESTAMP" />
@@ -31,7 +31,7 @@
     delete from tyb_important_message
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.xzm.modules.tyb.pojo.TybImportantMessage" >
+  <insert id="insert" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
     insert into tyb_important_message (id, time, autoid, 
       preValue, day, name, 
       importence, question, annValue, 
@@ -43,7 +43,7 @@
       #{imageurl,jdbcType=VARCHAR}, #{goodpers,jdbcType=INTEGER}, #{badpers,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.xzm.modules.tyb.pojo.TybImportantMessage" >
+  <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
     insert into tyb_important_message
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -134,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.tyb.pojo.TybImportantMessage" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
     update tyb_important_message
     <set >
       <if test="time != null" >
@@ -179,7 +179,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xzm.modules.tyb.pojo.TybImportantMessage" >
+  <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
     update tyb_important_message
     set time = #{time,jdbcType=TIMESTAMP},
       autoid = #{autoid,jdbcType=VARCHAR},

@@ -56,7 +56,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .select()
 //                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
-                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.tyb.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xzm.tyb.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

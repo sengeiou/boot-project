@@ -1,4 +1,4 @@
-package com.xzm.config;
+package com.xzm.single.config;
 
 import io.swagger.annotations.Api;
 import org.springframework.context.annotation.Bean;
@@ -56,7 +56,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .select()
 //                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
-                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.tyb.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xzm.single.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

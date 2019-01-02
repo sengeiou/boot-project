@@ -23,7 +23,7 @@ public class UserController {
     /**
      * 因为GetMapping 不支持@RequestBody
      */
-    @PostMapping(value = "register", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("注册") // UserForm 前去掉 @RequestBody
     public ServerResponse register(TybUserForm user) {
         return userService.register(user);
@@ -37,14 +37,14 @@ public class UserController {
                     dataType = "String", paramType = "query"),
     })
     @ApiOperation("登陆")
-    @PostMapping("login")
+    @PostMapping("/login")
     public ServerResponse login(@RequestParam("phone") String phone,
                                 @RequestParam("password") String password) {
         return userService.login(phone, password);
     }
 
     @ApiOperation("修改昵称")
-    @PostMapping("resetNickName")
+    @PostMapping("/resetNickName")
     public ServerResponse resetNickName(@RequestParam(value = "access_token") String access_token,
                                         @RequestParam("phone") String phone,
                                         @RequestParam("nick_name") String nick_name) {
@@ -60,7 +60,7 @@ public class UserController {
 
 
     @ApiOperation("用户跟单列表")
-    @GetMapping("selectGenDanTeacherList")
+    @GetMapping("/selectGenDanTeacherList")
     public ServerResponse selectGenDanTeacherList(@RequestParam("access_token") String access_token,
                                                   @RequestParam("phone") String phone) {
 //        PageHelper.startPage(pageNum, pageSize);
@@ -69,7 +69,7 @@ public class UserController {
 
 
     @ApiOperation("开户")
-    @PostMapping("userKaiHu")
+    @PostMapping("/userKaiHu")
     public ServerResponse selectUserKaiHu(@RequestParam("access_token") String access_token,
                                           @RequestParam(value = "phone",required = false) String phone,
                                           @RequestParam("userName") String userName,
@@ -78,7 +78,7 @@ public class UserController {
         return userService.userKaiHu(access_token, phone,userName,idCard,platformCode);
     }
     @ApiOperation("查询开户信息")
-    @GetMapping("selectUserKaiHuInfo")
+    @GetMapping("/selectUserKaiHuInfo")
     public ServerResponse selectUserKaiHuInfo(@RequestParam("access_token") String access_token,
                                               @RequestParam(value = "phone",required = false) String phone) {
         return userService.selectUserKaiHuInfo(access_token, phone);

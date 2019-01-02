@@ -6,15 +6,15 @@ import com.xzm.tyb.pojo.TybImportantMessage;
 
 //@Mapper
 public interface TybImportantMessageMapper extends BaseMapper<TybImportantMessage> {
-//    int deleteByPrimaryKey(Integer id);
-//
-////    int insert(TybImportantMessage record);
-//
-//    int insertSelective(TybImportantMessage record);
-//
-//    TybImportantMessage selectByPrimaryKey(Integer id);
-//
-//    int updateByPrimaryKeySelective(TybImportantMessage record);
-//
-//    int updateByPrimaryKey(TybImportantMessage record);
+    int deleteByPrimaryKey(Integer id);
+
+   int insert(TybImportantMessage record);
+
+    int insertSelective(TybImportantMessage record);
+
+    TybImportantMessage selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(TybImportantMessage record);
+
+    int updateByPrimaryKey(TybImportantMessage record);
 }
