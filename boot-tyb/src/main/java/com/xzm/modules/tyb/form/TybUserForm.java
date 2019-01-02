@@ -2,7 +2,6 @@ package com.xzm.modules.tyb.form;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
 
 @ApiModel(value = "用户表单")

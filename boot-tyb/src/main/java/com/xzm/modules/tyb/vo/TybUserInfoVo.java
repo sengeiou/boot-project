@@ -1,8 +1,6 @@
 package com.xzm.modules.tyb.vo;
 
-import lombok.Data;
 
-//@Data
 public class TybUserInfoVo {
     public UserInfo userInfo;
 
