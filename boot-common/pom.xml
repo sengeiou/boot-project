@@ -57,4 +57,32 @@
             <artifactId>mapper-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>-->
+    <build>
+        <finalName>${project.name}</finalName>
+
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--&lt;!&ndash;&lt;!&ndash; 要打包的文件所在的目录 &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<directory>src/main/</directory>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;&lt;!&ndash; includes 和 excludes 都可以独立配置，也可以同时配置 &ndash;&gt;&ndash;&gt;-->
+
+                <!--&lt;!&ndash;&lt;!&ndash; 指定要打包的文件 &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;&ndash;&gt;-->
+                <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<include>**/*.*</include>&ndash;&gt;-->
+                <!--&lt;!&ndash;</includes>&ndash;&gt;-->
+                <!--&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+
+                <!--&lt;!&ndash;&lt;!&ndash; 或者也可以剔除不需要打包的文件 &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<excludes>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<exclude>**/*.jsp</exclude>&ndash;&gt;-->
+                <!--&lt;!&ndash;</excludes>&ndash;&gt;-->
+
+                <!--&lt;!&ndash; 指定打包到目的文件夹 &ndash;&gt;-->
+                <!--<targetPath>META-INF</targetPath>-->
+            <!--</resource>-->
+        <!--</resources>-->
+        <!--<outputDirectory>${}</outputDirectory>-->
+    </build>
 </project>
