@@ -4,11 +4,11 @@ spring:
         driverClassName: com.mysql.jdbc.Driver
         druid:
             first: #118.24.122.203:3306 #47.100.0.247:3306
-                url: jdbc:mysql://47.100.0.247:3306/tyb?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+                url: jdbc:mysql://118.24.122.203:3306/tyb?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
                 username: root
                 password: xzm348701
             second:
-                url: jdbc:mysql://47.100.0.247:3306/demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+                url: jdbc:mysql://118.24.122.203:3306/demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
                 username: root
                 password: xzm348701
             initial-size: 10

@@ -18,7 +18,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * 用@Configuration注解该类，等价于XML中配置beans；
  * 用@Bean标注方法等价于XML中配置bean。
- *  http://localhost:8080/swagger-ui.html
+ *  http://localhost:8001/single/swagger-ui.html
+ *
+ *  http://localhost:8001/single/doc.html
+ *
+ *  http://patorjk.com/software/taag banner生成地址
  *
  */
 //@Api：修饰整个类，描述Controller的作用
@@ -36,7 +40,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class Swagger2 {
-    private  boolean enable;
+    private  boolean enable = true;
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("api文档")
@@ -80,7 +84,8 @@ public class Swagger2 {
                 .enable(enable);
     }
 
-    @Bean("system")
+//    @Bean("system")
+    @Bean
     public Docket system() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("系统模块")

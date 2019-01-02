@@ -72,8 +72,10 @@
         <jackson-databind.version>2.8.2</jackson-databind.version>
         <jackson-core.version>2.8.2</jackson-core.version>
         <velocity-version>1.7</velocity-version>
-        <mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
-        <mybatisplus.version>2.2.0</mybatisplus.version>
+        <!--<mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>-->
+        <!--<mybatisplus.version>2.2.0</mybatisplus.version>-->
+        <mybatisplus.spring.boot.version>3.0.6</mybatisplus.spring.boot.version>
+        <mybatisplus.version>3.0.6</mybatisplus.version>
         <!-- dp lib versions -->
         <java-version>1.8</java-version>
         <mysql-version>5.1.38</mysql-version>
@@ -430,16 +432,31 @@
 
 
             <!--mybatisplus和springboot整合-->
+            <!--<dependency>-->
+                <!--<groupId>com.baomidou</groupId>-->
+                <!--<artifactId>mybatisplus-spring-boot-starter</artifactId>-->
+                <!--<version>${mybatisplus.spring.boot.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>com.baomidou</groupId>-->
+                <!--<artifactId>mybatis-plus</artifactId>-->
+                <!--<version>${mybatisplus.version}</version>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>com.github.jsqlparser</groupId>-->
+                        <!--<artifactId>jsqlparser</artifactId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
+
+
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatisplus-spring-boot-starter</artifactId>
-                <version>${mybatisplus.spring.boot.version}</version>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.0.6</version>
             </dependency>
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
-                <version>${mybatisplus.version}</version>
-            </dependency>
+
+
 
             <!---->
 
