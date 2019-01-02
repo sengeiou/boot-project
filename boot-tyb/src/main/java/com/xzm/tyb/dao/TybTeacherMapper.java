@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 //@Mapper extends Mapper
-@Mapper
+//@Mapper
 
 /**
  * extends Mapper<TybTeacher>

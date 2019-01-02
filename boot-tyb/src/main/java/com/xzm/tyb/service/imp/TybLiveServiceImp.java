@@ -19,15 +19,15 @@ import java.util.List;
 @Service
 public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> implements TybLiveService {
     private  Log logger = LogFactory.getLog(getClass());
-    @Autowired
+    @Resource
     private TybHanDanPaiHangMapper handanPaiHangMapper;
-    @Autowired
+    @Resource
     private TybLiveTopMapper LiveTopMapper;
     @Resource
     private TybImportantMessageMapper importantMessageMapper;
     @Resource
     private TybTeacherMapper tybTeacherMapper;
-    @Autowired
+    @Resource
     private TybUserGenDanMapper tybUserGenDanMapper;
     @Override
     public ServerResponse<TybHanDanPaiHang> selectHanDanByPrimaryKey(Integer id) {
