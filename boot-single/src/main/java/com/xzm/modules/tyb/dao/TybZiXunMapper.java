@@ -1,6 +1,6 @@
 package com.xzm.modules.tyb.dao;
 
-import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.modules.tyb.pojo.TybZiXun;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

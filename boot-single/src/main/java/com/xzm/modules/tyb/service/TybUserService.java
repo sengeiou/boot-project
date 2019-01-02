@@ -2,9 +2,9 @@ package com.xzm.modules.tyb.service;
 
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.modules.tyb.vo.TybTeacherHanDanVo;
+import com.xzm.modules.tyb.vo.TybUserInfoVo;
 import com.xzm.modules.tyb.vo.TybUserKaiHuInfoVo;
 import com.xzm.tyb.form.TybUserForm;
-import com.xzm.tyb.vo.TybUserInfoVo;
 
 
 public interface TybUserService {

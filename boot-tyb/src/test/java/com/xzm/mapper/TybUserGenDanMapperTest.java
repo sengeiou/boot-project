@@ -1,11 +1,12 @@
 package com.xzm.mapper;
 
-import com.xzm.modules.tyb.dao.TybTeacherHanDanMapper;
-import com.xzm.modules.tyb.dao.TybTeacherMapper;
-import com.xzm.modules.tyb.dao.TybUserGenDanMapper;
-import com.xzm.modules.tyb.pojo.TybTeacher;
-import com.xzm.modules.tyb.pojo.TybTeacherHanDan;
-import com.xzm.modules.tyb.pojo.TybUserGenDan;
+
+import com.xzm.tyb.dao.TybTeacherHanDanMapper;
+import com.xzm.tyb.dao.TybTeacherMapper;
+import com.xzm.tyb.dao.TybUserGenDanMapper;
+import com.xzm.tyb.pojo.TybTeacher;
+import com.xzm.tyb.pojo.TybTeacherHanDan;
+import com.xzm.tyb.pojo.TybUserGenDan;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Before;
 import org.junit.Test;

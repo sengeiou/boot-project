@@ -1,6 +1,6 @@
 package com.xzm.modules.tyb.dao;
 
-import com.xzm.tyb.pojo.TybTeacher;
+import com.xzm.modules.tyb.pojo.TybTeacher;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

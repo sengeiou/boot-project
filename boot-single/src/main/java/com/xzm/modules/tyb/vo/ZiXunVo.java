@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.vo;
 
-import com.xzm.tyb.pojo.TybZiXun;
+
+import com.xzm.modules.tyb.pojo.TybZiXun;
 
 import java.util.List;
 public class ZiXunVo {

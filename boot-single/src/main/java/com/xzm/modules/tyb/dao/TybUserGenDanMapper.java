@@ -1,6 +1,6 @@
 package com.xzm.modules.tyb.dao;
 
-import com.xzm.tyb.pojo.TybUserGenDan;
+import com.xzm.modules.tyb.pojo.TybUserGenDan;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

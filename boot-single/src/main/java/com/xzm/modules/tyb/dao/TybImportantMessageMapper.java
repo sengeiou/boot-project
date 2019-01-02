@@ -1,6 +1,6 @@
 package com.xzm.modules.tyb.dao;
 
-import com.xzm.tyb.pojo.TybImportantMessage;
+import com.xzm.modules.tyb.pojo.TybImportantMessage;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

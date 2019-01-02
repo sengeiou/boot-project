@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.vo;
 
-import com.xzm.tyb.pojo.TybTeacher;
+
+import com.xzm.modules.tyb.pojo.TybTeacher;
 
 public class TybTeacherDetailVo  {
     private  TeacherDetail object;

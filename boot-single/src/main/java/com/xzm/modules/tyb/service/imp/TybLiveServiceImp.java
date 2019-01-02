@@ -2,12 +2,9 @@ package com.xzm.modules.tyb.service.imp;
 
 import com.xzm.common.entity.ServerResponse;
 import com.xzm.modules.tyb.dao.*;
+import com.xzm.modules.tyb.pojo.*;
 import com.xzm.modules.tyb.service.TybLiveService;
 import com.xzm.modules.tyb.vo.*;
-import com.xzm.tyb.pojo.TybHanDanPaiHang;
-import com.xzm.tyb.pojo.TybImportantMessage;
-import com.xzm.tyb.pojo.TybUserGenDan;
-import com.xzm.tyb.pojo.liveTop;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +75,7 @@ public class TybLiveServiceImp implements TybLiveService {
             Integer teacherId = item.getTeacherId();
             logger.debug("====查询用户老师ID==" + teacherId);
         });
-        List<com.xzm.tyb.pojo.TybTeacher> tybTeachers = tybTeacherMapper.selectTeacherList();
+        List<TybTeacher> tybTeachers = tybTeacherMapper.selectTeacherList();
         tybTeachers.forEach(teacherItem -> {
 
         });
@@ -98,7 +95,7 @@ public class TybLiveServiceImp implements TybLiveService {
 //            Integer teacherId = item.getTeacherId();
 //            logger.debug("====查询用户老师ID==" + teacherId);
 //        });
-        com.xzm.tyb.pojo.TybTeacher tybTeacher = tybTeacherMapper.selectByPrimaryKey(teacherId);
+        TybTeacher tybTeacher = tybTeacherMapper.selectByPrimaryKey(teacherId);
         TybTeacherDetailVo teacherDetailVo = new TybTeacherDetailVo();
         TybTeacherDetailVo.TeacherDetail teacherDetail = new TybTeacherDetailVo.TeacherDetail();
         teacherDetail.setStatus(0);

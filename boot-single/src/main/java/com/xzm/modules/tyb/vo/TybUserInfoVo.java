@@ -1,7 +1,5 @@
-package com.xzm.tyb.vo;
+package com.xzm.modules.tyb.vo;
 
-
-//@Data
 public class TybUserInfoVo {
     public UserInfo userInfo;
 

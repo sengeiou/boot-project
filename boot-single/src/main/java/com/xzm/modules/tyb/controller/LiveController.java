@@ -5,7 +5,6 @@ import com.xzm.common.entity.ServerResponse;
 import com.xzm.modules.tyb.dao.TybUserGenDanMapper;
 import com.xzm.modules.tyb.service.TybLiveService;
 import com.xzm.modules.tyb.service.TybZiXunService;
-import com.xzm.tyb.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

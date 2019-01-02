@@ -1,4 +1,4 @@
-package com.xzm.tyb.pojo;
+package com.xzm.modules.tyb.pojo;
 
 public class TybUserGenDan {
     private Integer id;

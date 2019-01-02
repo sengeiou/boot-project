@@ -1,4 +1,4 @@
-package com.xzm.tyb.pojo;
+package com.xzm.modules.tyb.pojo;
 
 import java.util.Date;
 

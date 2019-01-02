@@ -1,6 +1,5 @@
 package com.springmvc.entity;
 
-import lombok.*;
 
 import java.io.Serializable;
 

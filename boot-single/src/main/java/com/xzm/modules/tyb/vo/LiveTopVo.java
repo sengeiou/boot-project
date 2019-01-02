@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.vo;
 
-import com.xzm.tyb.pojo.liveTop;
+
+import com.xzm.modules.tyb.pojo.liveTop;
 
 import java.util.List;
 

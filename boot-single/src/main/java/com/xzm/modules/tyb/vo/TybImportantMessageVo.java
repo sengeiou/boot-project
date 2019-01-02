@@ -1,6 +1,7 @@
 package com.xzm.modules.tyb.vo;
 
-import com.xzm.tyb.pojo.TybImportantMessage;
+
+import com.xzm.modules.tyb.pojo.TybImportantMessage;
 
 public class TybImportantMessageVo {
      TybImportantMessage object;

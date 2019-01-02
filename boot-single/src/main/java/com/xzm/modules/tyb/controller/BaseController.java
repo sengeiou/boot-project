@@ -1,5 +1,4 @@
-package com.xzm.tyb.controller;
-
+package com.xzm.modules.tyb.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
