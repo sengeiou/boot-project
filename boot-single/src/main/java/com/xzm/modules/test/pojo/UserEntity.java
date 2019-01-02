@@ -47,6 +47,9 @@ public class UserEntity extends BaseEntity implements Serializable
         this.pwd = pwd;
     }
 
+    public UserEntity() {
+    }
+
     public Long getId() {
         return id;
     }

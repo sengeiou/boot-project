@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Api("用户接口")
 @RestController
-@RequestMapping(value = "/tyb/user")
-public class TybUserController {
+@RequestMapping(value = "/user")
+public class UserController {
 //    private static final Log logger = LogFactory.getLog(TybUserController.class);
     @Autowired
     private TybUserService userService;

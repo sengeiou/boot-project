@@ -109,11 +109,11 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
         <!-- 热部署模块 -->
-        <dependency>
+   <!--     <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
-        </dependency>
+            <optional>true</optional> &lt;!&ndash; 这个需要为 true 热部署才有效 &ndash;&gt;
+        </dependency>-->
         <!--swagger 接口Api文档-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -180,13 +180,13 @@
                     <!--fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
                     <fork>true</fork>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>1.2.5.RELEASE</version>
-                    </dependency>
-                </dependencies>
+                <!--<dependencies>-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.springframework</groupId>-->
+                        <!--<artifactId>springloaded</artifactId>-->
+                        <!--<version>1.2.5.RELEASE</version>-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
             </plugin>
             <!-- test generator 自动生成代码插件 -->
             <plugin>

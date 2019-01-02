@@ -17,16 +17,16 @@
 package com.xzm.config;
 
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * mybatis-plus配置
- *
- * @author Mark sunlightcs@gmail.com
- * @since 2.0.0 2018-02-05
  */
 @Configuration
+@MapperScan({"com.xzm.modules.tyb.dao","com.xzm.modules.sys.dao",
+        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class MybatisPlusConfig {
 
     /**

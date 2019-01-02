@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Api("webView部分")
 @Controller
-@RequestMapping("/tyb/webView")
+@RequestMapping("/webView")
 public class WebViewController {
 //   @Autowired
 //   private RedisTemplate redisTemplate;

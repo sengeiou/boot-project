@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  * 直播首页
  */
 @RestController
-@RequestMapping(value = "/tyb/teacher")
-public class TybTeacherController {
-    private static final Log logger = LogFactory.getLog(TybTeacherController.class);
+@RequestMapping(value = "/teacher")
+public class TeacherController {
+    private static final Log logger = LogFactory.getLog(TeacherController.class);
 //    @Autowired
 //    private TybLiveService liveService;
 //    @Autowired
