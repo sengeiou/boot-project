@@ -1,4 +1,3 @@
 target/
-!.mvn/wrapper/maven-wrapper.jar
-/logs/
-boot-tyb.iml
+*.iml
+/src/test
