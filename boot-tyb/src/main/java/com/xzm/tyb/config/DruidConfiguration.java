@@ -15,12 +15,14 @@ import org.springframework.context.annotation.Configuration;
  * Time：21:46
  * 码云：http://git.oschina.net/jnyqy
  * ========================
+ * http://localhost:8001/single/druid/index.html
  */
 @Configuration
 public class DruidConfiguration {
 
     @Bean
     public ServletRegistrationBean statViewServlet(){
+        System.out.println("=");
         //创建servlet注册实体
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
         //设置ip白名单

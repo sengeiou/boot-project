@@ -1,4 +1,4 @@
-package com.xzm.dialect;
+package com.xzm.single.dialect;
 
 /**
  * MySQL数据库方言
@@ -14,11 +14,11 @@ public class MySql5Dialect extends Dialect {
 
     @Override
     public String getLimitString(String sql, int offset, int limit) {
-        return MySql5PageHepler.getLimitString(sql, offset, limit);
+        return com.xzm.dialect.MySql5PageHepler.getLimitString(sql, offset, limit);
     }
 
     @Override
     public String getCountString(String sql) {
-        return MySql5PageHepler.getCountString(sql);
+        return com.xzm.dialect.MySql5PageHepler.getCountString(sql);
     }
 }

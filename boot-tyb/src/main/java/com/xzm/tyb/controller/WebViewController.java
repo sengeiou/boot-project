@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Api("webView部分")
 @Controller
-@RequestMapping("/webView")
+@RequestMapping("/h5")
 public class WebViewController {
 //   @Autowired
 //   private RedisTemplate redisTemplate;
@@ -23,7 +23,7 @@ public class WebViewController {
      * 金色星期三 活动
      */
     @ApiOperation("金色星期三")
-    @RequestMapping(value = "/goldenWed" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/act/one" ,method = RequestMethod.GET)
     public String goldenWed(){
         logger.debug("====");
         return "tyb/activities/golden_wed";
@@ -33,7 +33,7 @@ public class WebViewController {
      * 一元投 活动
      */
     @ApiOperation("一元投")
-    @RequestMapping(value = "/oneYuanInvest",method = RequestMethod.GET)
+    @RequestMapping(value = "/act/two",method = RequestMethod.GET)
     public String oneYuanInvest(){
         return "tyb/activities/one_yuan_invest";
     }
@@ -42,7 +42,7 @@ public class WebViewController {
      * 一键开户 活动
      */
     @ApiOperation("一键开户")
-    @RequestMapping(value = "/openAccount",method = RequestMethod.GET)
+    @RequestMapping(value = "/act/three",method = RequestMethod.GET)
     public String openAccount(){
         return "tyb/activities/open_account";
     }
@@ -51,7 +51,7 @@ public class WebViewController {
      * 关于我们
      */
     @ApiOperation("关于我们")
-    @RequestMapping(value = "/aboutApp",method = RequestMethod.GET)
+    @RequestMapping(value = "/act/four",method = RequestMethod.GET)
     public String aboutApp(){
         return "tyb/others/about_app";
     }
@@ -59,7 +59,7 @@ public class WebViewController {
      * 新闻资讯
      */
     @ApiOperation("新闻资讯")
-    @RequestMapping(value = "/news",method = RequestMethod.GET)
+    @RequestMapping(value = "/act/five",method = RequestMethod.GET)
     public String news(){
         return "tyb/others/news";
     }

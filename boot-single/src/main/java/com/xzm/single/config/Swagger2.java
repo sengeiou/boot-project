@@ -24,6 +24,9 @@ import springfox.documentation.spring.web.plugins.Docket;
  *
  *  http://patorjk.com/software/taag banner生成地址
  *
+ *  http://localhost:8001/single/swagger-resources
+ *  http://localhost:8001/single/v2/api-docs?group=groupName
+ *  http://localhost:8001/single/v2/api-docs-ext?group=groupName
  */
 //@Api：修饰整个类，描述Controller的作用
 //@ApiOperation：描述一个类的一个方法，或者说一个接口

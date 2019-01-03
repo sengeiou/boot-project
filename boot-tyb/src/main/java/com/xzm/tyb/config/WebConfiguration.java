@@ -3,7 +3,7 @@ package com.xzm.tyb.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-//import com.xzm.common.interceptor.SessionInterceptor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -11,9 +11,12 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import springfox.documentation.spring.web.SpringfoxWebMvcConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.xzm.common.interceptor.SessionInterceptor;
 
 /**
  * ========================
@@ -28,7 +31,9 @@ import java.util.List;
  * 來源：简书
  * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
+
 @Configuration
+@ConditionalOnClass(SpringfoxWebMvcConfiguration.class)
 public class WebConfiguration extends WebMvcConfigurerAdapter {
     /**
      * 允许跨域
@@ -45,8 +50,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     //自定义静态资源文件路径
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/com/xzm/resources/**")
-                .addResourceLocations("classpath:/static/");
+//        registry.addResourceHandler("/com/xzm/resources/**")
+//                .addResourceLocations("classpath:/static/");
 //        registry.addResourceHandler("/images/**")
 //                .addResourceLocations("classpath:/static/app/images");
 //        registry.addResourceHandler("/src/main/webapp/**")
@@ -60,22 +65,28 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
          * 修复继承WebMvcConfigurationSupport之后，
          * 静态文件映射会出现问题，需要重新指定静态资源
          */
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-        registry.addResourceHandler("/favicon.ico")
-                .addResourceLocations("classpath:/META-INF/resources/favicon.ico");
+//        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+//        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+//        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+//        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/favicon.ico");
+
+
+
+
+        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
         super.addResourceHandlers(registry);
     }
 
 
     /**
      * fastJson修改自定义消息转换器
+     *
      * @param converters 消息转换器列表
      */
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        System.out.println("===");
         //调用父类的配置
         super.configureMessageConverters(converters);
         //创建fastJson消息转换器
@@ -100,6 +111,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     /**
      * 添加自定义拦截器
+     *
      * @param registry
      */
     @Override

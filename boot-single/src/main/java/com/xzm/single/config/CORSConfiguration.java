@@ -1,4 +1,4 @@
-package com.xzm.config;
+package com.xzm.single.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -22,8 +22,7 @@ public class CORSConfiguration extends WebMvcConfigurerAdapter
 {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry
-                .addMapping("/**")
+        registry.addMapping("/**")
                 .allowedMethods("*")
                 .allowedOrigins("*")
                 .allowedHeaders("*");

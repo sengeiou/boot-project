@@ -4,7 +4,7 @@
 <configuration>
 
     <properties>
-        <property name="dialectClass" value="com.xzm.dialect.MySql5Dialect"/>
+        <property name="dialectClass" value="com.xzm.single.dialect.MySql5Dialect"/>
     </properties>
 	
 	<!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->

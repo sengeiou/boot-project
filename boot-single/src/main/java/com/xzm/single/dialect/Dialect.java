@@ -1,4 +1,4 @@
-package com.xzm.dialect;
+package com.xzm.single.dialect;
 
 /**
  * 数据库方言抽象类

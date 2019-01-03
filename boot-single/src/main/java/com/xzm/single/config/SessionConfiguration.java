@@ -1,4 +1,4 @@
-package com.xzm.config;
+package com.xzm.single.config;
 
 import com.xzm.common.interceptor.SessionInterceptor;
 import org.springframework.context.annotation.Configuration;

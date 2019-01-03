@@ -1,11 +1,10 @@
 package com.xzm.tyb.dao;
 
 import com.xzm.tyb.pojo.TybUserKaiHu;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-@Mapper
+//@Mapper
 
 //@Mapper
 public interface TybUserKaiHuMapper {

@@ -1,6 +1,5 @@
 package com.xzm.tyb.controller;
 
-
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.form.TybUserForm;
 import com.xzm.tyb.service.TybUserService;
@@ -12,11 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@Api("用户接口")
+//@Api("用户接口")
+@Api(tags ="用户")
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
-//    private static final Log logger = LogFactory.getLog(TybUserController.class);
+    //    private static final Log logger = LogFactory.getLog(TybUserController.class);
     @Autowired
     private TybUserService userService;
 
@@ -24,7 +24,7 @@ public class UserController {
      * 因为GetMapping 不支持@RequestBody
      */
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation("注册") // UserForm 前去掉 @RequestBody
+    @ApiOperation("注册")
     public ServerResponse register(TybUserForm user) {
         return userService.register(user);
     }
@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @ApiOperation("修改昵称")
-    @PostMapping("/resetNickName")
+    @PostMapping("/nickname/modify")
     public ServerResponse resetNickName(@RequestParam(value = "access_token") String access_token,
                                         @RequestParam("phone") String phone,
                                         @RequestParam("nick_name") String nick_name) {
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @ApiOperation("获取用户信息")
-    @GetMapping("getUserInfo")
+    @GetMapping("/info")
     public ServerResponse getUserInfo(@RequestParam(value = "access_token") String access_token,
                                       @RequestParam("phone") String phone) {
         return userService.getUserInfo(access_token, phone);
@@ -60,7 +60,7 @@ public class UserController {
 
 
     @ApiOperation("用户跟单列表")
-    @GetMapping("/selectGenDanTeacherList")
+    @GetMapping("/order/list")
     public ServerResponse selectGenDanTeacherList(@RequestParam("access_token") String access_token,
                                                   @RequestParam("phone") String phone) {
 //        PageHelper.startPage(pageNum, pageSize);
@@ -69,7 +69,7 @@ public class UserController {
 
 
     @ApiOperation("开户")
-    @PostMapping("/userKaiHu")
+    @PostMapping("/account/open")
     public ServerResponse selectUserKaiHu(@RequestParam("access_token") String access_token,
                                           @RequestParam(value = "phone",required = false) String phone,
                                           @RequestParam("userName") String userName,
@@ -78,7 +78,7 @@ public class UserController {
         return userService.userKaiHu(access_token, phone,userName,idCard,platformCode);
     }
     @ApiOperation("查询开户信息")
-    @GetMapping("/selectUserKaiHuInfo")
+    @GetMapping("/account/info")
     public ServerResponse selectUserKaiHuInfo(@RequestParam("access_token") String access_token,
                                               @RequestParam(value = "phone",required = false) String phone) {
         return userService.selectUserKaiHuInfo(access_token, phone);

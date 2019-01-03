@@ -93,7 +93,6 @@ public class TybUserServiceImp implements TybUserService {
         if (count == 1) {
             return ServerResponse.createBySuccess("注册成功");
         }
-
 //        if (count > 0) {
 //            return ServerResponse.createBySuccess("注册成功");
 //        }

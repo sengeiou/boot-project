@@ -109,14 +109,14 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <!--     ==== Spring Boot Mybatis 依赖 开始======-->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis.spring.boot</groupId>-->
+            <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.github.pagehelper</groupId>-->
+            <!--<artifactId>pagehelper-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>tk.mybatis</groupId>-->
             <!--<artifactId>mapper-spring-boot-starter</artifactId>-->
@@ -142,20 +142,37 @@
         </dependency>
 
         <!--swagger 接口Api文档-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.springfox</groupId>-->
+            <!--<artifactId>springfox-swagger2</artifactId>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.springfox</groupId>-->
+            <!--<artifactId>springfox-swagger-ui</artifactId>-->
+        <!--</dependency>-->
         <!--Lombok-->
         <!--<dependency>-->
             <!--<groupId>org.projectlombok</groupId>-->
             <!--<artifactId>lombok</artifactId>-->
         <!--</dependency>-->
+
+
+        <!--bootstrap swagger 接口Api文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+        </dependency>
+
+
         <!--jackson序列化-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>

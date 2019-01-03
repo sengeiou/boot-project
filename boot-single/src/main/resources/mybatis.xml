@@ -3,9 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties>
-        <property name="dialectClass" value="com.xzm.dialect.MySql5Dialect"/>
-    </properties>
+    <!--<properties>-->
+        <!--<property name="dialectClass" value="com.xzm.single.dialect.MySql5Dialect"/>-->
+    <!--</properties>-->
 	
 	<!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->
     <settings>
@@ -56,9 +56,9 @@
 
     </settings>
     
-    <plugins>
-        <plugin interceptor="com.xzm.common.interceptor.PaginationResultSetHandlerInterceptor"/>
-        <plugin interceptor="com.xzm.common.interceptor.PaginationStatementHandlerInterceptor"/>
-    </plugins>
+    <!--<plugins>-->
+        <!--<plugin interceptor="com.xzm.common.interceptor.PaginationResultSetHandlerInterceptor"/>-->
+        <!--<plugin interceptor="com.xzm.common.interceptor.PaginationStatementHandlerInterceptor"/>-->
+    <!--</plugins>-->
     
 </configuration>
