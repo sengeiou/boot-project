@@ -2,18 +2,18 @@ package com.springmvc.controller;
 
 
 //import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.springmvc.entity.Employee;
 import com.springmvc.entity.Msg;
 import com.springmvc.service.impl.EmployeeService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/emp")
 public class EmployeeController {
-	private Logger logger = Logger.getLogger(TestController.class);
+//	private Logger logger = Logger.getLogger(TestController.class);
 	@Autowired
 	EmployeeService employeeService;
 
@@ -119,7 +119,7 @@ public class EmployeeController {
 	@RequestMapping(value="/emp/{id}",method= RequestMethod.GET)
 	@ResponseBody
 	public Msg getEmp(@PathVariable("id")Integer id){
-          logger.error("查询员工==="+id);
+//          logger.error("查询员工==="+id);
 		Employee employee = employeeService.getEmp(id);
 		return Msg.success().add("emp", employee);
 	}
@@ -134,7 +134,7 @@ public class EmployeeController {
 	@RequestMapping("/checkuser")
 	public Msg checkuser(@RequestParam("empName")String empName){
 		System.out.println("检查姓名====");
-		logger.debug("===检查姓名====");
+//		logger.debug("===检查姓名====");
 		//先判断用户名是否是合法的表达式;
 		String regx = "(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,5})";
 
@@ -192,7 +192,7 @@ public class EmployeeController {
 		// 这不是一个分页查询
 		// 引入PageHelper分页插件
 		// 在查询之前只需要调用，传入页码，以及每页的大小
-		logger.debug("====当前请求==="+pn);
+//		logger.debug("====当前请求==="+pn);
 		PageHelper.startPage(pn, 5);
 		// startPage后面紧跟的这个查询就是一个分页查询
 		List<Employee> emps = employeeService.getAll();
@@ -216,7 +216,7 @@ public class EmployeeController {
 		// startPage后面紧跟的这个查询就是一个分页查询
 		List<Employee> emps = employeeService.getAll();
 		 for (int i = 0; i < emps.size(); i++) {
-			 logger.debug("查询员工=="+emps.get(i).getEmpName());
+//			 logger.debug("查询员工=="+emps.get(i).getEmpName());
 		 }
 		// 使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
 		// 封装了详细的分页信息,包括有我们查询出来的数据，传入连续显示的页数
@@ -235,7 +235,7 @@ public class EmployeeController {
 	@RequestMapping("/getEmpDetail")
 	@ResponseBody
 	public  Msg getEmpDetail(Employee employee) {
-		logger.debug("得到员工详情==="+employee.getEmpName());
+//		logger.debug("得到员工详情==="+employee.getEmpName());
 		return  Msg.success().add("成功", "");
 	}
 

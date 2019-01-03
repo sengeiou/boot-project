@@ -6,7 +6,6 @@ import com.springmvc.entity.Employee;
 import com.springmvc.entity.UserList;
 import com.springmvc.service.TestUserListService;
 import com.springmvc.service.impl.EmployeeService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +25,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/test")
 public class TestController {
-    private Logger logger = Logger.getLogger(TestController.class);
+//    private Logger logger = Logger.getLogger(TestController.class);
     @Autowired
     EmployeeService employeeService;
     @Autowired
@@ -77,11 +76,11 @@ public class TestController {
 //        logger.info("查询55="+list.getUSex());
 //        logger.info("查询66="+list.getUAge());
         UserList list = testUserListServices.selectByPrimaryKey(6);
-        logger.info("查询11="+list.getuName());
-        logger.info("查询33="+list.getuPassword());
-        logger.info("查询44="+list.getuPhonenumber());
-        logger.info("查询55="+list.getuSex());
-        logger.info("查询66="+list.getuSex());
+//        logger.info("查询11="+list.getuName());
+//        logger.info("查询33="+list.getuPassword());
+//        logger.info("查询44="+list.getuPhonenumber());
+//        logger.info("查询55="+list.getuSex());
+//        logger.info("查询66="+list.getuSex());
         return "getUser";
     }
 
@@ -100,7 +99,8 @@ public class TestController {
         // startPage后面紧跟的这个查询就是一个分页查询
         List<Employee> emps = employeeService.getAll();
         for (int i = 0; i < emps.size(); i++) {
-            logger.debug("查询员工=="+emps.get(i).getEmpName());;
+//            logger.debug("查询员工=="+emps.get(i).getEmpName());;
+            System.out.println("===");
         }
         // 使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         // 封装了详细的分页信息,包括有我们查询出来的数据，传入连续显示的页数

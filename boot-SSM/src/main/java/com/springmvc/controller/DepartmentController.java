@@ -2,7 +2,6 @@ package com.springmvc.controller;
 import com.springmvc.entity.Department;
 import com.springmvc.entity.Msg;
 import com.springmvc.service.impl.DepartmentService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,7 @@ import java.util.List;
 @Controller
 public class DepartmentController {
 
-	private Logger logger = Logger.getLogger(getClass());
+//   private Log logger = Logger.getLogger(getClass());
 	@Autowired
 	private DepartmentService departmentService;
 
@@ -32,9 +31,9 @@ public class DepartmentController {
 		//查出的所有部门信息
 
 
-		logger.debug("查询部门信息==");
+//		logger.debug("查询部门信息==");
 		List<Department> list = departmentService.getDepts();
-		logger.debug("查询部门信息=="+list.get(0).getDeptName());
+//		logger.debug("查询部门信息=="+list.get(0).getDeptName());
 		return Msg.success().add("depts", list);
 	}
 

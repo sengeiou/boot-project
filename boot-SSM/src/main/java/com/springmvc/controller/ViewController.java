@@ -7,7 +7,6 @@ import com.springmvc.service.UserListService;
 import com.springmvc.service.UserService;
 import com.springmvc.service.impl.EmployeeService;
 import org.apache.commons.collections.map.HashedMap;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class ViewController {
-    private Logger logger = Logger.getLogger(ViewController.class);
+//    private Logger logger = Logger.getLogger(ViewController.class);
 
     //    @Resource(name = "UserService")
     @Resource   /*不要name属性也可以*/
@@ -47,16 +47,16 @@ public class ViewController {
 
         Map<String, Object> map = new HashedMap();
         System.out.println("你已通过springMVC进入controller方法。。。。");
-        logger.info("你已通过springMVC进入controller方法。。。。");
+//        logger.info("你已通过springMVC进入controller方法。。。。");
         String usernames = request.getParameter("username");
         String passwords = request.getParameter("password");
-        logger.debug("用户名=xxx==" + usernames);
-        logger.debug("用户密码=xxxx==" + passwords);
-        logger.debug("用户名===" + user.getUsername());
-        logger.debug("用户密码===" + user.getPassword());
+//        logger.debug("用户名=xxx==" + usernames);
+//        logger.debug("用户密码=xxxx==" + passwords);
+//        logger.debug("用户名===" + user.getUsername());
+//        logger.debug("用户密码===" + user.getPassword());
         User query = userService.findByUsernameAndPwd(user.getUsername(), user.getPassword());
-        logger.debug("查询===用户名===" + query.getUsername());
-        logger.debug("查询==用户密码===" + query.getPassword());
+//        logger.debug("查询===用户名===" + query.getUsername());
+//        logger.debug("查询==用户密码===" + query.getPassword());
         if (query != null) {
             map.put("result", "success");
         } else {
@@ -73,7 +73,7 @@ public class ViewController {
 
     @RequestMapping("/ajax")
     public String ajax() {
-        logger.info("登录成功。。。xxxxxxxxxxxxx。");
+//        logger.info("登录成功。。。xxxxxxxxxxxxx。");
         return "ajax";
     }
 
@@ -86,11 +86,11 @@ public class ViewController {
 //        userListService.insert(userList);
 //
         UserList list = userListService.selectByPrimaryKey(6);
-        logger.info("查询11=" + list.getuName());
-        logger.info("查询33=" + list.getuPassword());
-        logger.info("查询44=" + list.getuPhonenumber());
-        logger.info("查询55=" + list.getuSex());
-        logger.info("查询66=" + list.getuAge());
+//        logger.info("查询11=" + list.getuName());
+//        logger.info("查询33=" + list.getuPassword());
+//        logger.info("查询44=" + list.getuPhonenumber());
+//        logger.info("查询55=" + list.getuSex());
+//        logger.info("查询66=" + list.getuAge());
         return "getUser";
     }
 
@@ -126,7 +126,7 @@ public class ViewController {
      */
     @RequestMapping("/login")
     public String login(){
-        logger.debug("======进入到登陆====");
+//        logger.debug("======进入到登陆====");
         return "login";
     }
 
@@ -135,7 +135,7 @@ public class ViewController {
      */
     @RequestMapping("/list")
     public String list(){
-        logger.debug("======员工列表1111====");
+//        logger.debug("======员工列表1111====");
         return "list";
     }
 
@@ -146,7 +146,7 @@ public class ViewController {
      */
     @RequestMapping("/empList")
     public String getEmplist(){
-        logger.debug("======员工列表2222====");
+//        logger.debug("======员工列表2222====");
         return "emplist";
     }
 
@@ -178,7 +178,7 @@ public class ViewController {
      */
     @RequestMapping("/goodslist")
     public String goodslist(){
-        logger.debug("======员工列表2222====");
+//        logger.debug("======员工列表2222====");
         return "goods/goodslist";
     }
 
