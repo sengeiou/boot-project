@@ -28,8 +28,6 @@ public class UserController {
     public ServerResponse register(TybUserForm user) {
         return userService.register(user);
     }
-
-
     @ApiImplicitParams({
             @ApiImplicitParam(name = "phone", value = "手机号", required = true,
                     dataType = "String", paramType = "query"),

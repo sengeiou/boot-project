@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * http://localhost:8080/thymeleaf
  */
-@Api("webView部分")
+@Api(tags = "webView部分")
 @Controller
 @RequestMapping("/h5")
 public class WebViewController {

@@ -1,4 +1,4 @@
-package com.xzm;
+package com.xzm.tyb;
 
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Configuration;

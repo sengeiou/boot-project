@@ -47,6 +47,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 //                .allowedHeaders("*");
     }
 
+
     //自定义静态资源文件路径
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -71,8 +72,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 //        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/favicon.ico");
 
 
-
-
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
         registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
         super.addResourceHandlers(registry);

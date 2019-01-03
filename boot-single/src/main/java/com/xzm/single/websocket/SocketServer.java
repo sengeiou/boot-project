@@ -1,6 +1,7 @@
 package com.xzm.single.websocket;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
@@ -8,7 +9,7 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+@EnableWebSocket // 允许WebSocket
 @ServerEndpoint(value = "/socketServer/{userid}")
 @Component
 public class SocketServer {

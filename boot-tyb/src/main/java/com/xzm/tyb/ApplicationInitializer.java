@@ -1,10 +1,9 @@
-package com.xzm;
+package com.xzm.tyb;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.core.annotation.Order;
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 

@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
@@ -16,8 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 
 //@ImportResource({"classpath:spring.xml"}) 可以代替传统的xml配置
-@EnableWebSocket // 允许WebSocket
-@EnableSwagger2 //开启Swagger文档
+
 @EnableScheduling//开启定时任务
 // mapper 接口类扫描包配置
 //@MapperScan(basePackages = {"com.xzm.modules.sys.dao","com.xzm.modules.tyb.dao"})
