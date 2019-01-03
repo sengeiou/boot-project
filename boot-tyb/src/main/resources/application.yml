@@ -50,7 +50,7 @@ spring:
           cache: false
           prefix: classpath:/templates/
           suffix: .html
-#          mode: LEGACYHTML5
+          mode: LEGACYHTML5
           encoding: UTF-8
           content-type: text/html
   # 指定静态资源的路径
@@ -67,12 +67,14 @@ spring:
       prefix: /WEB-INF/jsp/
 #      views-name:
 
-#mybatis:
-##   mapper-locations: classpath:mapper/*.xml
-##   mapperLocations: classpath:mapper/**/*.xml
-#    mapper-Locations: classpath:mapper/**/*.xml
-#    type-aliases-package: com.xzm.poji
-#    configLocation: classpath:mybatis.xml
+mybatis:
+#   mapper-locations: classpath:mapper/*.xml
+#   mapperLocations: classpath:mapper/**/*.xml
+    mapper-Locations: classpath:mapper/**/*.xml
+    type-aliases-package: com.xzm.tyb.pojo
+    configLocation: classpath:mybatis.xml
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
 #pagehelper分页插件配置
 pagehelper:
     helperDialect: mysql

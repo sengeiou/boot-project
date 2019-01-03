@@ -43,8 +43,7 @@ public class GlobalExceptionResolver {
     public void page403(HttpServletResponse response, NoHandlerFoundException  e) {
 //        HttpStatus notFound = HttpStatus.NOT_FOUND;
         logger.debug("===方法找不到==HttpServletResponse==" + e.getMessage());
-        ServerResponse<Object> serverResponse =
-                ServerResponse.createByErrorCodeMessage(404,"找不到"+e.getMessage());
+        ServerResponse<Object> serverResponse = ServerResponse.createByErrorCodeMessage(404,e.getMessage());
         responseResult(response,serverResponse);
     }
     /**

@@ -47,7 +47,7 @@ public class Swagger2 {
     private  boolean enable = true;
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("api文档")
+                .title("app接口文档")
                 .description("app接口文档")
                 .termsOfServiceUrl("www.smallxzm.top")
                 .version("1.0")
