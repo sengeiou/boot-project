@@ -1,4 +1,4 @@
-package com.xzm.common.interceptor;
+package com.xzm.single.common.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

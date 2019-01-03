@@ -1,7 +1,7 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.common.utils.RegexUtils;
 import com.xzm.tyb.constants.Constants;
@@ -18,14 +18,17 @@ import com.xzm.tyb.service.TybUserService;
 import com.xzm.tyb.vo.TybTeacherHanDanVo;
 import com.xzm.tyb.vo.TybUserInfoVo;
 import com.xzm.tyb.vo.TybUserKaiHuInfoVo;
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+
+//import org.apache.commons.collections.CollectionUtils;
 
 //import org.springframework.util.ObjectUtils;
 

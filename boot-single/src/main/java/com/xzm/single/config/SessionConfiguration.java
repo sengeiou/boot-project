@@ -1,6 +1,6 @@
 package com.xzm.single.config;
 
-import com.xzm.common.interceptor.SessionInterceptor;
+import com.xzm.single.common.interceptor.SessionInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;

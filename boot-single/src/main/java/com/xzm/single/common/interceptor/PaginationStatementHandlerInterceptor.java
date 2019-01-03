@@ -1,8 +1,8 @@
-package com.xzm.common.interceptor;
+package com.xzm.single.common.interceptor;
 
 import com.xzm.common.entity.Page;
-import com.xzm.dialect.Dialect;
-import com.xzm.dialect.DialectFactory;
+import com.xzm.single.dialect.Dialect;
+import com.xzm.single.dialect.DialectFactory;
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;

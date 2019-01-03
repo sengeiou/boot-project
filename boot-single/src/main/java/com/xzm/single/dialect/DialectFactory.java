@@ -1,4 +1,4 @@
-package com.xzm.dialect;
+package com.xzm.single.dialect;
 
 import org.apache.ibatis.session.Configuration;
 

@@ -5,8 +5,8 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.common.exception.RRException;
-import org.apache.shiro.authz.UnauthenticatedException;
-import org.apache.shiro.authz.UnauthorizedException;
+//import org.apache.shiro.authz.UnauthenticatedException;
+//import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,21 +23,21 @@ public class GlobalExceptionResolver {
 
     private final Logger logger = LoggerFactory.getLogger(GlobalExceptionResolver.class);
 
-    @ExceptionHandler(UnauthenticatedException.class)
-    public void page401(HttpServletResponse response, UnauthenticatedException e) {
-        logger.debug("===page401==HttpServletResponse==" + e.getMessage());
-//        ServerResponse<Object> result = new ServerResponse<>();
-//            result.setCode(RetCode.UNAUTHEN).setMsg("用户未登录").setData(null);
-//        responseResult(response, result);
-    }
-
-    @ExceptionHandler(UnauthorizedException.class)
-    public void page403(HttpServletResponse response, UnauthorizedException e) {
-        logger.debug("===page403==HttpServletResponse==" + e.getMessage());
-//        RetResult<Object> result = new RetResult<>();
-//        result.setCode(RetCode.UNAUTHZ).setMsg("用户没有访问权限").setData(null);
-//        responseResult(response, result);
-    }
+//    @ExceptionHandler(UnauthenticatedException.class)
+//    public void page401(HttpServletResponse response, UnauthenticatedException e) {
+//        logger.debug("===page401==HttpServletResponse==" + e.getMessage());
+////        ServerResponse<Object> result = new ServerResponse<>();
+////            result.setCode(RetCode.UNAUTHEN).setMsg("用户未登录").setData(null);
+////        responseResult(response, result);
+//    }
+//
+//    @ExceptionHandler(UnauthorizedException.class)
+//    public void page403(HttpServletResponse response, UnauthorizedException e) {
+//        logger.debug("===page403==HttpServletResponse==" + e.getMessage());
+////        RetResult<Object> result = new RetResult<>();
+////        result.setCode(RetCode.UNAUTHZ).setMsg("用户没有访问权限").setData(null);
+////        responseResult(response, result);
+//    }
     /** 路径方法找不到异常 */
     @ExceptionHandler(NoHandlerFoundException.class)
     public void page403(HttpServletResponse response, NoHandlerFoundException  e) {

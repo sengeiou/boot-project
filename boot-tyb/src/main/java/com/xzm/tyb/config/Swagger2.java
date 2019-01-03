@@ -18,11 +18,15 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * 用@Configuration注解该类，等价于XML中配置beans；
  * 用@Bean标注方法等价于XML中配置bean。
- *  http://localhost:8002/tyb/swagger-ui.html
+ *  http://localhost:8001/single/swagger-ui.html
  *
- *    http://localhost:8002/tyb/doc.html
- *    http://patorjk.com/software/taag banner生成地址
+ *  http://localhost:8001/single/doc.html
  *
+ *  http://patorjk.com/software/taag banner生成地址
+ *
+ *  http://localhost:8001/single/swagger-resources
+ *  http://localhost:8001/single/v2/api-docs?group=groupName
+ *  http://localhost:8001/single/v2/api-docs-ext?group=groupName
  */
 //@Api：修饰整个类，描述Controller的作用
 //@ApiOperation：描述一个类的一个方法，或者说一个接口
@@ -36,11 +40,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 //@ApiImplicitParam：一个请求参数
 //@ApiImplicitParams：多个请求参数
 
-//开启Swagger文档
-//@EnableSwagger2
+
 @Configuration
 public class Swagger2 {
-    private  boolean enable = false;
+    private  boolean enable = true;
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("api文档")
@@ -56,21 +59,21 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .select()
 //                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
-                .apis(RequestHandlerSelectors.basePackage("com.xzm.tyb.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xzm.single.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
-    @Bean
-    public Docket createTestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("测试xxx")
-                .apiInfo(apiInfo())
-                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
-                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+//    @Bean
+//    public Docket createTestApi() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .groupName("测试xxx")
+//                .apiInfo(apiInfo())
+//                .select()
+////                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
+//                .apis(RequestHandlerSelectors.basePackage("com.xzm.test.controller"))
+//                .paths(PathSelectors.any())
+//                .build();
+//    }
     @Bean("test")
     public Docket userApis() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -84,7 +87,8 @@ public class Swagger2 {
                 .enable(enable);
     }
 
-    @Bean("system")
+    //    @Bean("system")
+    @Bean
     public Docket system() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("系统模块")
