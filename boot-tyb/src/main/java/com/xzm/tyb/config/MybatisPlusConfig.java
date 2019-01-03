@@ -17,7 +17,9 @@
 package com.xzm.tyb.config;
 
 //import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +29,7 @@ import org.springframework.context.annotation.Configuration;
 
 //@MapperScan({"com.xzm.modules.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
+@MapperScan("com.xzm.tyb.dao")
 @Configuration
 public class MybatisPlusConfig {
 
