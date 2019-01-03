@@ -7,6 +7,26 @@ import java.util.Date;
 //@Table(name = "sys_role")
 public class TybImportantMessage implements Serializable {
 
+    public TybImportantMessage(Integer id, Date time, String autoid, String prevalue, String day, String name, String importence, String question, String annvalue, String imageurl, Integer goodpers, Integer badpers, Date createTime, Date updataTime) {
+        this.id = id;
+        this.time = time;
+        this.autoid = autoid;
+        this.prevalue = prevalue;
+        this.day = day;
+        this.name = name;
+        this.importence = importence;
+        this.question = question;
+        this.annvalue = annvalue;
+        this.imageurl = imageurl;
+        this.goodpers = goodpers;
+        this.badpers = badpers;
+        this.createTime = createTime;
+        this.updataTime = updataTime;
+    }
+
+    public TybImportantMessage() {
+    }
+
     public TybImportantMessage(Integer id) {
         this.id = id;
     }
