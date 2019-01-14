@@ -15,16 +15,13 @@ import com.xzm.tyb.pojo.TybUser;
 import com.xzm.tyb.pojo.TybUserGenDan;
 import com.xzm.tyb.pojo.TybUserKaiHu;
 import com.xzm.tyb.service.TybUserService;
-import com.xzm.tyb.vo.TybTeacherHanDanVo;
-import com.xzm.tyb.vo.TybUserInfoVo;
-import com.xzm.tyb.vo.TybUserKaiHuInfoVo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,13 +32,13 @@ import java.util.List;
 @Service
 public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> implements TybUserService {
     private static final Log logger = LogFactory.getLog(TybUserServiceImp.class);
-    @Resource
+    @Autowired
     private TybUserMapper userMapper;
-    @Resource
+    @Autowired
     private TybUserGenDanMapper userGenDanMapper;
-    @Resource
+    @Autowired
     private TybTeacherHanDanMapper teacherHanDanMapper;
-    @Resource
+    @Autowired
     private TybUserKaiHuMapper userKaiHuMapper;
 
     /**
@@ -111,19 +108,11 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 获取用户信息
      */
     @Override
-    public TybUserInfoVo getUserInfo(String access_token, String phone) {
+    public TybUser getUserInfo(String access_token, String phone) {
         TybUser tybUser = userMapper.selectByUniqueKey(phone);
         if (!ObjectUtils.isEmpty(tybUser)) {
-            TybUserInfoVo tybUserInfoVo = new TybUserInfoVo();
-            TybUserInfoVo.UserInfo userInfo = new TybUserInfoVo.UserInfo();
-            userInfo.setNickName(tybUser.getNickName());
-            userInfo.setPhone(tybUser.getPhone());
-            userInfo.setPhoneUrl(tybUser.getPhoneUrl());
-            userInfo.setPushStatus(tybUser.getPushStatus());
-            tybUserInfoVo.setUserInfo(userInfo);
-            return tybUserInfoVo;
+            return tybUser;
         }
-//        Throw ServerResponse.createByErrorMessage("获取用户信息失败");
         throw new RRException("获取用户信息失败");
     }
 
@@ -132,7 +121,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 再根据老师ids去查询老师喊单列表
      */
     @Override
-    public TybTeacherHanDanVo selectGenDanTeacherList(String access_token, String phone) {
+    public List<TybTeacherHanDan> selectGenDanTeacherList(String access_token, String phone) {
         List<TybTeacherHanDan> teacherHanDanList = null;
         List<TybUserGenDan> genDanList = userGenDanMapper.selectUserGenDanByUserPhone(phone);
         List<Integer> ids = new ArrayList<>();
@@ -140,23 +129,18 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         if (!CollectionUtils.isEmpty((ids))) {
             teacherHanDanList = teacherHanDanMapper.selectGenDanTeacherListByTeacherIds(ids);
         }
-        TybTeacherHanDanVo teacherHanDanVo = new TybTeacherHanDanVo();
-        teacherHanDanVo.setObject(teacherHanDanList);
-        return teacherHanDanVo;
+        return teacherHanDanList;
     }
 
     /**
      * 查询开户信息
      */
     @Override
-    public TybUserKaiHuInfoVo selectUserKaiHuInfo(String access_token, String phone) {
+    public TybUserKaiHu selectUserKaiHuInfo(String access_token, String phone) {
         List<TybUserKaiHu> tybUserKaiHuList = userKaiHuMapper.selectUserKaiHuInfoByPhone(phone);
         if (!CollectionUtils.isEmpty(tybUserKaiHuList)) {
             TybUserKaiHu tybUserKaiHu = tybUserKaiHuList.get(0);
-            TybUserKaiHuInfoVo userKaiHuInfoVo = new TybUserKaiHuInfoVo();
-            userKaiHuInfoVo.setIdCard(tybUserKaiHu.getIdCard());
-            userKaiHuInfoVo.setUserName(tybUserKaiHu.getUserName());
-            return userKaiHuInfoVo;
+            return tybUserKaiHu;
         } else {
             throw new RRException("您还没有开过户哦");
 
@@ -166,14 +150,9 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 开户
      */
     @Override
-    public String userKaiHu(String access_token,
-                                            String phone,
-                                            String userName,
-                                            String idCard,
-                                            String platformCode) {
+    public String userKaiHu(String access_token, String phone, String userName, String idCard, String platformCode) {
         TybUserKaiHu userKaiHu = userKaiHuMapper.
                 selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(phone, idCard, platformCode);
-
         TybUserKaiHu userKaiHuDo = new TybUserKaiHu();
         if (!ObjectUtils.isEmpty(userKaiHu)) {
             throw new RRException("当前交易所已经开户");
@@ -189,18 +168,11 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         userKaiHuDo.setIdCard(idCard);
         userKaiHuDo.setUserName(userName);
         userKaiHuDo.setPlatformCode(platformCode);
-
         if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[0], platformCode)) {
             userKaiHuDo.setPlatformName("新华上海贵金属交易中心");
         } else if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[1], platformCode)) {
             userKaiHuDo.setPlatformName("上海石油化工交易中心");
         }
-//        logger.debug("提交开会信息=phone==" + phone);
-//        logger.debug("提交开会信息=userName==" + userName);
-//        logger.debug("提交开会信息=idCard==" + idCard);
-//        logger.debug("提交开会信息=platformCode==" + platformCode);
-//        logger.debug("提交开会信息=platformName==" + userKaiHuDo.getPlatformName());
-//        logger.debug("提交开会信息===" + userKaiHuDo.toString());
         int count = userKaiHuMapper.insertSelective(userKaiHuDo);
         logger.debug("提交开会llllllllll===" + count);
         if (count > 0) {

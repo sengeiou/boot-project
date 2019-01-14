@@ -3,9 +3,10 @@ package com.xzm.tyb.service;
 //import com.baomidou.mybatisplus.service.IService;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xzm.tyb.pojo.TybZiXun;
-import com.xzm.tyb.vo.ZiXunVo;
+
+import java.util.List;
 
 
 public interface TybZiXunService extends IService<TybZiXun> {
-    ZiXunVo selectZiXunList(Integer type);
+    List<TybZiXun> selectZiXunList(Integer type);
 }

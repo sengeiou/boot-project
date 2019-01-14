@@ -35,21 +35,6 @@
         delete from tyb_live_Top
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.liveTop">
-        insert into tyb_live_Top (id, title, live_url,
-                                  dian_zan_count, ad_text, ad_url,
-                                  online_count, handan_rate, ying_li,
-                                  main_img, sub_img, create_time,
-                                  updata_time)
-        values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{liveUrl,jdbcType=VARCHAR},
-                                        #{dianZanCount,jdbcType=INTEGER}, #{adText,jdbcType=VARCHAR},
-                                        #{adUrl,jdbcType=VARCHAR},
-                                        #{onlineCount,jdbcType=INTEGER}, #{handanRate,jdbcType=REAL},
-                                        #{yingLi,jdbcType=REAL},
-                                        #{mainImg,jdbcType=VARCHAR}, #{subImg,jdbcType=VARCHAR},
-                #{createTime,jdbcType=TIMESTAMP},
-                #{updataTime,jdbcType=TIMESTAMP})
-    </insert>
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.liveTop">
         insert into tyb_live_Top
         <trim prefix="(" suffix=")" suffixOverrides=",">

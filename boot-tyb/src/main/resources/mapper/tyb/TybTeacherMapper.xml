@@ -68,22 +68,6 @@
         delete from tyb_teacher
         where id = #{id,jdbcType=INTEGER}
     </delete>
-
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybTeacher">
-        insert into tyb_teacher (id, thumb, teacher_name,
-                                 dian_zan_count, hdcgl, profit,
-                                 gen_dan_count, pin_zhong, cang_wei,
-                                 dian_wei, shou_yi, content,
-                                 create_time, updata_time)
-        values (#{id,jdbcType=INTEGER}, #{thumb,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR},
-                                        #{dianZanCount,jdbcType=INTEGER}, #{hdcgl,jdbcType=REAL},
-                                        #{profit,jdbcType=REAL},
-                                        #{genDanCount,jdbcType=VARCHAR}, #{pinZhong,jdbcType=VARCHAR},
-                                        #{cangWei,jdbcType=REAL},
-                                        #{dianWei,jdbcType=REAL}, #{shouYi,jdbcType=REAL}, #{content,jdbcType=VARCHAR},
-                #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
-    </insert>
-
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybTeacher">
         insert into tyb_teacher
         <trim prefix="(" suffix=")" suffixOverrides=",">

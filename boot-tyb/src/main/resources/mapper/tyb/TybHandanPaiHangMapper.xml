@@ -33,7 +33,7 @@
         delete from tyb_han_dan_pai_hang
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
+<!--    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
         insert into tyb_han_dan_pai_hang (id, title, product_type,
                                           order_time, point, profit,
                                           create_time, updata_time)
@@ -45,7 +45,7 @@
                 #{profit,jdbcType=VARCHAR},
                 #{createTime,jdbcType=TIMESTAMP},
                 #{updataTime,jdbcType=TIMESTAMP})
-    </insert>
+    </insert>-->
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
         insert into tyb_han_dan_pai_hang
         <trim prefix="(" suffix=")" suffixOverrides=",">

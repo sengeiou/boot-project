@@ -44,14 +44,7 @@
         delete from tyb_user
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybUser">
-        insert into tyb_user (id, nick_name, phone,
-                              password, phone_url, push_status,
-                              create_time, updata_time)
-        values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
-                #{password,jdbcType=VARCHAR}, #{phoneUrl,jdbcType=VARCHAR}, #{pushStatus,jdbcType=INTEGER},
-                #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
-    </insert>
+
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybUser">
         insert into tyb_user
         <trim prefix="(" suffix=")" suffixOverrides=",">

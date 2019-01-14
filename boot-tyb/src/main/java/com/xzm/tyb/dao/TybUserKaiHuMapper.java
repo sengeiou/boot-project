@@ -1,5 +1,6 @@
 package com.xzm.tyb.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xzm.tyb.pojo.TybUserKaiHu;
 import org.apache.ibatis.annotations.Param;
 
@@ -7,7 +8,7 @@ import java.util.List;
 //@Mapper
 
 //@Mapper
-public interface TybUserKaiHuMapper {
+public interface TybUserKaiHuMapper extends BaseMapper<TybUserKaiHu>{
     int deleteByPrimaryKey(Integer id);
 
 //    int insert(TybUserKaiHu record);
@@ -20,7 +21,7 @@ public interface TybUserKaiHuMapper {
 
     int updateByPrimaryKey(TybUserKaiHu record);
 
-    List<TybUserKaiHu>  selectUserKaiHuInfoByPhone(String phone);
+    List<TybUserKaiHu> selectUserKaiHuInfoByPhone(String phone);
 
     TybUserKaiHu selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(
                                     @Param("phone") String phone,

@@ -1,5 +1,6 @@
 package com.xzm.tyb.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xzm.tyb.pojo.TybTeacherHanDan;
 import org.apache.ibatis.annotations.Param;
 
@@ -7,7 +8,7 @@ import java.util.List;
 //@Mapper
 
 //@Mapper
-public interface TybTeacherHanDanMapper {
+public interface TybTeacherHanDanMapper extends BaseMapper<TybTeacherHanDan> {
     int deleteByPrimaryKey(Integer id);
 
     int insertSelective(TybTeacherHanDan record);

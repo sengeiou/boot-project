@@ -31,18 +31,7 @@
     delete from tyb_important_message
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
-    insert into tyb_important_message (id, time, autoid, 
-      preValue, day, name, 
-      importence, question, annValue, 
-      imageUrl, goodPers, badPers, 
-      create_time, updata_time)
-    values (#{id,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}, #{autoid,jdbcType=VARCHAR}, 
-      #{prevalue,jdbcType=VARCHAR}, #{day,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{importence,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, #{annvalue,jdbcType=VARCHAR}, 
-      #{imageurl,jdbcType=VARCHAR}, #{goodpers,jdbcType=INTEGER}, #{badpers,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
-  </insert>
+
   <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybImportantMessage" >
     insert into tyb_important_message
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -1,21 +1,29 @@
 package com.xzm.tyb.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.xzm.tyb.pojo.TybHanDanPaiHang;
-import com.xzm.tyb.vo.*;
+import com.xzm.tyb.pojo.TybImportantMessage;
+import com.xzm.tyb.pojo.TybTeacher;
+import com.xzm.tyb.pojo.liveTop;
+
+import java.util.List;
+
+
 /**
  * 直播 extends IService<TybTeacher>
  */
-public interface TybLiveService  {
+public interface TybLiveService extends IService<TybTeacher> {
     TybHanDanPaiHang selectHanDanByPrimaryKey(Integer id);
 
-    HandanPaiHangListVo selectHanDanList();
+    List<TybHanDanPaiHang> selectHanDanList();
 
-    LiveTopVo selectLiveTopList();
+    List<liveTop> selectLiveTopList();
 
-    TybImportantMessageVo selectImportantMessageById(Integer id);
+    TybImportantMessage selectImportantMessageById(Integer id);
 
-    TybTeacherVo selectTeacherList(String access_token, String phone);
+    List<TybTeacher> selectTeacherList(String access_token, String phone);
 
-    TybTeacherDetailVo selectTeacherByTeacherId(String access_token,
+    TybTeacher selectTeacherByTeacherId(String access_token,
                                                                 String phone,
                                                                 Integer teacherId);
 }

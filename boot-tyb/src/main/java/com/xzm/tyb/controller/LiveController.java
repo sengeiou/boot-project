@@ -2,7 +2,6 @@ package com.xzm.tyb.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.entity.ServerResponse;
-import com.xzm.tyb.dao.TybUserGenDanMapper;
 import com.xzm.tyb.service.TybLiveService;
 import com.xzm.tyb.service.TybZiXunService;
 import io.swagger.annotations.Api;
@@ -22,8 +21,8 @@ public class LiveController extends BaseController {
     private TybLiveService liveService;
     @Autowired
     private TybZiXunService ziXunService;
-    @Autowired
-    private TybUserGenDanMapper userGenDanMapper;
+//    @Autowired
+//    private TybUserGenDanMapper userGenDanMapper;
 
     @ApiOperation("首页直播室banner")
     @GetMapping("/banner")

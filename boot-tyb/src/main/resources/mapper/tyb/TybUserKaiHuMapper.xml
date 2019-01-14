@@ -27,14 +27,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
 
-  <insert id="insert" parameterType="com.xzm.tyb.pojo.TybUserKaiHu" >
-    insert into tyb_user_kai_hu (id, user_name, id_card, 
-      phone, platform_code, platform_name, 
-      create_time, updata_time)
-    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{platformCode,jdbcType=VARCHAR}, #{platformName,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP})
-  </insert>
+
 
   <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybUserKaiHu">
     insert into tyb_user_kai_hu

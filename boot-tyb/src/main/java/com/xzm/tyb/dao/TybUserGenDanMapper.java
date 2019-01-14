@@ -1,15 +1,14 @@
 package com.xzm.tyb.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xzm.tyb.pojo.TybUserGenDan;
 
 import java.util.List;
 //@Mapper
 //@Mapper
 
-public interface TybUserGenDanMapper {
+public interface TybUserGenDanMapper extends BaseMapper<TybUserGenDan> {
     int deleteByPrimaryKey(Integer id);
-
-//    int insert(TybUserGenDan record);
 
     int insertSelective(TybUserGenDan record);
 

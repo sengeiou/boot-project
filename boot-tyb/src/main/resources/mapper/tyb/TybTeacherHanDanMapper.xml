@@ -41,26 +41,6 @@
     delete from tyb_teacher_han_dan
     where id = #{id,jdbcType=INTEGER}
   </delete>
-
-  <insert id="insert" parameterType="com.xzm.tyb.pojo.TybTeacherHanDan" >
-    insert into tyb_teacher_han_dan (id, kc_time, lei_xing, 
-      cang_wei, cang_wei_type, ping_zhong, 
-      kai_cang_jia, zhi_sun_jia, zhi_yin_jia, 
-      remark, kai_cang_ce_lv, type, 
-      room_id, status, teacher_id, 
-      ping_cang_time, ping_cang_jia, hl_dian, 
-      profit, create_time, updata_time
-      )
-    values (#{id,jdbcType=INTEGER}, #{kcTime,jdbcType=TIMESTAMP}, #{leiXing,jdbcType=VARCHAR}, 
-      #{cangWei,jdbcType=INTEGER}, #{cangWeiType,jdbcType=VARCHAR}, #{pingZhong,jdbcType=VARCHAR}, 
-      #{kaiCangJia,jdbcType=REAL}, #{zhiSunJia,jdbcType=REAL}, #{zhiYinJia,jdbcType=REAL}, 
-      #{remark,jdbcType=VARCHAR}, #{kaiCangCeLv,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
-      #{roomId,jdbcType=REAL}, #{status,jdbcType=INTEGER}, #{teacherId,jdbcType=INTEGER}, 
-      #{pingCangTime,jdbcType=TIMESTAMP}, #{pingCangJia,jdbcType=VARCHAR}, #{hlDian,jdbcType=REAL}, 
-      #{profit,jdbcType=REAL}, #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-
   <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybTeacherHanDan" >
     insert into tyb_teacher_han_dan
     <trim prefix="(" suffix=")" suffixOverrides="," >

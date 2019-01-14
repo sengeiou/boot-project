@@ -21,14 +21,6 @@
         delete from tyb_user_gen_dan
         where id = #{id,jdbcType=INTEGER}
     </delete>
-
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
-        insert into tyb_user_gen_dan (id, user_phone, teacher_id
-        )
-        values (#{id,jdbcType=INTEGER}, #{userPhone,jdbcType=VARCHAR}, #{teacherId,jdbcType=INTEGER}
-        )
-    </insert>
-
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
         insert into tyb_user_gen_dan
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -56,7 +48,7 @@
     </insert>
 
     <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybUserGenDan">
-        update tyb_user_gen_dan
+        update tyb_han_dan_pai_hang
         <set>
             <if test="userPhone != null">
                 user_phone = #{userPhone,jdbcType=VARCHAR},

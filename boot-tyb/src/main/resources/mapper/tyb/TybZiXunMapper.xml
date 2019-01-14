@@ -6,7 +6,7 @@
         <result column="type" property="type" jdbcType="INTEGER"/>
         <result column="title" property="title" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
-        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="url" TybUserGenDanMapper="url" jdbcType="VARCHAR"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
         <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP"/>
     </resultMap>
@@ -23,14 +23,7 @@
     delete from tyb_zi_xun
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybZiXun">
-    insert into tyb_zi_xun (id, type, title,
-      description, url, create_time, 
-      updata_time)
-    values (#{id,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updataTime,jdbcType=TIMESTAMP})
-  </insert>
+
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybZiXun">
         insert into tyb_zi_xun
         <trim prefix="(" suffix=")" suffixOverrides=",">

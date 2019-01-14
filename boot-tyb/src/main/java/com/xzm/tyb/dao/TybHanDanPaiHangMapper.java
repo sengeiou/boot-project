@@ -1,16 +1,15 @@
 package com.xzm.tyb.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xzm.tyb.pojo.TybHanDanPaiHang;
 
 import java.util.List;
-//@Mapper
-//@Mapper
 
-public interface TybHanDanPaiHangMapper {
-    int deleteByPrimaryKey(Integer id);
-//    int insert(TybHanDanPaiHang record);
-    int insertSelective(TybHanDanPaiHang record);
+//@Mapper
+//@Mapper
+public interface TybHanDanPaiHangMapper extends BaseMapper<TybHanDanPaiHang> {
     TybHanDanPaiHang selectByPrimaryKey(Integer id);
+
     int updateByPrimaryKeySelective(TybHanDanPaiHang record);
 
     int updateByPrimaryKey(TybHanDanPaiHang record);
