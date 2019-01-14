@@ -6,7 +6,7 @@
 注意：如果mapper代理方法开发，namespace有重要作用
 在 xxxmapper.xml 中 namespace 等于 mapper 接口地址
 -->
-<mapper namespace="com.xzm.single.modules.test.dao.TestUserMapper">
+<mapper namespace="com.xzm.single.dao.TestUserMapper">
 
     <!--在映射文件中配置很多sql语句-->
 
@@ -61,7 +61,7 @@
     type: resultMap最终映射的java对象类型
     id:对resultMap的唯一标识
     -->
-    <resultMap id="userResultMap" type="com.xzm.modules.test.po.User">
+    <resultMap id="userResultMap" type="com.xzm.single.entity.User">
         <!--id表示查询结果中的唯一标识
         column：查询出来的列名
         property：type指定pojo的属性名
@@ -83,7 +83,7 @@
     #{userCustom.username} :取出pojo包装对象中的用户名称
 
     -->
-    <select id="findUserList" parameterType="com.xzm.modules.test.po.UserQueryVo" resultType="com.xzm.modules.test.po.UserCustom">
+    <select id="findUserList" parameterType="com.xzm.single.entity.UserQueryVo" resultType="com.xzm.single.entity.UserCustom">
 
         select * from user
         <!--where可以自动的去掉条件中的第一个and-->
@@ -101,7 +101,7 @@
     parameterType:指定输入的类型和findUserList一样
     resultType:输出结果类型为 int
     -->
-    <select id="findUserCount" parameterType="com.xzm.modules.test.po.UserQueryVo" resultType="int">
+    <select id="findUserCount" parameterType="com.xzm.single.entity.UserQueryVo" resultType="int">
 
         select count(*) from user
         <!--where可以自动的去掉条件中的第一个and-->
@@ -135,7 +135,7 @@
         resultType：表示指定sql输出结果的所映射的java对象类型
     -->
     <!-- 根据id获取用户信息 -->
-    <select id="findUserById" parameterType="int" resultType="com.xzm.modules.test.po.User" useCache="true">
+    <select id="findUserById" parameterType="int" resultType="com.xzm.single.entity.User" useCache="true">
         select *
         from user
         where id = #{id}
@@ -146,14 +146,14 @@
          使用${}拼接sql，会引起sql注入
          ${value}：接收输入参数的内容，如果传入类型是简单类型，${}中只能够使用value
     -->
-    <select id="findUserByUsername" parameterType="java.lang.String" resultType="com.xzm.modules.test.po.User">
+    <select id="findUserByUsername" parameterType="java.lang.String" resultType="com.xzm.single.entity.User">
         select *
         from user
         where username like '%${value}%'
     </select>
 
     <!-- 添加用户 -->
-    <insert id="insetrUser" parameterType="com.xzm.modules.test.po.User" flushCache="true">
+    <insert id="insetrUser" parameterType="com.xzm.single.entity.User" flushCache="true">
         <!-- selectKey将主键返回，需要再返回
              parameterType：指定输入参数类型是 POJO （包括用户信息）
              添加selectKey实现将主键返回
@@ -190,7 +190,7 @@
         parameterType指定user对象，包括id和更新信息，id必须存在
         #{id}：从输入对象中获取id属性值
     -->
-    <update id="updateUserById" parameterType="com.xzm.modules.test.po.User">
+    <update id="updateUserById" parameterType="com.xzm.single.entity.User">
         update user
         set username = #{username}, birthday = #{birthday}, sex = #{sex}, address = #{address}
         where user.id = #{id}

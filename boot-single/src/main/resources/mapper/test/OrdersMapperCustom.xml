@@ -6,7 +6,7 @@
 注意：如果mapper代理方法开发，namespace有重要作用
 在 xxxmapper.xml 中 namespace 等于 mapper 接口地址
 -->
-<mapper namespace="com.xzm.single.modules.test.dao.OrdersMapperCustom">
+<mapper namespace="com.xzm.single.dao.OrdersMapperCustom">
 
     <!--&lt;!&ndash;定义查询订单关联查询用户信息的resultMap-->
         <!--将整个查询结果映射到cn.zhisheng.mybatis.po.Orders-->

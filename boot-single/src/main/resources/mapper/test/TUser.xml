@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xzm.single.modules.test.dao.TUserMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.modules.test.pojo.TUser">
+<mapper namespace="com.xzm.single.dao.TUserMapper">
+    <resultMap id="BaseResultMap" type="com.xzm.single.entity.TUser">
         <id column="t_id" jdbcType="INTEGER" property="t_id"/>
         <result column="t_name" jdbcType="VARCHAR" property="t_name"/>
         <result column="t_age" jdbcType="INTEGER" property="t_age"/>
@@ -71,7 +71,7 @@
     <sql id="Base_Column_List">
         t_id, t_name, t_age, t_address, t_pwd
     </sql>
-    <select id="selectByExample" parameterType="com.xzm.modules.test.pojo.TUserExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="com.xzm.single.entity.TUserExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -102,19 +102,19 @@
         delete from demo.t_user
         where t_id = #{t_id,jdbcType=INTEGER}
     </delete>
-    <delete id="deleteByExample" parameterType="com.xzm.modules.test.pojo.TUserExample">
+    <delete id="deleteByExample" parameterType="com.xzm.single.entity.TUserExample">
         delete from demo.t_user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.xzm.modules.test.pojo.TUser">
+    <insert id="insert" parameterType="com.xzm.single.entity.TUser">
         insert into demo.t_user (t_id, t_name, t_age,
                                  t_address, t_pwd)
         values (#{t_id,jdbcType=INTEGER}, #{t_name,jdbcType=VARCHAR}, #{t_age,jdbcType=INTEGER},
                 #{t_address,jdbcType=VARCHAR}, #{t_pwd,jdbcType=VARCHAR})
     </insert>
-    <insert id="insertSelective" parameterType="com.xzm.modules.test.pojo.TUser">
+    <insert id="insertSelective" parameterType="com.xzm.single.entity.TUser">
         insert into demo.t_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="t_id != null">
@@ -151,7 +151,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.xzm.modules.test.pojo.TUserExample" resultType="java.lang.Long">
+    <select id="countByExample" parameterType="com.xzm.single.entity.TUserExample" resultType="java.lang.Long">
         select count(*) from demo.t_user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -191,7 +191,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.modules.test.pojo.TUser">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.single.entity.TUser">
         update demo.t_user
         <set>
             <if test="t_name != null">
@@ -209,7 +209,7 @@
         </set>
         where t_id = #{t_id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xzm.modules.test.pojo.TUser">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.single.entity.TUser">
         update demo.t_user
         set t_name    = #{t_name,jdbcType=VARCHAR},
             t_age     = #{t_age,jdbcType=INTEGER},

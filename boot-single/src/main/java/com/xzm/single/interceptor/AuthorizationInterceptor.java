@@ -32,6 +32,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("AuthorizationInterceptor");
         Login annotation;
         if(handler instanceof HandlerMethod) {
             annotation = ((HandlerMethod) handler).getMethodAnnotation(Login.class);

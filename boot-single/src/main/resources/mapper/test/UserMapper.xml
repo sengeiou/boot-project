@@ -6,7 +6,7 @@
 注意：如果mapper代理方法开发，namespace有重要作用
 在 xxxmapper.xml 中 namespace 等于 mapper 接口地址
 -->
-<mapper namespace="com.xzm.single.modules.test.dao.UserMapper">
+<mapper namespace="com.xzm.single.dao.UserMapper">
 
     <!--&lt;!&ndash;在映射文件中配置很多sql语句&ndash;&gt;-->
 
