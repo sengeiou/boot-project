@@ -8,7 +8,7 @@ import java.util.List;
 //@Mapper
 
 //@Mapper
-public interface TybUserKaiHuMapper extends BaseMapper<TybUserKaiHu>{
+public interface TybUserKaiHuMapper extends BaseMapper<TybUserKaiHu> {
     int deleteByPrimaryKey(Integer id);
 
 //    int insert(TybUserKaiHu record);
@@ -23,8 +23,7 @@ public interface TybUserKaiHuMapper extends BaseMapper<TybUserKaiHu>{
 
     List<TybUserKaiHu> selectUserKaiHuInfoByPhone(String phone);
 
-    TybUserKaiHu selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(
-                                    @Param("phone") String phone,
-                                    @Param("idCard") String idCard,
-                                    @Param("platformCode") String platformCode);
+    TybUserKaiHu selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(@Param("phone") String phone,
+                                                                    @Param("idCard") String idCard,
+                                                                    @Param("platformCode") String platformCode);
 }
