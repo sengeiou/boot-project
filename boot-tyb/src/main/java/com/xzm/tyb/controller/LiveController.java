@@ -1,4 +1,6 @@
 package com.xzm.tyb.controller;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.dao.TybUserGenDanMapper;
 import com.xzm.tyb.service.TybLiveService;
@@ -78,12 +80,15 @@ public class LiveController extends BaseController {
     @GetMapping("/news/list")
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int pageNum,
                                           @RequestParam(defaultValue = "5") int pageSize,
-                                          @RequestParam(defaultValue = "1") int type) {
+                                          @RequestParam(defaultValue = "1") int type, Page page) {
 //        PageHelper.startPage(pageNum, pageSize);
         logger.debug("=type==" + type);
         logger.debug("=pageNum==" + pageNum);
         logger.debug("=pageSize==" + pageSize);
-        return ziXunService.selectZiXunList(type);
+//        IPage page1 = ziXunService.page(page);
+//        return ziXunService.selectZiXunList(type);
+        return ServerResponse.createBySuccess(ziXunService.page(page));
+
     }
 
 
