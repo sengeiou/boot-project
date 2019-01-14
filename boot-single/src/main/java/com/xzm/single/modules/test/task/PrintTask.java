@@ -1,4 +1,4 @@
-package com.xzm.modules.test.task;
+package com.xzm.single.modules.test.task;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

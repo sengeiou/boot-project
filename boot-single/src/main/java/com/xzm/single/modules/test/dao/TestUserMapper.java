@@ -1,9 +1,8 @@
-package com.xzm.modules.test.dao;
+package com.xzm.single.modules.test.dao;
 
-
-import com.xzm.modules.test.po.User;
-import com.xzm.modules.test.po.UserCustom;
-import com.xzm.modules.test.po.UserQueryVo;
+import com.xzm.single.modules.test.po.User;
+import com.xzm.single.modules.test.po.UserCustom;
+import com.xzm.single.modules.test.po.UserQueryVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.xzm.common.exception;
+package com.xzm.single.common.exception;
 
 /**
  * 自定义异常

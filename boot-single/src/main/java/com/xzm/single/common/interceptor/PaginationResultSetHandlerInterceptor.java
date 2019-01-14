@@ -1,6 +1,6 @@
-package com.xzm.common.interceptor;
+package com.xzm.single.common.interceptor;
 
-import com.xzm.common.entity.Page;
+import com.xzm.single.common.entity.Page;
 import org.apache.ibatis.executor.resultset.DefaultResultSetHandler;
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.*;

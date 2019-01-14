@@ -1,4 +1,4 @@
-package com.xzm.modules.test.po;
+package com.xzm.single.modules.test.po;
 
 public class Orderdetail {
     private Integer id;

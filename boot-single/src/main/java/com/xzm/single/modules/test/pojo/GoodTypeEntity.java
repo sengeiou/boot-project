@@ -1,4 +1,4 @@
-package com.xzm.modules.test.pojo;
+package com.xzm.single.modules.test.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;

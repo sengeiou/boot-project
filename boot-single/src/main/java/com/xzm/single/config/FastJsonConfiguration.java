@@ -1,4 +1,4 @@
-package com.xzm.config;
+package com.xzm.single.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;

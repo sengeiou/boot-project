@@ -1,4 +1,4 @@
-package com.xzm.dialect;
+package com.xzm.single.dialect;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

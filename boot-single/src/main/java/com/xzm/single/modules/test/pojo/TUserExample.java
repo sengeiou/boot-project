@@ -1,5 +1,4 @@
-package com.xzm.modules.test.pojo;
-
+package com.xzm.single.modules.test.pojo;
 import java.util.ArrayList;
 import java.util.List;
 

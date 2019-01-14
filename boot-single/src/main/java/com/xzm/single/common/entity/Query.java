@@ -1,4 +1,4 @@
-package com.xzm.common.entity;
+package com.xzm.single.common.entity;
 
 import java.sql.Date;
 import java.util.HashMap;

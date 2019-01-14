@@ -1,6 +1,7 @@
-package com.xzm.common.utils;
+package com.xzm.single.common.utils;
 
 import com.alibaba.druid.util.StringUtils;
+import com.xzm.single.common.utils.HttpContextUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

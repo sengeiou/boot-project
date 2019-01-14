@@ -1,4 +1,4 @@
-package com.xzm.common.constant;
+package com.xzm.single.common.constant;
 
 /**
  * 系统级静态变量

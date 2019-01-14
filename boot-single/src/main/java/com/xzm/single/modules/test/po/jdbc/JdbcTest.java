@@ -1,4 +1,4 @@
-package com.xzm.modules.test.po.jdbc;
+package com.xzm.single.modules.test.po.jdbc;
 
 /**
  * Created by 10412 on 2016/11/27.

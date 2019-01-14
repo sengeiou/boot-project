@@ -1,9 +1,8 @@
-package com.xzm.common.utils;
+package com.xzm.single.common.utils;
 
-
-import com.xzm.common.constant.MsgConstant;
-import com.xzm.common.constant.SystemConstant;
-import com.xzm.common.entity.R;
+import com.xzm.single.common.constant.MsgConstant;
+import com.xzm.single.common.constant.SystemConstant;
+import com.xzm.single.common.entity.R;
 
 /**
  * 通用工具类

@@ -1,6 +1,4 @@
-package com.xzm.modules.test.pojo;
-
-
+package com.xzm.single.modules.test.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +17,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "t_user")
 public class UserEntity extends BaseEntity implements Serializable
-
 
 {
 

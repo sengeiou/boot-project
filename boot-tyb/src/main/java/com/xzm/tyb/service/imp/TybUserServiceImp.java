@@ -97,7 +97,6 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         if (count == 1) {
             return ServerResponse.createBySuccess("注册成功");
         }
-
 //        if (count > 0) {
 //            return ServerResponse.createBySuccess("注册成功");
 //        }
@@ -170,7 +169,6 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
             return ServerResponse.createBySuccess("您还没有开过户哦", null);
         }
     }
-
     /**
      * 开户
      */

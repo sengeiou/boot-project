@@ -1,7 +1,6 @@
 package com.xzm.single.interceptor;
-
-import com.xzm.common.exception.RRException;
 import com.xzm.single.annotation.Login;
+import com.xzm.single.common.exception.RRException;
 import com.xzm.single.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang.StringUtils;

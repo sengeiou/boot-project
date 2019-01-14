@@ -1,4 +1,4 @@
-package com.xzm.common.annotation;
+package com.xzm.single.common.annotation;
 
 import java.lang.annotation.*;
 

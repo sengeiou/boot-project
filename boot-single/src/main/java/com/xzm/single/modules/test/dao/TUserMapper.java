@@ -1,7 +1,7 @@
-package com.xzm.modules.test.dao;
+package com.xzm.single.modules.test.dao;
 
-import com.xzm.modules.test.pojo.TUser;
-import com.xzm.modules.test.pojo.TUserExample;
+import com.xzm.single.modules.test.pojo.TUser;
+import com.xzm.single.modules.test.pojo.TUserExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

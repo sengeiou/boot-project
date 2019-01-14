@@ -1,8 +1,7 @@
-package com.xzm.modules.test.po;
-
+package com.xzm.single.modules.test.po;
 
 //通过此类映射订单和用户查询的结果，让此类继承包括 字段较多的pojo类
-public class OrdersCustom extends Orders{
+public class OrdersCustom extends Orders {
 	
 	//添加用户属性
 	/*USER.username,

@@ -1,4 +1,4 @@
-package com.xzm.common.interceptor;
+package com.xzm.single.common.interceptor;
 
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;

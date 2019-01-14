@@ -1,4 +1,4 @@
-package com.xzm.config;
+package com.xzm.single.config;
 
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 

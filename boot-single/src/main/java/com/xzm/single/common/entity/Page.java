@@ -1,4 +1,4 @@
-package com.xzm.common.entity;
+package com.xzm.single.common.entity;
 
 import org.apache.ibatis.session.RowBounds;
 

@@ -1,6 +1,6 @@
 package com.xzm.single.common.interceptor;
 
-import com.xzm.common.entity.Page;
+import com.xzm.single.common.entity.Page;
 import com.xzm.single.dialect.Dialect;
 import com.xzm.single.dialect.DialectFactory;
 import org.apache.ibatis.executor.parameter.ParameterHandler;

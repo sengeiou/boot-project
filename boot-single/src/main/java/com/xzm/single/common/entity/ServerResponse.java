@@ -1,7 +1,8 @@
-package com.xzm.common.entity;
+package com.xzm.single.common.entity;
 
 //import org.codehaus.jackson.annotate.JsonIgnore;
 //import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;

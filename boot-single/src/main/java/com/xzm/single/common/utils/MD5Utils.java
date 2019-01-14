@@ -1,4 +1,4 @@
-package com.xzm.common.utils;
+package com.xzm.single.common.utils;
 
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;

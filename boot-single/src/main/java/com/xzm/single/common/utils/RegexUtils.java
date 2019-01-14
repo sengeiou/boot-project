@@ -1,4 +1,5 @@
-package com.xzm.common.utils;
+package com.xzm.single.common.utils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
