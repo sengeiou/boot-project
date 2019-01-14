@@ -2,7 +2,7 @@ package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.common.utils.RegexUtils;
 import com.xzm.tyb.constants.Constants;
 import com.xzm.tyb.dao.TybTeacherHanDanMapper;
@@ -51,76 +51,67 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
     private boolean checkUserValid(String phone) {
         int count = userMapper.checkUserValid(phone);
         logger.debug("===查询用户===" + count);
-//        if(resultCount == 0 ){
-//            return ServerResponse.createByErrorMessage("用户不存在");
-//        }
-        if (count == 1) {
-            return true;
-        }
-        return false;
+        return count >= 1;
     }
 
     /**
      * 用户登陆
      */
     @Override
-    public ServerResponse<String> login(String phone, String password) {
+    public String login(String phone, String password) {
         boolean isValid = checkUserValid(phone);
         if (!isValid) {
-            return ServerResponse.createByErrorMessage("用户名不存在");
+            throw new RRException("用户名不存在");
         }
         TybUser user = userMapper.selectByUserNameAndPassWord(phone, password);
         if (user == null) {
-            return ServerResponse.createByErrorMessage("您输入的密码有误");
+            throw new RRException("您输入的密码有误");
         }
-        return ServerResponse.createBySuccess("登陆成功");
+        return "登陆成功";
     }
 
     /**
      * 用户注册
      */
     @Override
-    public ServerResponse<String> register(TybUserForm user) {
+    public String register(TybUserForm user) {
         if (!RegexUtils.isMobileExact(user.getPhone())) {
-            return ServerResponse.createByErrorMessage("手机号号错误");
+            throw new RRException("手机号号错误");
         }
         boolean isValid = checkUserValid(user.getPhone());
         if (isValid) {
-            return ServerResponse.createByErrorMessage("当前用户已存在");
+            throw new RRException("当前用户已存在");
         }
         TybUser tybUser = new TybUser();
         tybUser.setPhone(user.getPhone());
         tybUser.setNickName(user.getPhone().substring(7, 11) + "投资");
         tybUser.setPassword(user.getPassword());
-        int count = userMapper.insertSelective(tybUser);
+        int count = userMapper.insert(tybUser);
         logger.debug("===插入用户===" + count);
         if (count == 1) {
-            return ServerResponse.createBySuccess("注册成功");
+            return "注册成功";
         }
-//        if (count > 0) {
-//            return ServerResponse.createBySuccess("注册成功");
-//        }
-        return ServerResponse.createBySuccess("注册失败");
+        throw new RRException("注册失败");
     }
 
     /**
      * 修改用户昵称
      */
     @Override
-    public ServerResponse<String> resetNickName(String access_token, String phone, String nick_name) {
+    public String resetNickName(String access_token, String phone, String nick_name) {
         int count = userMapper.updateUserNameByUniqueKey(phone, nick_name);
         logger.debug("==修改用户昵称=" + count);
         if (count == 1) {
-            return ServerResponse.createBySuccess("修改成功");
+            return "修改成功";
         }
-        return ServerResponse.createBySuccess("修改失败");
+        throw new RRException("修改失败");
     }
 
     /**
      * 获取用户信息
      */
     @Override
-    public ServerResponse<TybUserInfoVo> getUserInfo(String access_token, String phone) {
+    public TybUserInfoVo getUserInfo(String access_token, String phone) {
         TybUser tybUser = userMapper.selectByUniqueKey(phone);
         if (!ObjectUtils.isEmpty(tybUser)) {
             TybUserInfoVo tybUserInfoVo = new TybUserInfoVo();
@@ -130,9 +121,10 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
             userInfo.setPhoneUrl(tybUser.getPhoneUrl());
             userInfo.setPushStatus(tybUser.getPushStatus());
             tybUserInfoVo.setUserInfo(userInfo);
-            return ServerResponse.createBySuccess(tybUserInfoVo);
+            return tybUserInfoVo;
         }
-        return ServerResponse.createByErrorMessage("获取用户信息失败");
+//        Throw ServerResponse.createByErrorMessage("获取用户信息失败");
+        throw new RRException("获取用户信息失败");
     }
 
     /**
@@ -140,7 +132,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 再根据老师ids去查询老师喊单列表
      */
     @Override
-    public ServerResponse<TybTeacherHanDanVo> selectGenDanTeacherList(String access_token, String phone) {
+    public TybTeacherHanDanVo selectGenDanTeacherList(String access_token, String phone) {
         List<TybTeacherHanDan> teacherHanDanList = null;
         List<TybUserGenDan> genDanList = userGenDanMapper.selectUserGenDanByUserPhone(phone);
         List<Integer> ids = new ArrayList<>();
@@ -150,30 +142,31 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         }
         TybTeacherHanDanVo teacherHanDanVo = new TybTeacherHanDanVo();
         teacherHanDanVo.setObject(teacherHanDanList);
-        return ServerResponse.createBySuccess(teacherHanDanVo);
+        return teacherHanDanVo;
     }
 
     /**
      * 查询开户信息
      */
     @Override
-    public ServerResponse<TybUserKaiHuInfoVo> selectUserKaiHuInfo(String access_token, String phone) {
+    public TybUserKaiHuInfoVo selectUserKaiHuInfo(String access_token, String phone) {
         List<TybUserKaiHu> tybUserKaiHuList = userKaiHuMapper.selectUserKaiHuInfoByPhone(phone);
         if (!CollectionUtils.isEmpty(tybUserKaiHuList)) {
             TybUserKaiHu tybUserKaiHu = tybUserKaiHuList.get(0);
             TybUserKaiHuInfoVo userKaiHuInfoVo = new TybUserKaiHuInfoVo();
             userKaiHuInfoVo.setIdCard(tybUserKaiHu.getIdCard());
             userKaiHuInfoVo.setUserName(tybUserKaiHu.getUserName());
-            return ServerResponse.createBySuccess(userKaiHuInfoVo);
+            return userKaiHuInfoVo;
         } else {
-            return ServerResponse.createBySuccess("您还没有开过户哦", null);
+            throw new RRException("您还没有开过户哦");
+
         }
     }
     /**
      * 开户
      */
     @Override
-    public ServerResponse<String> userKaiHu(String access_token,
+    public String userKaiHu(String access_token,
                                             String phone,
                                             String userName,
                                             String idCard,
@@ -183,14 +176,14 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
 
         TybUserKaiHu userKaiHuDo = new TybUserKaiHu();
         if (!ObjectUtils.isEmpty(userKaiHu)) {
-            return ServerResponse.createByErrorMessage("当前交易所已经开户");
+            throw new RRException("当前交易所已经开户");
 
         }
         if (!RegexUtils.isMobileExact(phone)) {
-            return ServerResponse.createByErrorMessage("手机号不正确");
+            throw new RRException("手机号不正确");
         }
         if (!RegexUtils.isIDCard18(idCard)) {
-            return ServerResponse.createByErrorMessage("身份证号不正确");
+            throw new RRException("身份证号不正确");
         }
         userKaiHuDo.setPhone(phone);
         userKaiHuDo.setIdCard(idCard);
@@ -202,18 +195,19 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         } else if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[1], platformCode)) {
             userKaiHuDo.setPlatformName("上海石油化工交易中心");
         }
-        logger.debug("提交开会信息=phone==" + phone);
-        logger.debug("提交开会信息=userName==" + userName);
-        logger.debug("提交开会信息=idCard==" + idCard);
-        logger.debug("提交开会信息=platformCode==" + platformCode);
-        logger.debug("提交开会信息=platformName==" + userKaiHuDo.getPlatformName());
-        logger.debug("提交开会信息===" + userKaiHuDo.toString());
+//        logger.debug("提交开会信息=phone==" + phone);
+//        logger.debug("提交开会信息=userName==" + userName);
+//        logger.debug("提交开会信息=idCard==" + idCard);
+//        logger.debug("提交开会信息=platformCode==" + platformCode);
+//        logger.debug("提交开会信息=platformName==" + userKaiHuDo.getPlatformName());
+//        logger.debug("提交开会信息===" + userKaiHuDo.toString());
         int count = userKaiHuMapper.insertSelective(userKaiHuDo);
         logger.debug("提交开会llllllllll===" + count);
         if (count > 0) {
-            return ServerResponse.createBySuccessMessage("开户成功");
+            return "开户成功";
         }
-        return ServerResponse.createByErrorMessage("开户失败");
+        throw new RRException("开户失败");
+
     }
 }
 

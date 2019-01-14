@@ -10,7 +10,7 @@ import java.util.List;
 public interface TybUserKaiHuMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(TybUserKaiHu record);
+//    int insert(TybUserKaiHu record);
 
     int insertSelective(TybUserKaiHu record);
 

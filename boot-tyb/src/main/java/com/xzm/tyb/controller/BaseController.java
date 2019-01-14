@@ -9,6 +9,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseController {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
-	
+//	protected static final Log logger = LogFactory.getLog(LiveController.class);
 
 }

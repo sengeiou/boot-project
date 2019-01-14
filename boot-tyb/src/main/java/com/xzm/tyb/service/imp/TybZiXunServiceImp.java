@@ -17,10 +17,10 @@ public class TybZiXunServiceImp extends ServiceImpl<TybZiXunMapper, TybZiXun> im
     private TybZiXunMapper ziXunMapper;
 
     @Override
-    public ServerResponse selectZiXunList(Integer type) {
+    public ZiXunVo selectZiXunList(Integer type) {
         List<TybZiXun> ziXun = ziXunMapper.selectZiXunList(type);
         ZiXunVo ziXunVo = new ZiXunVo();
         ziXunVo.setHandan(ziXun);
-        return ServerResponse.createBySuccess(ziXunVo);
+        return ziXunVo;
     }
 }

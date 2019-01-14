@@ -8,7 +8,7 @@ import java.util.List;
 public interface TybLiveTopMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(liveTop record);
+//    int insert(liveTop record);
 
     int insertSelective(liveTop record);
 

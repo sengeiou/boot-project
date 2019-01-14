@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Api(tags = "webView部分")
 @Controller
 @RequestMapping("/h5")
-public class WebViewController {
+public class WebViewController extends BaseController {
 //   @Autowired
 //   private RedisTemplate redisTemplate;
     private final Logger logger = LoggerFactory.getLogger(getClass());

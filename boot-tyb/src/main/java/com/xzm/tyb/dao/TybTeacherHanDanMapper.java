@@ -10,8 +10,6 @@ import java.util.List;
 public interface TybTeacherHanDanMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(TybTeacherHanDan record);
-
     int insertSelective(TybTeacherHanDan record);
 
     TybTeacherHanDan selectByPrimaryKey(Integer id);

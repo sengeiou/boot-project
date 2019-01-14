@@ -1,7 +1,6 @@
 package com.xzm.tyb.dao;
 
 import com.xzm.tyb.pojo.TybUserGenDan;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 //@Mapper
@@ -10,7 +9,7 @@ import java.util.List;
 public interface TybUserGenDanMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(TybUserGenDan record);
+//    int insert(TybUserGenDan record);
 
     int insertSelective(TybUserGenDan record);
 

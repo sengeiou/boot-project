@@ -1,5 +1,5 @@
 package com.xzm.tyb.controller;
-import com.baomidou.mybatisplus.core.metadata.IPage;
+
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.dao.TybUserGenDanMapper;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/live")
 public class LiveController extends BaseController {
-    //    private static final Log logger = LogFactory.getLog(LiveController.class);
+    //
     @Autowired
     private TybLiveService liveService;
     @Autowired
@@ -28,20 +28,19 @@ public class LiveController extends BaseController {
     @ApiOperation("首页直播室banner")
     @GetMapping("/banner")
     public ServerResponse selectLiveTopList() {
-        return liveService.selectLiveTopList();
+        return ServerResponse.createBySuccess(liveService.selectLiveTopList());
     }
 
     @ApiOperation("获取重要消息")
     @GetMapping("/banner/message")
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int id) {
-        return liveService.selectImportantMessageById(id);
+        return ServerResponse.createBySuccess(liveService.selectImportantMessageById(id));
     }
 
     @ApiOperation("老师喊单信息")
     @GetMapping("/teacher/order/info")
     public ServerResponse selectHanDanByPrimaryKey(@RequestParam Integer id) {
-        ServerResponse serverResponse = liveService.selectHanDanByPrimaryKey(id);
-        return serverResponse;
+        return ServerResponse.createBySuccess(liveService.selectHanDanByPrimaryKey(id));
     }
 
     @ApiOperation("老师列表")
@@ -51,7 +50,7 @@ public class LiveController extends BaseController {
                                             @RequestParam String access_token,
                                             @RequestParam(value = "phone", required = false) String phone) {
 //        PageHelper.startPage(pageNum, pageSize);
-        return liveService.selectTeacherList(access_token, phone);
+        return ServerResponse.createBySuccess(liveService.selectTeacherList(access_token, phone));
     }
 
     @ApiOperation("老师详情")
@@ -59,7 +58,7 @@ public class LiveController extends BaseController {
     public ServerResponse selectTeacherByTeacherId(@RequestParam(value = "access_token") String access_token,
                                                    @RequestParam(value = "phone", required = false) String phone,
                                                    @RequestParam("teacherId") Integer teacherId) {
-        return liveService.selectTeacherByTeacherId(access_token, phone, teacherId);
+        return ServerResponse.createBySuccess(liveService.selectTeacherByTeacherId(access_token, phone, teacherId));
     }
 
     @ApiOperation("老师喊单列表")
@@ -67,7 +66,7 @@ public class LiveController extends BaseController {
     public ServerResponse selectHanDanList(@RequestParam(defaultValue = "1") int pageNum,
                                            @RequestParam(defaultValue = "5") int pageSize) {
 //        PageHelper.startPage(pageNum, pageSize);
-        return liveService.selectHanDanList();
+        return ServerResponse.createBySuccess(liveService.selectHanDanList());
     }
 
 

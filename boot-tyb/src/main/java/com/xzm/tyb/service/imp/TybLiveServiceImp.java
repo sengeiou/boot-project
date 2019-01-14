@@ -1,8 +1,6 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
-import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.dao.*;
 import com.xzm.tyb.pojo.*;
@@ -10,7 +8,6 @@ import com.xzm.tyb.service.TybLiveService;
 import com.xzm.tyb.vo.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -30,20 +27,20 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
     @Resource
     private TybUserGenDanMapper tybUserGenDanMapper;
     @Override
-    public ServerResponse<TybHanDanPaiHang> selectHanDanByPrimaryKey(Integer id) {
+    public TybHanDanPaiHang selectHanDanByPrimaryKey(Integer id) {
         TybHanDanPaiHang handanPaiHang = handanPaiHangMapper.selectByPrimaryKey(id);
-        return ServerResponse.createBySuccess(handanPaiHang);
+        return handanPaiHang;
     }
 
     /**
      *获取老师历史喊单
      */
     @Override
-    public ServerResponse<HandanPaiHangListVo> selectHanDanList() {
+    public HandanPaiHangListVo selectHanDanList() {
         List<TybHanDanPaiHang> paiHangList = handanPaiHangMapper.selectHanDanList();
         HandanPaiHangListVo handanPaiHangListVo = new HandanPaiHangListVo();
         handanPaiHangListVo.setHandan(paiHangList);
-        return ServerResponse.createBySuccess("老师喊单数据获取成功",handanPaiHangListVo);
+        return handanPaiHangListVo;
     }
 
 
@@ -51,29 +48,29 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
      * 直播首页三个直播室 List数据
      */
     @Override
-    public ServerResponse<LiveTopVo> selectLiveTopList() {
+    public LiveTopVo selectLiveTopList() {
         List<liveTop> liveTopList = LiveTopMapper.selectLiveTopList();
         LiveTopVo liveTopVo = new LiveTopVo();
         liveTopVo.setLive(liveTopList);
-        return ServerResponse.createBySuccess(liveTopVo);
+        return liveTopVo;
     }
 
     /**
      * 获取直播页重要消息数据
      */
     @Override
-    public ServerResponse<TybImportantMessageVo> selectImportantMessageById(Integer id) {
+    public TybImportantMessageVo selectImportantMessageById(Integer id) {
         TybImportantMessage message = importantMessageMapper.selectById(new TybImportantMessage(1));
         TybImportantMessageVo importantMessageVo = new TybImportantMessageVo();
         importantMessageVo.setObject(message);
-        return ServerResponse.createBySuccess(importantMessageVo);
+        return importantMessageVo;
     }
 
     /**
      * 查询人气讲师列表
      */
     @Override
-    public ServerResponse<TybTeacherVo> selectTeacherList(String access_token, String phone) {
+    public TybTeacherVo selectTeacherList(String access_token, String phone) {
         List<TybUserGenDan> userGenDansList = tybUserGenDanMapper.selectUserGenDanByUserPhone(phone);
         userGenDansList.forEach(item -> {
             Integer teacherId = item.getTeacherId();
@@ -85,7 +82,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
         });
         TybTeacherVo tybTeacherVo = new TybTeacherVo();
         tybTeacherVo.setObject(tybTeachers);
-        return ServerResponse.createBySuccess(tybTeacherVo);
+        return tybTeacherVo;
     }
 
 
@@ -93,7 +90,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
      * 根据老师ID查询讲师信息
      */
     @Override
-    public ServerResponse<TybTeacherDetailVo> selectTeacherByTeacherId(String access_token, String phone, Integer teacherId) {
+    public TybTeacherDetailVo selectTeacherByTeacherId(String access_token, String phone, Integer teacherId) {
 //        List<TybUserGenDan> userGenDansList = tybUserGenDanMapper.selectUserGenDanByUserPhone(phone);
 //        userGenDansList.forEach(item -> {
 //            Integer teacherId = item.getTeacherId();
@@ -122,6 +119,6 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper,TybTeacher> 
         teacherDetail.setShouYi(tybTeacher.getShouYi());
         teacherDetail.setContent(tybTeacher.getContent());
         teacherDetailVo.setObject(teacherDetail);
-        return ServerResponse.createBySuccess(teacherDetailVo);
+        return teacherDetailVo;
     }
 }
