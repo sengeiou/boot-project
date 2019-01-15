@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/teacher")
 public class TeacherController  extends BaseController{
-    private static final Log logger = LogFactory.getLog(TeacherController.class);
+
 //    @Autowired
 //    private TybLiveService liveService;
 //    @Autowired

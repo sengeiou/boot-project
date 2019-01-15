@@ -1,6 +1,8 @@
 package com.xzm.tyb.controller;
 
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,6 +11,5 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseController {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
-//	protected static final Log logger = LogFactory.getLog(LiveController.class);
-
+//	protected   Log logger = LogFactory.getLog(getClass());
 }
