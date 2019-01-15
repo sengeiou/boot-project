@@ -33,8 +33,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <thymeleaf-spring-boot.version>3.0.2.RELEASE</thymeleaf-spring-boot.version>
         <!--<thymeleaf-spring-boot.version>2.1.5.RELEASE</thymeleaf-spring-boot.version>-->
-        <thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>
-        <thymeleaf-spring-boot.version>1.5.7.RELEASE</thymeleaf-spring-boot.version>
+        <!--<thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>-->
+        <!--<thymeleaf-spring-boot.version>1.5.7.RELEASE</thymeleaf-spring-boot.version>-->
         <freemarker-spring-boot.version>1.5.7.RELEASE</freemarker-spring-boot.version>
         <java.version>1.8</java.version>
         <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
@@ -103,11 +103,10 @@
         <!--<jackson.version>2.5.0</jackson.version>-->
         <com.google.gson.version>2.7</com.google.gson.version>
 
-
-        <tomcat-port.version>8083</tomcat-port.version>
+    <!--    <tomcat-port.version>8083</tomcat-port.version>
         <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
         <tomcat-path.version>/</tomcat-path.version>
-        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>-->
     </properties>
     <dependencies>
         <dependency>
@@ -126,6 +125,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <!--2.1.5-->
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+            <version>1.9.22</version>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>com.fasterxml.jackson</groupId>-->
@@ -210,18 +220,18 @@
             </dependency>
             <!--官方推荐模板 thymeleaf-->
             <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-                <!--&lt;!&ndash;<version>${thymeleaf.version}</version>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>2.1.5.RELEASE</version>&ndash;&gt;-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+            <!--&lt;!&ndash;<version>${thymeleaf.version}</version>&ndash;&gt;-->
+            <!--&lt;!&ndash;<version>2.1.5.RELEASE</version>&ndash;&gt;-->
             <!--</dependency>-->
 
 
             <!-- 引入freeMarker的依赖包. -->
             <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
-                <!--<version>${freemarker-spring-boot.version}</version>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
+            <!--<version>${freemarker-spring-boot.version}</version>-->
             <!--</dependency>-->
 
             <!-- mybatis和SpringBoot整合-->

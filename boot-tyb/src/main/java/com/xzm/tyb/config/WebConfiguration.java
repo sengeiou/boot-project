@@ -72,7 +72,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 //        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/favicon.ico");
 
 
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/templates/");
+//        registry.addResourceHandler("/**").addResourceLocations("classpath:/templates/");
         registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
         registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
