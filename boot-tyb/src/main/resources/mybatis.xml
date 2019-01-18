@@ -3,9 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties>
+<!--    <properties>
         <property name="dialectClass" value="com.xzm.single.dialect.MySql5Dialect"/>
-    </properties>
+    </properties>-->
 	
 	<!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->
     <settings>

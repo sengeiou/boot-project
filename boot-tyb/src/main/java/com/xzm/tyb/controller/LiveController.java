@@ -1,7 +1,11 @@
 package com.xzm.tyb.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.pojo.TybTeacher;
+import com.xzm.tyb.pojo.TybZiXun;
 import com.xzm.tyb.service.TybLiveService;
 import com.xzm.tyb.service.TybZiXunService;
 import io.swagger.annotations.Api;
@@ -72,22 +76,23 @@ public class LiveController extends BaseController {
     /**
      * 获取咨询新闻列表
      *
-     * @param type 1财经要闻 2研究报告 3独家解读 4市场动态
+     *  1财经要闻 2研究报告 3独家解读 4市场动态
      */
     @ApiOperation("行情咨询新闻列表")
     @GetMapping("/news/list")
     public ServerResponse selectZiXunList(@RequestParam(defaultValue = "1") int pageNum,
                                           @RequestParam(defaultValue = "5") int pageSize,
-                                          @RequestParam(defaultValue = "1") int type, Page page) {
+                                          @RequestParam(defaultValue = "1") int type) {
 //        PageHelper.startPage(pageNum, pageSize);
-        logger.debug("=type==" + type);
+//        logger.debug("=type==" + type);
         logger.debug("=pageNum==" + pageNum);
         logger.debug("=pageSize==" + pageSize);
-//        IPage page1 = ziXunService.page(page);
-//        return ziXunService.selectZiXunList(type);
-        return ServerResponse.createBySuccess(ziXunService.page(page));
-
+        IPage<TybZiXun> page = ziXunService.page(new Page<>(pageNum, pageSize), new QueryWrapper<TybZiXun>()
+                .lambda().in(TybZiXun::getType, type));
+//                .or(e -> e.like(TybZiXun::getName, "张")));
+        return ServerResponse.createBySuccess(page);
     }
+
 
 
 }
