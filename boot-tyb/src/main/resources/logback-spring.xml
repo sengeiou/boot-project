@@ -1,11 +1,16 @@
 <configuration debug="false" scan="true" scanPeriod="10 seconds">
     <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
     <!--<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>-->
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
 
+
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <!--<logger name="org.springframework.web" level="INFO"/>-->
+    <!--<logger name="org.springboot.sample" level="TRACE" />-->
     <contextName>logback</contextName>
 
     <!--输出sql语句-->
-    <logger name="com.xzm.tyb" level="debug"/>
+    <logger name="com.xzm.tyb.dao" level="debug"/>
     <!--<property name="path" value="D:/log"></property>-->
     <property name="path" value="./logs"></property>
 
@@ -120,8 +125,8 @@
         </filter>
     </appender>
 
-    <root>
-        <level value="info"/>
+    <root level="INFO">
+        <!--<level value="info"/>-->
         <appender-ref ref="console"/>
         <!--<appender-ref ref="debug_file"/>-->
         <!--<appender-ref ref="info_file"/>-->
