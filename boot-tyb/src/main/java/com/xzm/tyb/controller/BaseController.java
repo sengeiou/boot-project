@@ -11,5 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseController {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
+	protected String TAG = getClass().getName();
+
 //	protected   Log logger = LogFactory.getLog(getClass());
 }

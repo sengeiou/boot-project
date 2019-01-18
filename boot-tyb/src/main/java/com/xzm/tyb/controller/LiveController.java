@@ -8,13 +8,11 @@ import com.xzm.tyb.pojo.TybTeacher;
 import com.xzm.tyb.pojo.TybZiXun;
 import com.xzm.tyb.service.TybLiveService;
 import com.xzm.tyb.service.TybZiXunService;
+import com.xzm.tyb.vo.TeacherDetailVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Api(tags = "直播")
 @RestController
@@ -42,7 +40,7 @@ public class LiveController extends BaseController {
 
     @ApiOperation("老师喊单信息")
     @GetMapping("/teacher/order/info")
-    public ServerResponse selectHanDanByPrimaryKey(@RequestParam Integer id) {
+    public ServerResponse selectHanDanByPrimaryKey(@RequestBody Integer id) {
         return ServerResponse.createBySuccess(liveService.selectHanDanByPrimaryKey(id));
     }
 
@@ -64,6 +62,23 @@ public class LiveController extends BaseController {
         return ServerResponse.createBySuccess(liveService.selectTeacherByTeacherId(access_token, phone, teacherId));
     }
 
+
+    @ApiOperation("老师详情")
+    @PostMapping("/teacher/detail1")
+    public ServerResponse selectTeacherByTeacherId1(@RequestBody TeacherDetailVo vo) {
+        String accessToken = vo.getAccess_token();
+        int pageNum = vo.getPageNum();
+        int pageSize = vo.getPageSize();
+        String phone = vo.getPhone();
+        Integer teacherId = vo.getTeacherId();
+        logger.debug(accessToken);
+        logger.debug(TAG, pageNum);
+        logger.debug(TAG, pageSize);
+        logger.debug(phone);
+        logger.debug(TAG, teacherId);
+        return ServerResponse.createBySuccess(liveService.selectTeacherByTeacherId("xx", phone, teacherId));
+    }
+
     @ApiOperation("老师喊单列表")
     @GetMapping("/teacher/order/list")
     public ServerResponse selectHanDanList(@RequestParam(defaultValue = "1") int pageNum,
@@ -75,8 +90,8 @@ public class LiveController extends BaseController {
 
     /**
      * 获取咨询新闻列表
-     *
-     *  1财经要闻 2研究报告 3独家解读 4市场动态
+     * <p>
+     * 1财经要闻 2研究报告 3独家解读 4市场动态
      */
     @ApiOperation("行情咨询新闻列表")
     @GetMapping("/news/list")
@@ -92,7 +107,6 @@ public class LiveController extends BaseController {
 //                .or(e -> e.like(TybZiXun::getName, "张")));
         return ServerResponse.createBySuccess(page);
     }
-
 
 
 }
