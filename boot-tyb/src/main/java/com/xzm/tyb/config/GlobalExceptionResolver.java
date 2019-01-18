@@ -51,9 +51,6 @@ public class GlobalExceptionResolver {
      */
     @ExceptionHandler(value = RRException.class)
     public void serviceExceptionHandler(HttpServletResponse response, RRException e) {
-//        RetResult<Object> result = new RetResult<>();
-//        result.setCode(RetCode.FAIL).setMsg(e.getMessage()).setData(null);
-//        responseResult(response, result);
         logger.debug("全局业务异常==");
         ServerResponse<Object> serverResponse =
                 ServerResponse.createByErrorCodeMessage(e.getCode(),e.getMessage());
@@ -62,18 +59,12 @@ public class GlobalExceptionResolver {
     /**
      * 其他异常统一处理
      */
-    @ExceptionHandler(value = Exception.class)
-    public void exceptionHandler(HttpServletResponse response, Exception e) {
-        logger.debug("===其他异常统一处理==" + e.getMessage());
-//        logger.debug("===其他异常统一处理==" + e.getMessage());
-//        RetResult<Object> result = new RetResult<>();
-//        result.setCode(RetCode.INTERNAL_SERVER_ERROR).setMsg("服务器打酱油了，请稍后再试~");
-//        logger.error(e.getMessage(), e);
-//        responseResult(response, result);
-        ServerResponse<Object> serverResponse =
-                ServerResponse.createByErrorCodeMessage(404,"找不到"+e.getMessage());
-        responseResult(response,serverResponse);
-    }
+//    @ExceptionHandler(value = Exception.class)
+//    public void exceptionHandler(HttpServletResponse response, Exception e) {
+//        ServerResponse<Object> serverResponse =
+//       ServerResponse.createByErrorCodeMessage(404,"找不到"+e.getMessage());
+//        responseResult(response,serverResponse);
+//    }
 
 //
 //    @ExceptionHandler(value = {IOException.class, RuntimeException.class})

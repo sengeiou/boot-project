@@ -26,9 +26,8 @@ public class TestController  extends BaseController{
     /**
      * 获取咨询新闻列表
      */
-    @ApiOperation("行情咨询新闻列表")
-    @GetMapping("/news/list")
-    public Resp selectZiXunLists(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
+    @GetMapping("/test1")
+    public Resp test1(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
 
         logger.debug("=pageNum==" + pageNum);
         logger.debug("=pageSize==" + pageSize);
@@ -36,6 +35,16 @@ public class TestController  extends BaseController{
         return Resp.success(list, 5l, 1, 3);
 //      return Resp.s(ziXunService.page(page));
 
+    }
+    /**
+     * 获取咨询新闻列表
+     */
+    @GetMapping("/test2")
+    public Resp test2() {
+//        List<TybZiXun> list = ziXunService.list();
+        String str= null;
+        System.out.println(str.length());
+        return Resp.success(Resp.success("哈哈哈"));
     }
 
 }
