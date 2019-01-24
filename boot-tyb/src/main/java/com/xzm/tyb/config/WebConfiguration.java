@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.socket.server.HandshakeInterceptor;
 import springfox.documentation.spring.web.SpringfoxWebMvcConfiguration;
 
 import java.util.ArrayList;
@@ -112,7 +113,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     /**
      * 添加自定义拦截器
-     *
+     * HandlerInterceptor
      * @param registry
      */
     @Override
