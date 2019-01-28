@@ -3,6 +3,10 @@ package com.xzm.tyb.controller;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.form.TybUserForm;
 import com.xzm.tyb.service.TybUserService;
+import com.xzm.tyb.vo.AccountOpenVo;
+import com.xzm.tyb.vo.LoginVo;
+import com.xzm.tyb.vo.NiceNameModifyVo;
+import com.xzm.tyb.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -25,7 +29,7 @@ public class UserController  extends BaseController{
      */
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("注册")
-    public ServerResponse register(TybUserForm user) {
+    public ServerResponse register(@RequestBody TybUserForm user) {
         return ServerResponse.createBySuccess(userService.register(user));
     }
     @ApiImplicitParams({
@@ -36,49 +40,39 @@ public class UserController  extends BaseController{
     })
     @ApiOperation("登陆")
     @PostMapping("/login")
-    public ServerResponse login(@RequestParam("phone") String phone,
-                                @RequestParam("password") String password) {
-        return   ServerResponse.createBySuccess(userService.login(phone, password));
+    public ServerResponse login(@RequestBody LoginVo vo) {
+        return   ServerResponse.createBySuccess(userService.login(vo.getPhone(), vo.getPassword()));
     }
 
     @ApiOperation("修改昵称")
     @PostMapping("/nickname/modify")
-    public ServerResponse resetNickName(@RequestParam(value = "access_token") String access_token,
-                                        @RequestParam("phone") String phone,
-                                        @RequestParam("nick_name") String nick_name) {
-        return ServerResponse.createBySuccess(userService.resetNickName(access_token, phone, nick_name));
+    public ServerResponse nicknameModify(@RequestBody NiceNameModifyVo vo) {
+        return ServerResponse.createBySuccess(userService.resetNickName(vo.getPhone(), vo.getNickName()));
     }
 
     @ApiOperation("获取用户信息")
-    @GetMapping("/info")
-    public ServerResponse getUserInfo(@RequestParam(value = "access_token") String access_token,
-                                      @RequestParam("phone") String phone) {
-        return ServerResponse.createBySuccess(userService.getUserInfo(access_token, phone));
+    @PostMapping("/info")
+    public ServerResponse info(@RequestBody UserVo vo) {
+        return ServerResponse.createBySuccess(userService.getUserInfo(vo.getPhone()));
     }
 
 
     @ApiOperation("用户跟单列表")
-    @GetMapping("/order/list")
-    public ServerResponse selectGenDanTeacherList(@RequestParam("access_token") String access_token,
-                                                  @RequestParam("phone") String phone) {
+    @PostMapping("/order/list")
+    public ServerResponse orderList(@RequestBody UserVo vo) {
 //        PageHelper.startPage(pageNum, pageSize);
-        return ServerResponse.createBySuccess(userService.selectGenDanTeacherList(access_token, phone));
+        return ServerResponse.createBySuccess(userService.selectGenDanTeacherList(vo.getPhone()));
     }
-
 
     @ApiOperation("开户")
     @PostMapping("/account/open")
-    public ServerResponse selectUserKaiHu(@RequestParam("access_token") String access_token,
-                                          @RequestParam(value = "phone",required = false) String phone,
-                                          @RequestParam("userName") String userName,
-                                          @RequestParam("idCard") String idCard,
-                                          @RequestParam("platformCode") String platformCode) {
-        return ServerResponse.createBySuccess(userService.userKaiHu(access_token, phone,userName,idCard,platformCode)) ;
+    public ServerResponse accountOpen(@RequestBody AccountOpenVo vo) {
+        return ServerResponse.createBySuccess(userService.userKaiHu(String.valueOf(vo.getPhone()),
+                vo.getUserName(), String.valueOf(vo.getIdCard()),vo.getPlatformCode())) ;
     }
     @ApiOperation("查询开户信息")
-    @GetMapping("/account/info")
-    public ServerResponse selectUserKaiHuInfo(@RequestParam("access_token") String access_token,
-                                              @RequestParam(value = "phone",required = false) String phone) {
-        return ServerResponse.createBySuccess(userService.selectUserKaiHuInfo(access_token, phone)) ;
+    @PostMapping("/account/info")
+    public ServerResponse accountInfo(@RequestBody UserVo vo) {
+        return ServerResponse.createBySuccess(userService.selectUserKaiHuInfo(vo.getPhone())) ;
     }
 }

@@ -21,7 +21,7 @@ public interface TybLiveService extends IService<TybTeacher> {
 
     TybImportantMessage selectImportantMessageById(Integer id);
 
-    List<TybTeacher> selectTeacherList(String access_token, String phone);
+    List<TybTeacher> selectTeacherList(String phone);
 
-    TybTeacher selectTeacherByTeacherId(String access_token, String phone, Integer teacherId);
+    TybTeacher selectTeacherByTeacherId( Integer teacherId);
 }

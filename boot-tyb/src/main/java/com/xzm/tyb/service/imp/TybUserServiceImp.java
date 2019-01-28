@@ -95,7 +95,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 修改用户昵称
      */
     @Override
-    public String resetNickName(String access_token, String phone, String nick_name) {
+    public String resetNickName(String phone, String nick_name) {
         int count = userMapper.updateUserNameByUniqueKey(phone, nick_name);
         logger.debug("==修改用户昵称=" + count);
         if (count == 1) {
@@ -108,7 +108,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 获取用户信息
      */
     @Override
-    public TybUser getUserInfo(String access_token, String phone) {
+    public TybUser getUserInfo(String phone) {
         TybUser tybUser = userMapper.selectByUniqueKey(phone);
         if (!ObjectUtils.isEmpty(tybUser)) {
             return tybUser;
@@ -121,7 +121,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 再根据老师ids去查询老师喊单列表
      */
     @Override
-    public List<TybTeacherHanDan> selectGenDanTeacherList(String access_token, String phone) {
+    public List<TybTeacherHanDan> selectGenDanTeacherList(String phone) {
         List<TybTeacherHanDan> teacherHanDanList = null;
         List<TybUserGenDan> genDanList = userGenDanMapper.selectUserGenDanByUserPhone(phone);
         List<Integer> ids = new ArrayList<>();
@@ -136,7 +136,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 查询开户信息
      */
     @Override
-    public TybUserKaiHu selectUserKaiHuInfo(String access_token, String phone) {
+    public TybUserKaiHu selectUserKaiHuInfo(String phone) {
         List<TybUserKaiHu> tybUserKaiHuList = userKaiHuMapper.selectUserKaiHuInfoByPhone(phone);
         if (!CollectionUtils.isEmpty(tybUserKaiHuList)) {
             TybUserKaiHu tybUserKaiHu = tybUserKaiHuList.get(0);
@@ -150,7 +150,7 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 开户
      */
     @Override
-    public String userKaiHu(String access_token, String phone, String userName, String idCard, String platformCode) {
+    public String userKaiHu(String phone, String userName, String idCard, String platformCode) {
         TybUserKaiHu userKaiHu = userKaiHuMapper.
                 selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(phone, idCard, platformCode);
         TybUserKaiHu userKaiHuDo = new TybUserKaiHu();
@@ -173,7 +173,8 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         } else if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[1], platformCode)) {
             userKaiHuDo.setPlatformName("上海石油化工交易中心");
         }
-        int count = userKaiHuMapper.insertSelective(userKaiHuDo);
+//        int count = userKaiHuMapper.insertSelective(userKaiHuDo);
+        int count = userKaiHuMapper.insert(userKaiHuDo);
         logger.debug("提交开会llllllllll===" + count);
         if (count > 0) {
             return "开户成功";

@@ -17,9 +17,9 @@ import java.util.List;
 public interface TybUserService  extends IService<TybUser> {
     String login(String phone, String password);
     String register(TybUserForm user);
-    String resetNickName(String access_token,String phone,String nick_name);
-    TybUser getUserInfo(String access_token, String phone);
-    List<TybTeacherHanDan> selectGenDanTeacherList(String access_token, String phone);
-    TybUserKaiHu selectUserKaiHuInfo(String access_token, String phone);
-    String userKaiHu(String access_token, String phone,String userName,String idCard,String platformCode);
+    String resetNickName(String phone,String nick_name);
+    TybUser getUserInfo( String phone);
+    List<TybTeacherHanDan> selectGenDanTeacherList(String phone);
+    TybUserKaiHu selectUserKaiHuInfo(String phone);
+    String userKaiHu(String phone,String userName,String idCard,String platformCode);
 }

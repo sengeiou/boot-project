@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,52 +16,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/h5")
 public class WebViewController extends BaseController {
-//   @Autowired
+    //   @Autowired
 //   private RedisTemplate redisTemplate;
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    /**
-     * 金色星期三 活动
-     */
-    @ApiOperation("金色星期三")
-    @RequestMapping(value = "/act/one" ,method = RequestMethod.GET)
-    public String goldenWed(){
+
+    @ApiOperation("(活动)金色星期三")
+    @GetMapping(value = "/act/one")
+    public String act1() {
         logger.debug("====");
         return "tyb/activities/golden_wed";
     }
 
-    /**
-     * 一元投 活动
-     */
-    @ApiOperation("一元投")
-    @RequestMapping(value = "/act/two",method = RequestMethod.GET)
-    public String oneYuanInvest(){
+    @ApiOperation("(活动)一元投")
+    @GetMapping(value = "/act/two")
+    public String act2() {
         return "tyb/activities/one_yuan_invest";
     }
 
-    /**
-     * 一键开户 活动
-     */
     @ApiOperation("一键开户")
-    @RequestMapping(value = "/act/three",method = RequestMethod.GET)
-    public String openAccount(){
+    @GetMapping(value = "/account/open")
+    public String accountOpen() {
         return "tyb/activities/open_account";
     }
 
-    /**
-     * 关于我们
-     */
     @ApiOperation("关于我们")
-    @RequestMapping(value = "/act/four",method = RequestMethod.GET)
-    public String aboutApp(){
+    @GetMapping(value = "/about")
+    public String about() {
         return "tyb/others/about_app";
     }
-    /**
-     * 新闻资讯
-     */
+
     @ApiOperation("新闻资讯")
-    @RequestMapping(value = "/act/five",method = RequestMethod.GET)
-    public String news(){
+    @RequestMapping(value = "/news", method = RequestMethod.GET)
+    public String news() {
         return "tyb/others/news";
     }
 

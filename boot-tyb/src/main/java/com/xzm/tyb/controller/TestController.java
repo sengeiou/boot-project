@@ -27,7 +27,8 @@ public class TestController  extends BaseController{
      * 获取咨询新闻列表
      */
     @GetMapping("/test1")
-    public Resp test1(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
+    public Resp test1(@RequestParam(defaultValue = "1") int pageNum,
+                      @RequestParam(defaultValue = "5") int pageSize) {
 
         logger.debug("=pageNum==" + pageNum);
         logger.debug("=pageSize==" + pageSize);

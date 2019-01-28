@@ -65,7 +65,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher>
      * 查询人气讲师列表
      */
     @Override
-    public List<TybTeacher> selectTeacherList(String access_token, String phone) {
+    public List<TybTeacher> selectTeacherList(String phone) {
         List<TybUserGenDan> userGenDansList = tybUserGenDanMapper.selectUserGenDanByUserPhone(phone);
         userGenDansList.forEach(item -> {
             Integer teacherId = item.getTeacherId();
@@ -83,7 +83,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher>
      * 根据老师ID查询讲师信息
      */
     @Override
-    public TybTeacher selectTeacherByTeacherId(String access_token, String phone, Integer teacherId) {
+    public TybTeacher selectTeacherByTeacherId(Integer teacherId) {
         int count = tybTeacherMapper.selectTeacherByPrimaryKey(teacherId);
         logger.debug("===查询老师数量===" + count);
         if (count < 1) {

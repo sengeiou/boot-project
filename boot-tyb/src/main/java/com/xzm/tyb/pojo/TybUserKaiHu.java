@@ -2,7 +2,7 @@ package com.xzm.tyb.pojo;
 import java.util.Date;
 //@Data
 public class TybUserKaiHu {
-    private Integer id;
+    private long id;
 
     private String userName;
 
@@ -18,11 +18,11 @@ public class TybUserKaiHu {
 
     private Date updataTime;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
