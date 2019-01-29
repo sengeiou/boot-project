@@ -1,5 +1,6 @@
 package com.xzm.tyb.controller;
 
+import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.vo.*;
 import com.xzm.tyb.service.TybUserService;

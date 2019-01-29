@@ -1,5 +1,6 @@
 package com.xzm.tyb.controller;
 
+import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybZiXunService;
 import com.xzm.tyb.utils.Resp;
@@ -15,7 +16,7 @@ import java.util.List;
 @Api(tags = "测试")
 @RestController
 @RequestMapping(value = "/test")
-public class TestController  extends BaseController{
+public class TestController  extends BaseController {
     @Autowired
     private TybZiXunService ziXunService;
 

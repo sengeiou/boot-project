@@ -3,6 +3,7 @@ package com.xzm.tyb.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybLiveService;
@@ -13,7 +14,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
 
 @Api(tags = "直播")
 @RestController

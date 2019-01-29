@@ -1,7 +1,9 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xzm.tyb.common.base.BaseServiceImpl;
 import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.common.utils.RegexUtils;
 import com.xzm.tyb.constants.Constants;
@@ -30,8 +32,7 @@ import java.util.UUID;
 //import org.springframework.util.ObjectUtils;
 
 @Service
-public class TybUserServiceImp extends ServiceImpl<TybUserMapper, TybUser> implements TybUserService {
-    private static final Log logger = LogFactory.getLog(TybUserServiceImp.class);
+public class TybUserServiceImp extends BaseServiceImpl<TybUserMapper, TybUser> implements TybUserService {
     @Autowired
     private TybUserMapper userMapper;
     @Autowired
@@ -112,7 +113,9 @@ public class TybUserServiceImp extends ServiceImpl<TybUserMapper, TybUser> imple
      */
     @Override
     public TybUser getUserInfo(String phone) {
-        TybUser tybUser = userMapper.selectByUniqueKey(phone);
+//        TybUser tybUser = userMapper.selectByUniqueKey(phone);
+        TybUser tybUser = userMapper.selectOne(new QueryWrapper<TybUser>()
+                .eq("phone",phone));
         if (!ObjectUtils.isEmpty(tybUser)) {
             return tybUser;
         }

@@ -1,4 +1,4 @@
-package com.xzm.tyb.controller;
+package com.xzm.tyb.common.base;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

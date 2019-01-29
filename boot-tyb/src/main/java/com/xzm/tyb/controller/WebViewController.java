@@ -1,5 +1,6 @@
 package com.xzm.tyb.controller;
 
+import com.xzm.tyb.common.base.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

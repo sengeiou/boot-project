@@ -1,7 +1,6 @@
 package com.xzm.tyb.controller;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.xzm.tyb.common.base.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/teacher")
-public class TeacherController  extends BaseController{
+public class TeacherController  extends BaseController {
 
 //    @Autowired
 //    private TybLiveService liveService;
