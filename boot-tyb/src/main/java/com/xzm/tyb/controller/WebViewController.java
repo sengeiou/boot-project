@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * http://localhost:8080/thymeleaf
  */
-@Api(tags = "webView部分")
+@Api(tags = "h5部分")
 @Controller
 @RequestMapping("/h5")
 public class WebViewController extends BaseController {
     //   @Autowired
 //   private RedisTemplate redisTemplate;
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+//    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
     @ApiOperation("(活动)金色星期三")
