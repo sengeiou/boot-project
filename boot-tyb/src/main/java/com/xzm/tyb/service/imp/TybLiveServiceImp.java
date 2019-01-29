@@ -57,7 +57,7 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher>
      */
     @Override
     public TybImportantMessage selectImportantMessageById(Integer id) {
-        TybImportantMessage message = importantMessageMapper.selectById(new TybImportantMessage(1));
+        TybImportantMessage message = importantMessageMapper.selectById(new TybImportantMessage(1l));
         return message;
     }
 

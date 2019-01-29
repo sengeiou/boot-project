@@ -4,7 +4,7 @@ import java.util.Date
 
 //@Data
 class TybHanDanPaiHang {
-    var id: Int? = null
+    var id: Long? = null
     var title: String? = null
     var producttype: String? = null
     var ordertime: String? = null
