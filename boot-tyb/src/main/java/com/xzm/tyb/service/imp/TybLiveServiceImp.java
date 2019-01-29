@@ -1,14 +1,12 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xzm.tyb.common.base.BaseServiceImpl;
 import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.dao.*;
 import com.xzm.tyb.pojo.entity.*;
 import com.xzm.tyb.service.TybLiveService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,8 +46,8 @@ public class TybLiveServiceImp extends BaseServiceImpl<TybTeacherMapper, TybTeac
      * 直播首页三个直播室 List数据
      */
     @Override
-    public List<LiveTop> selectLiveTopList() {
-        List<LiveTop> liveTopList = LiveTopMapper.selectLiveTopList();
+    public List<TybLiveTop> selectLiveTopList() {
+        List<TybLiveTop> liveTopList = LiveTopMapper.selectList(new QueryWrapper<>());
         return liveTopList;
     }
 
