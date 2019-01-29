@@ -1,7 +1,7 @@
 package com.xzm.tyb.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.pojo.TybTeacherHanDan;
+import com.xzm.tyb.pojo.entity.TybTeacherHanDan;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

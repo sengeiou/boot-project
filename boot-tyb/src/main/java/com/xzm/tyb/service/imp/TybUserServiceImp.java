@@ -9,11 +9,11 @@ import com.xzm.tyb.dao.TybTeacherHanDanMapper;
 import com.xzm.tyb.dao.TybUserGenDanMapper;
 import com.xzm.tyb.dao.TybUserKaiHuMapper;
 import com.xzm.tyb.dao.TybUserMapper;
-import com.xzm.tyb.form.TybUserForm;
-import com.xzm.tyb.pojo.TybTeacherHanDan;
-import com.xzm.tyb.pojo.TybUser;
-import com.xzm.tyb.pojo.TybUserGenDan;
-import com.xzm.tyb.pojo.TybUserKaiHu;
+import com.xzm.tyb.pojo.entity.TybTeacherHanDan;
+import com.xzm.tyb.pojo.entity.TybUser;
+import com.xzm.tyb.pojo.entity.TybUserGenDan;
+import com.xzm.tyb.pojo.entity.TybUserKaiHu;
+import com.xzm.tyb.pojo.vo.TybUserVo;
 import com.xzm.tyb.service.TybUserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -24,13 +24,13 @@ import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.UUID;
 //import org.apache.commons.collections.CollectionUtils;
 
 //import org.springframework.util.ObjectUtils;
 
 @Service
-public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> implements TybUserService {
+public class TybUserServiceImp extends ServiceImpl<TybUserMapper, TybUser> implements TybUserService {
     private static final Log logger = LogFactory.getLog(TybUserServiceImp.class);
     @Autowired
     private TybUserMapper userMapper;
@@ -71,7 +71,8 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
      * 用户注册
      */
     @Override
-    public String register(TybUserForm user) {
+    public String register(TybUserVo user) {
+//        baseMapper.selectByUniqueKey()
         if (!RegexUtils.isMobileExact(user.getPhone())) {
             throw new RRException("手机号号错误");
         }
@@ -83,6 +84,8 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         tybUser.setPhone(user.getPhone());
         tybUser.setNickName(user.getPhone().substring(7, 11) + "投资");
         tybUser.setPassword(user.getPassword());
+//        tybUser.setId(Long.parseLong(user.getPhone()));
+
         int count = userMapper.insert(tybUser);
         logger.debug("===插入用户===" + count);
         if (count == 1) {
@@ -139,21 +142,22 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
     public TybUserKaiHu selectUserKaiHuInfo(String phone) {
         List<TybUserKaiHu> tybUserKaiHuList = userKaiHuMapper.selectUserKaiHuInfoByPhone(phone);
         if (!CollectionUtils.isEmpty(tybUserKaiHuList)) {
-            TybUserKaiHu tybUserKaiHu = tybUserKaiHuList.get(0);
-            return tybUserKaiHu;
+            return tybUserKaiHuList.get(0);
         } else {
             throw new RRException("您还没有开过户哦");
 
         }
     }
+
     /**
      * 开户
      */
     @Override
     public String userKaiHu(String phone, String userName, String idCard, String platformCode) {
+
         TybUserKaiHu userKaiHu = userKaiHuMapper.
                 selectUserKaiHuInfoByPhoneAndIdCardAndPlatformCode(phone, idCard, platformCode);
-        TybUserKaiHu userKaiHuDo = new TybUserKaiHu();
+        TybUserKaiHu tybUserKaihu = new TybUserKaiHu();
         if (!ObjectUtils.isEmpty(userKaiHu)) {
             throw new RRException("当前交易所已经开户");
 
@@ -164,17 +168,17 @@ public class TybUserServiceImp  extends ServiceImpl<TybUserMapper,TybUser> imple
         if (!RegexUtils.isIDCard18(idCard)) {
             throw new RRException("身份证号不正确");
         }
-        userKaiHuDo.setPhone(phone);
-        userKaiHuDo.setIdCard(idCard);
-        userKaiHuDo.setUserName(userName);
-        userKaiHuDo.setPlatformCode(platformCode);
+        tybUserKaihu.setPhone(phone);
+        tybUserKaihu.setIdCard(idCard);
+        tybUserKaihu.setUserName(userName);
+        tybUserKaihu.setPlatformCode(platformCode);
         if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[0], platformCode)) {
-            userKaiHuDo.setPlatformName("新华上海贵金属交易中心");
+            tybUserKaihu.setPlatformName("新华上海贵金属交易中心");
         } else if (org.apache.commons.lang.ObjectUtils.equals(Constants.platformCode[1], platformCode)) {
-            userKaiHuDo.setPlatformName("上海石油化工交易中心");
+            tybUserKaihu.setPlatformName("上海石油化工交易中心");
         }
 //        int count = userKaiHuMapper.insertSelective(userKaiHuDo);
-        int count = userKaiHuMapper.insert(userKaiHuDo);
+        int count = userKaiHuMapper.insert(tybUserKaihu);
         logger.debug("提交开会llllllllll===" + count);
         if (count > 0) {
             return "开户成功";

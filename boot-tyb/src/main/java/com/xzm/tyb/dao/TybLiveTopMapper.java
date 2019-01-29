@@ -1,23 +1,23 @@
 package com.xzm.tyb.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.pojo.liveTop;
+import com.xzm.tyb.pojo.entity.LiveTop;
 
 import java.util.List;
 //@Mapper
 
-public interface TybLiveTopMapper extends BaseMapper<liveTop> {
+public interface TybLiveTopMapper extends BaseMapper<LiveTop> {
     int deleteByPrimaryKey(Integer id);
 
-//    int insert(liveTop record);
+//    int insert(LiveTop record);
 
-    int insertSelective(liveTop record);
+    int insertSelective(LiveTop record);
 
-    liveTop selectByPrimaryKey(Integer id);
+    LiveTop selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(liveTop record);
+    int updateByPrimaryKeySelective(LiveTop record);
 
-    int updateByPrimaryKey(liveTop record);
+    int updateByPrimaryKey(LiveTop record);
 
-    List<liveTop> selectLiveTopList();
+    List<LiveTop> selectLiveTopList();
 }

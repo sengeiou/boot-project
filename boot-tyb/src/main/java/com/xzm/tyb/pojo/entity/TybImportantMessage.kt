@@ -1,4 +1,4 @@
-package com.xzm.tyb.pojo
+package com.xzm.tyb.pojo.entity
 
 import javax.persistence.Id
 import java.io.Serializable
@@ -37,9 +37,9 @@ class TybImportantMessage : Serializable {
     var updataTime: Date? = null
 
 
-    constructor(id: Long?) {
-        this.id = id
-    }
+//    constructor(id: Long?) {
+//        this.id = id
+//    }
 
 
 }

@@ -1,18 +1,25 @@
 package com.xzm;
+import com.xzm.tyb.utils.IdUtils;
+import com.xzm.tyb.utils.Identity;
 
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.UUID;
 
 public class Test {
     private static int msgCount = 0; //消息发送次数
     private static Timer mTimer;
 
     public static void main(String[] args) {
-        String flower = "朵玫瑰";
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i + flower);
-        }
+//        String flower = "朵玫瑰";
+//        for (int i = 0; i < 100; i++) {
+//            System.out.println(i + flower);
+//        }
+        String uuid = IdUtils.uuid();
+//        identit
+        String s = UUID.randomUUID().toString();
+        System.out.println(s);
     }
 
 

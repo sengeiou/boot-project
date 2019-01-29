@@ -4,7 +4,7 @@ package com.xzm.tyb.service.imp;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.dao.*;
-import com.xzm.tyb.pojo.*;
+import com.xzm.tyb.pojo.entity.*;
 import com.xzm.tyb.service.TybLiveService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -47,8 +47,8 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher>
      * 直播首页三个直播室 List数据
      */
     @Override
-    public List<liveTop> selectLiveTopList() {
-        List<liveTop> liveTopList = LiveTopMapper.selectLiveTopList();
+    public List<LiveTop> selectLiveTopList() {
+        List<LiveTop> liveTopList = LiveTopMapper.selectLiveTopList();
         return liveTopList;
     }
 
@@ -57,7 +57,8 @@ public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher>
      */
     @Override
     public TybImportantMessage selectImportantMessageById(Integer id) {
-        TybImportantMessage message = importantMessageMapper.selectById(new TybImportantMessage(1l));
+//        TybImportantMessage message = new TybImportantMessage();
+        TybImportantMessage message = importantMessageMapper.selectById(id);
         return message;
     }
 

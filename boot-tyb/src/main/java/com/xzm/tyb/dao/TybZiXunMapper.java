@@ -3,7 +3,7 @@ package com.xzm.tyb.dao;
 
 //import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.tyb.pojo.entity.TybZiXun;
 
 import java.util.List;
 

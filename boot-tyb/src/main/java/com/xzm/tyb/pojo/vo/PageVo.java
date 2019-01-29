@@ -1,5 +1,4 @@
-package com.xzm.tyb.vo;
-
+package com.xzm.tyb.pojo.vo;
 import io.swagger.annotations.ApiModelProperty;
 
 public class PageVo extends AuthVo {

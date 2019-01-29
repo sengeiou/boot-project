@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xzm.tyb.dao.TybHanDanPaiHangMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.TybHanDanPaiHang">
+    <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.entity.TybHanDanPaiHang">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="title" jdbcType="VARCHAR" property="title"/>
         <result column="product_type" jdbcType="VARCHAR" property="producttype"/>
@@ -33,7 +33,7 @@
         <!--delete from tyb_han_dan_pai_hang-->
         <!--where id = #{id,jdbcType=INTEGER}-->
     <!--</delete>-->
-<!--    <insert id="insert" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
+<!--    <insert id="insert" parameterType="com.xzm.tyb.pojo.entity.TybHanDanPaiHangDoDo">
         insert into tyb_han_dan_pai_hang (id, title, product_type,
                                           order_time, point, profit,
                                           create_time, updata_time)
@@ -46,7 +46,7 @@
                 #{createTime,jdbcType=TIMESTAMP},
                 #{updataTime,jdbcType=TIMESTAMP})
     </insert>-->
-    <!--<insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">-->
+    <!--<insert id="insertSelective" parameterType="com.xzm.tyb.pojo.entity.TybHanDanPaiHangDoDo">-->
         <!--insert into tyb_han_dan_pai_hang-->
         <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
             <!--<if test="id != null">-->
@@ -101,7 +101,7 @@
             <!--</if>-->
         <!--</trim>-->
     <!--</insert>-->
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.entity.TybHanDanPaiHang">
         update tyb_han_dan_pai_hang
         <set>
             <if test="title != null">
@@ -128,7 +128,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.TybHanDanPaiHang">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.entity.TybHanDanPaiHang">
         update tyb_han_dan_pai_hang
         set title       = #{title,jdbcType=VARCHAR},
             product_type = #{producttype,jdbcType=VARCHAR},

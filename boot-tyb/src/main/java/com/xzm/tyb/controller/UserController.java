@@ -1,12 +1,8 @@
 package com.xzm.tyb.controller;
 
 import com.xzm.tyb.common.entity.ServerResponse;
-import com.xzm.tyb.form.TybUserForm;
+import com.xzm.tyb.pojo.vo.*;
 import com.xzm.tyb.service.TybUserService;
-import com.xzm.tyb.vo.AccountOpenVo;
-import com.xzm.tyb.vo.LoginVo;
-import com.xzm.tyb.vo.NiceNameModifyVo;
-import com.xzm.tyb.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -16,10 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 //@Api("用户接口")
-@Api(tags ="用户")
+@Api(tags = "用户")
 @RestController
 @RequestMapping(value = "/user")
-public class UserController  extends BaseController{
+public class UserController extends BaseController {
     //    private static final Log logger = LogFactory.getLog(TybUserController.class);
     @Autowired
     private TybUserService userService;
@@ -29,9 +25,10 @@ public class UserController  extends BaseController{
      */
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("注册")
-    public ServerResponse register(@RequestBody TybUserForm user) {
+    public ServerResponse register(@RequestBody TybUserVo user) {
         return ServerResponse.createBySuccess(userService.register(user));
     }
+
     @ApiImplicitParams({
             @ApiImplicitParam(name = "phone", value = "手机号", required = true,
                     dataType = "String", paramType = "query"),
@@ -41,7 +38,7 @@ public class UserController  extends BaseController{
     @ApiOperation("登陆")
     @PostMapping("/login")
     public ServerResponse login(@RequestBody LoginVo vo) {
-        return   ServerResponse.createBySuccess(userService.login(vo.getPhone(), vo.getPassword()));
+        return ServerResponse.createBySuccess(userService.login(vo.getPhone(), vo.getPassword()));
     }
 
     @ApiOperation("修改昵称")
@@ -68,11 +65,12 @@ public class UserController  extends BaseController{
     @PostMapping("/account/open")
     public ServerResponse accountOpen(@RequestBody AccountOpenVo vo) {
         return ServerResponse.createBySuccess(userService.userKaiHu(String.valueOf(vo.getPhone()),
-                vo.getUserName(), String.valueOf(vo.getIdCard()),vo.getPlatformCode())) ;
+                vo.getUserName(), String.valueOf(vo.getIdCard()), vo.getPlatformCode()));
     }
+
     @ApiOperation("查询开户信息")
     @PostMapping("/account/info")
     public ServerResponse accountInfo(@RequestBody UserVo vo) {
-        return ServerResponse.createBySuccess(userService.selectUserKaiHuInfo(vo.getPhone())) ;
+        return ServerResponse.createBySuccess(userService.selectUserKaiHuInfo(vo.getPhone()));
     }
 }

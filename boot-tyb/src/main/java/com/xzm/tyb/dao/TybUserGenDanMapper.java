@@ -1,7 +1,7 @@
 package com.xzm.tyb.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.pojo.TybUserGenDan;
+import com.xzm.tyb.pojo.entity.TybUserGenDan;
 
 import java.util.List;
 //@Mapper

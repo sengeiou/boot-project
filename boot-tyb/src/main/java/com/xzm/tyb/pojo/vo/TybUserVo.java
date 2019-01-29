@@ -1,4 +1,4 @@
-package com.xzm.tyb.form;
+package com.xzm.tyb.pojo.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @ApiModel(value = "用户表单")
 //@Data
-public class TybUserForm {
+public class TybUserVo{
     @ApiModelProperty(value = "手机号")
     @NotBlank(message="手机号不能为空")
     private String phone;

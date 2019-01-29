@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xzm.tyb.dao.TybTeacherMapper">
-    <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.TybTeacher">
+    <resultMap id="BaseResultMap" type="com.xzm.tyb.pojo.entity.TybTeacher">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="thumb" property="thumb" jdbcType="VARCHAR"/>
         <result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
@@ -58,7 +58,7 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
-    <select id="selectTeacherList" resultType="com.xzm.tyb.pojo.TybTeacher">
+    <select id="selectTeacherList" resultType="com.xzm.tyb.pojo.entity.TybTeacher">
         select
         <include refid="Base_Column_List"/>
         from tyb_teacher
@@ -68,7 +68,7 @@
         delete from tyb_teacher
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.TybTeacher">
+    <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.entity.TybTeacher">
         insert into tyb_teacher
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -160,7 +160,7 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.TybTeacher">
+    <update id="updateByPrimaryKeySelective" parameterType="com.xzm.tyb.pojo.entity.TybTeacher">
         update tyb_teacher
         <set>
             <if test="thumb != null">
@@ -206,7 +206,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.TybTeacher">
+    <update id="updateByPrimaryKey" parameterType="com.xzm.tyb.pojo.entity.TybTeacher">
         update tyb_teacher
         set thumb          = #{thumb,jdbcType=VARCHAR},
             teacher_name   = #{teacherName,jdbcType=VARCHAR},
@@ -225,7 +225,7 @@
     </update>
 
 
-    <select id="selectTeacherListByIds" resultType="com.xzm.tyb.pojo.TybTeacher"
+    <select id="selectTeacherListByIds" resultType="com.xzm.tyb.pojo.entity.TybTeacher"
             parameterType="map">
         select
         <include refid="Base_Column_List"/>

@@ -1,4 +1,4 @@
-package com.xzm.tyb.pojo
+package com.xzm.tyb.pojo.entity
 
 import javax.persistence.Id
 import java.util.Date

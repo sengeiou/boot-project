@@ -4,7 +4,7 @@ package com.xzm.tyb.dao;
 //import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.pojo.TybUser;
+import com.xzm.tyb.pojo.entity.TybUser;
 import org.apache.ibatis.annotations.Param;
 
 //@Mapper

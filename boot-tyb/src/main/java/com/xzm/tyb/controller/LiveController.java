@@ -4,14 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.entity.ServerResponse;
-import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybLiveService;
 import com.xzm.tyb.service.TybZiXunService;
-import com.xzm.tyb.vo.*;
+import com.xzm.tyb.pojo.vo.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @Api(tags = "直播")
 @RestController

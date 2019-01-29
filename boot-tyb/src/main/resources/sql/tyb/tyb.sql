@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `tyb_han_dan_pai_hang`;
         private String point;
         private String profit;*/
 CREATE TABLE `tyb_han_dan_pai_hang` (
-  `id`          INT(100)  NOT NULL AUTO_INCREMENT,
+  `id`          bigint(100)  NOT NULL AUTO_INCREMENT,
   `title`       VARCHAR(20)        DEFAULT NULL COMMENT '讲师名称',
   `product_type` VARCHAR(50)        DEFAULT NULL COMMENT '产品类型',
   `order_time`   VARCHAR(200)       DEFAULT NULL COMMENT '喊单时间',

@@ -1,9 +1,16 @@
-package com.xzm.tyb.pojo
-
+package com.xzm.tyb.pojo.entity
+import com.xzm.tyb.utils.identity
 import java.util.Date
 
-class liveTop {
-     var id: Long = 0
+class LiveTop {
+
+//    @JvmStatic
+//    fun main(args: Array<String>) {
+//
+//        //        identit
+//        println(uuid)
+//    }
+     var id: Long = identity.nextId()
 
     var title: String? = null
 

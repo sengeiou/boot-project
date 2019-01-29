@@ -1,10 +1,10 @@
 package com.xzm.tyb.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.xzm.tyb.pojo.TybHanDanPaiHang;
-import com.xzm.tyb.pojo.TybImportantMessage;
-import com.xzm.tyb.pojo.TybTeacher;
-import com.xzm.tyb.pojo.liveTop;
+import com.xzm.tyb.pojo.entity.TybHanDanPaiHang;
+import com.xzm.tyb.pojo.entity.TybImportantMessage;
+import com.xzm.tyb.pojo.entity.TybTeacher;
+import com.xzm.tyb.pojo.entity.LiveTop;
 
 import java.util.List;
 
@@ -17,11 +17,11 @@ public interface TybLiveService extends IService<TybTeacher> {
 
     List<TybHanDanPaiHang> selectHanDanList();
 
-    List<liveTop> selectLiveTopList();
+    List<LiveTop> selectLiveTopList();
 
     TybImportantMessage selectImportantMessageById(Integer id);
 
     List<TybTeacher> selectTeacherList(String phone);
 
-    TybTeacher selectTeacherByTeacherId( Integer teacherId);
+    TybTeacher selectTeacherByTeacherId(Integer teacherId);
 }

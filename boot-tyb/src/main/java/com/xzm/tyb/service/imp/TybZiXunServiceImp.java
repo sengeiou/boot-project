@@ -2,7 +2,7 @@ package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xzm.tyb.dao.TybZiXunMapper;
-import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybZiXunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

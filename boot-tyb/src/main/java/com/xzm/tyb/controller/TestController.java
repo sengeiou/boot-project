@@ -1,13 +1,9 @@
 package com.xzm.tyb.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xzm.tyb.common.entity.ServerResponse;
-import com.xzm.tyb.pojo.TybZiXun;
+import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybZiXunService;
 import com.xzm.tyb.utils.Resp;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
