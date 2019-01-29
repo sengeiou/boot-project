@@ -2,6 +2,7 @@ package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xzm.tyb.common.base.BaseServiceImpl;
 import com.xzm.tyb.common.exception.RRException;
 import com.xzm.tyb.dao.*;
 import com.xzm.tyb.pojo.entity.*;
@@ -14,8 +15,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TybLiveServiceImp extends ServiceImpl<TybTeacherMapper, TybTeacher> implements TybLiveService {
-    private Log logger = LogFactory.getLog(getClass());
+public class TybLiveServiceImp extends BaseServiceImpl<TybTeacherMapper, TybTeacher> implements TybLiveService {
+//    private Log logger = LogFactory.getLog(getClass());
     @Autowired
     private TybHanDanPaiHangMapper handanPaiHangMapper;
     @Autowired

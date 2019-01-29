@@ -1,6 +1,7 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xzm.tyb.common.base.BaseServiceImpl;
 import com.xzm.tyb.dao.TybZiXunMapper;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.service.TybZiXunService;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class TybZiXunServiceImp extends ServiceImpl<TybZiXunMapper, TybZiXun> implements TybZiXunService {
+public class TybZiXunServiceImp extends BaseServiceImpl<TybZiXunMapper, TybZiXun> implements TybZiXunService {
 
     @Autowired
     private TybZiXunMapper ziXunMapper;
