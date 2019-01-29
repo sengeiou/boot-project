@@ -1,10 +1,10 @@
 package com.xzm.tyb.common.base;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzm.tyb.service.imp.TybUserServiceImp;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public abstract class BaseServiceImpl<M extends BaseMapper<T>, T> implements IBaseService<T> {
+public class BaseServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements IBaseService<T> {
     public Log logger = LogFactory.getLog(getClass());
 }
