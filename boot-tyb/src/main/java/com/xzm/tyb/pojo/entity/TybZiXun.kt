@@ -4,18 +4,18 @@ import java.util.Date
 
 //@Data
 class TybZiXun {
-     val id: Long? = null
+     var id: Long? = null
 
-     val type: Int? = null
+     var type: Int? = null
 
-     val title: String? = null
+     var title: String? = null
 
-     val description: String? = null
+     var description: String? = null
 
-     val url: String? = null
+     var url: String? = null
 
-     val createTime: Date? = null
+     var createTime: Date? = null
 
-     val updataTime: Date? = null
+     var updataTime: Date? = null
 
 }

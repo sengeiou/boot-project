@@ -1,6 +1,7 @@
 package com.xzm.tyb.service.imp;
 //import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xzm.tyb.common.base.BaseServiceImpl;
@@ -114,8 +115,11 @@ public class TybUserServiceImp extends BaseServiceImpl<TybUserMapper, TybUser> i
     @Override
     public TybUser getUserInfo(String phone) {
 //        TybUser tybUser = userMapper.selectByUniqueKey(phone);
-        TybUser tybUser = userMapper.selectOne(new QueryWrapper<TybUser>()
-                .eq("phone",phone));
+//        TybUser tybUser = userMapper.selectOne(new QueryWrapper<TybUser>()
+//                .eq("phone",phone));
+        LambdaQueryWrapper<TybUser> queryWrapper = new QueryWrapper<TybUser>()
+                .lambda().eq(TybUser::getPhone, phone);
+        TybUser tybUser = userMapper.selectOne(queryWrapper);
         if (!ObjectUtils.isEmpty(tybUser)) {
             return tybUser;
         }

@@ -1,15 +1,20 @@
 package com.xzm.tyb.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.base.BaseController;
+import com.xzm.tyb.common.entity.ServerResponse;
+import com.xzm.tyb.pojo.entity.TybUser;
 import com.xzm.tyb.pojo.entity.TybZiXun;
+import com.xzm.tyb.pojo.vo.PageVo;
 import com.xzm.tyb.service.TybZiXunService;
 import com.xzm.tyb.utils.Resp;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +30,7 @@ public class TestController  extends BaseController {
      */
     @GetMapping("/test1")
     public Resp test1(@RequestParam(defaultValue = "1") int pageNum,
-                      @RequestParam(defaultValue = "5") int pageSize) {
+                      @RequestParam(defaultValue = "10") int pageSize) {
 
         logger.debug("=pageNum==" + pageNum);
         logger.debug("=pageSize==" + pageSize);
@@ -45,4 +50,26 @@ public class TestController  extends BaseController {
         return Resp.success(Resp.success("哈哈哈"));
     }
 
+    /**
+     * 获取咨询新闻列表
+     */
+    @PostMapping("/test3")
+    public ServerResponse test3(@RequestBody PageVo vo) {
+//        List<TybZiXun> list = ziXunService.list();
+        Page<TybZiXun> page = new Page<>(vo.getPageNum(),vo.getPageSize());
+//        QueryWrapper<TybZiXun> diseaseQueryWrapperw = new QueryWrapper<>();
+//        UpdateWrapper<TybZiXun> updateWrapper = new UpdateWrapper<>();
+////        updateWrapper.
+//        IPage<TybZiXun> page1 = diseaseQueryWrapperw.select(page, diseaseQueryWrapperw);
+
+
+//        TybUser tybUser = userMapper.selectOne(new QueryWrapper<TybUser>()
+//                .lambda().eq(TybUser::getPhone,phone));
+//        Integer type = new TybZiXun().getType();
+//        LambdaQueryWrapper<TybZiXun> queryWrapper = new QueryWrapper<>().lambda().eq(TybZiXun::getType, 1);
+
+        IPage<TybZiXun> page1 = ziXunService.page(page,new QueryWrapper<TybZiXun>()
+                .lambda().eq(TybZiXun::getType, 1));
+        return ServerResponse.createBySuccess(page1);
+    }
 }

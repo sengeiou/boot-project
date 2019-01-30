@@ -11,7 +11,7 @@ class TybLiveTop {
 //        println(uuid)
 //    }
 //     var id: Long = identity.nextId()
-   var id: Long = 0
+    var id: Long = 0
 
     var title: String? = null
 
