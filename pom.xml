@@ -98,7 +98,7 @@
         <!-- log4j日志文件管理包版本 -->
         <slf4j.version>1.7.7</slf4j.version>
         <tk.mybatis-spring-boot.version>2.0.1</tk.mybatis-spring-boot.version>
-        <taglibs.version>1.1.2</taglibs.version>
+        <!--<taglibs.version>1.1.2</taglibs.version>-->
     <!--    <tomcat-port.version>8083</tomcat-port.version>
         <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
         <tomcat-path.version>/</tomcat-path.version>
@@ -289,10 +289,10 @@
 
             <!--Lombok-->
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
 
             <!--QueryDSL是一个Java语言编写的通用查询框架，
@@ -547,12 +547,12 @@
             </dependency>
 
 
-            <!--标签库-->
-            <dependency>
-                <groupId>taglibs</groupId>
-                <artifactId>standard</artifactId>
-                <version>${taglibs.version}</version>
-            </dependency>
+            <!--&lt;!&ndash;标签库&ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>taglibs</groupId>-->
+                <!--<artifactId>standard</artifactId>-->
+                <!--<version>${taglibs.version}</version>-->
+            <!--</dependency>-->
             <!--<dependency>-->
             <!--<groupId>org.jetbrains.kotlin</groupId>-->
             <!--<artifactId>kotlin-stdlib</artifactId>-->
