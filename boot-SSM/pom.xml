@@ -88,14 +88,15 @@
             <version>${druid-version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>log4j</groupId>-->
-        <!--<artifactId>log4j</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.slf4j</groupId>-->
-        <!--<artifactId>slf4j-api</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -242,14 +243,6 @@
         <!--<version>5.4.1.Final</version>-->
         <!--</dependency>-->
 
-
-        <!--&lt;!&ndash;引入pageHelper分页插件 &ndash;&gt;-->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <!--<version>5.0.0</version>-->
-        </dependency>
-
         <!-- MBG -->
         <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
         <!--<dependency>-->
@@ -274,45 +267,19 @@
             <!--<version>2.8.0</version>-->
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.springframework.data</groupId>-->
-            <!--<artifactId>spring-jdbc</artifactId>-->
-            <!--<version>4.3.7.RELEASE</version>-->
+        <!--<groupId>org.springframework.data</groupId>-->
+        <!--<artifactId>spring-jdbc</artifactId>-->
+        <!--<version>4.3.7.RELEASE</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <!--  <version>1.8.7.RELEASE</version>-->
-          <!--  <version>1.6.4.RELEASE</version>-->
+            <!--  <version>1.6.4.RELEASE</version>-->
             <!--<version>${redis-spring-boot.version}</version>-->
         </dependency>
-        <!--redis缓存序列化需要用到滴-->
-        <dependency>
-            <groupId>com.dyuproject.protostuff</groupId>
-            <artifactId>protostuff-core</artifactId>
-            <version>${protostuff.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>com.dyuproject.protostuff</groupId>
-            <artifactId>protostuff-runtime</artifactId>
-            <version>${protostuff.version}</version>
-        </dependency>
 
-        <!--标签库-->
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-        </dependency>
-        <!--阿里巴巴fastjson-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.javaetmoi.core</groupId>-->
-        <!--<artifactId>javaetmoi-spring4-vfs2-support</artifactId>-->
-        <!--&lt;!&ndash;<version>1.4.1</version>&ndash;&gt;-->
-        <!--</dependency>-->
     </dependencies>
     <build>
         <finalName>ssm</finalName>

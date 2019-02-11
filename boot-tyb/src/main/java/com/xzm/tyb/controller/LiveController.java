@@ -14,6 +14,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 
 @Api(tags = "直播")
 @RestController
@@ -26,7 +28,8 @@ public class LiveController extends BaseController {
     private TybZiXunService ziXunService;
 //    @Autowired
 //    private TybUserGenDanMapper userGenDanMapper;
-
+//    @Resource(name = "TybLiveService")
+//    private TybLiveService tybLiveService;
     @ApiOperation("首页直播室banner")
     @PostMapping("/banner")
     public ServerResponse banner() {

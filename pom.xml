@@ -28,6 +28,7 @@
         <!--<relativePath/>-->  <!-- lookup parent from repository  <relativePath></relativePath>-->
     </parent>
     <properties>
+        <!--项目版本属性-->
         <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -35,8 +36,44 @@
         <!--<thymeleaf-spring-boot.version>2.1.5.RELEASE</thymeleaf-spring-boot.version>-->
         <!--<thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>-->
         <!--<thymeleaf-spring-boot.version>1.5.7.RELEASE</thymeleaf-spring-boot.version>-->
+        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
+        <!--以下两项需要如果不配置，解析themleaft 会有问题-->
+        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
+        <!--3.0.2.RELEASE-->
+        <!--依赖版本属性-->
+        <aspect-version>1.8.10</aspect-version>
         <freemarker-spring-boot.version>1.5.7.RELEASE</freemarker-spring-boot.version>
+        <commons-lang-version>2.6</commons-lang-version>
+        <commons-lang-version>2.6</commons-lang-version>
+        <commons-fileupload-version>1.3.1</commons-fileupload-version>
+        <commons-io-version>2.5</commons-io-version>
+        <commons-codec-version>1.10</commons-codec-version>
+        <commons-configuration-version>1.10</commons-configuration-version>
+        <cglib.version>3.1</cglib.version>
+        <druid-spring-boot.version>1.1.0</druid-spring-boot.version> <!--1.1.0--> <!--1.0.4-->
+        <druid-version>1.1.0</druid-version>
+        <fastjson.version>1.2.31</fastjson.version>
+        <httpclient-version>4.5.3</httpclient-version>
         <java.version>1.8</java.version>
+        <junit.version>4.12</junit.version>
+        <!-- jackson包版本 -->
+        <!--<jackson.version>2.5.0</jackson.version>-->
+        <!--jackson-->
+        <jackson-mapper-asl.version>1.9.12</jackson-mapper-asl.version>
+        <jackson-annotations.version>2.8.2</jackson-annotations.version>
+        <jackson-databind.version>2.8.2</jackson-databind.version>
+        <jackson-core.version>2.8.2</jackson-core.version>
+
+        <!--jsp-->
+        <javax.websocket-api.version>1.0</javax.websocket-api.version>
+        <javaee-api.version>7.0</javaee-api.version>
+        <jstl.version>1.2</jstl.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <jwt.version>0.7.0</jwt.version>
+        <!--<kotlin.version>1.3.0</kotlin.version>-->
+        <kotlin.version>1.3.20</kotlin.version>
+        <log4j.version>1.2.17</log4j.version>
+        <mysql-connector.version>5.1.21</mysql-connector.version>
         <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
         <mybatis.version>3.4.6</mybatis.version>
@@ -44,76 +81,33 @@
         <mybatis-ehcache.version>1.1.0</mybatis-ehcache.version>
         <mybatis-plus.spring.boot.version>3.0.6</mybatis-plus.spring.boot.version>
         <mybatis-plus.version>3.0.6</mybatis-plus.version>
+        <nekohtml-version>1.9.22</nekohtml-version>
         <pagehelper-spring-boot.version>1.2.5</pagehelper-spring-boot.version>
         <pagehelper.version>5.1.8</pagehelper.version>
-        <tk.mybatis-spring-boot.version>2.0.1</tk.mybatis-spring-boot.version>
-        <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
-        <druid-spring-boot.version>1.1.0</druid-spring-boot.version> <!--1.1.0--> <!--1.0.4-->
-        <druid-version>1.1.0</druid-version>
+        <!--<protostuff.version>1.0.8</protostuff.version>-->
         <querydsl.version>4.1.4</querydsl.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-        <springfox-swagger2-springboot.version>1.8.8</springfox-swagger2-springboot.version>
-        <junit.version>4.12</junit.version>
-        <!--<kotlin.version>1.3.0</kotlin.version>-->
-        <kotlin.version>1.3.20</kotlin.version>
-        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
-        <!--以下两项需要如果不配置，解析themleaft 会有问题-->
-        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
-        <!--3.0.2.RELEASE-->
-
-        <shiro-version>1.3.2</shiro-version>
-        <commons-lang-version>2.6</commons-lang-version>
-        <httpclient-version>4.5.3</httpclient-version>
-        <jwt.version>0.7.0</jwt.version>
-        <spring.version>4.3.7</spring.version>
-        <mysql-connector.version>5.1.21</mysql-connector.version>
-        <fastjson.version>1.2.31</fastjson.version>
-        <log4j.version>1.2.17</log4j.version>
-        <javax.websocket-api.version>1.0</javax.websocket-api.version>
-        <javaee-api.version>7.0</javaee-api.version>
-        <jstl.version>1.2</jstl.version>
-        <jsp-api.version>2.2</jsp-api.version>
-        <servlet-api.version>3.1.0</servlet-api.version> <!--boot项目默认引用3.1.0--> <!--2.5-->
-        <spring-boot-starter-websocket.version>1.3.5.RELEASE</spring-boot-starter-websocket.version>
-        <jackson-mapper-asl.version>1.9.12</jackson-mapper-asl.version>
-        <jackson-annotations.version>2.8.2</jackson-annotations.version>
-        <jackson-databind.version>2.8.2</jackson-databind.version>
-        <jackson-core.version>2.8.2</jackson-core.version>
-        <velocity-version>1.7</velocity-version>
-        <!--<mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>-->
-        <!--<mybatisplus.version>2.2.0</mybatisplus.version>-->
-
-        <!-- dp lib versions -->
-        <java-version>1.8</java-version>
-        <mysql-version>5.1.38</mysql-version>
-
-        <commons-lang-version>2.6</commons-lang-version>
-        <commons-fileupload-version>1.3.1</commons-fileupload-version>
-        <commons-io-version>2.5</commons-io-version>
-        <commons-codec-version>1.10</commons-codec-version>
-        <commons-configuration-version>1.10</commons-configuration-version>
-        <aspect-version>1.8.10</aspect-version>
-        <shiro-version>1.3.2</shiro-version>
         <quartz-version>2.2.3</quartz-version>
-        <nekohtml-version>1.9.22</nekohtml-version>
-        <protostuff.version>1.0.8</protostuff.version>
-        <taglibs.version>1.1.2</taglibs.version>
-        <!--boot ssm-->
+        <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
         <!-- spring版本号 -->
         <spring.version>4.3.7.RELEASE</spring.version>
-        <!-- mybatis版本号 -->
-        <!--<mybatis.version>3.2.6</mybatis.version>-->
+        <spring-boot-starter-websocket.version>1.3.5.RELEASE</spring-boot-starter-websocket.version>
+        <shiro-version>1.3.2</shiro-version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2-springboot.version>1.8.8</springfox-swagger2-springboot.version>
+        <servlet-api.version>3.1.0</servlet-api.version> <!--boot项目默认引用3.1.0--> <!--2.5-->
         <!-- log4j日志文件管理包版本 -->
         <slf4j.version>1.7.7</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
-        <!-- jackson包版本 -->
-        <!--<jackson.version>2.5.0</jackson.version>-->
-        <com.google.gson.version>2.7</com.google.gson.version>
+        <tk.mybatis-spring-boot.version>2.0.1</tk.mybatis-spring-boot.version>
+        <taglibs.version>1.1.2</taglibs.version>
+    <!--    <tomcat-port.version>8083</tomcat-port.version>
+        <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
+        <tomcat-path.version>/</tomcat-path.version>
+        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>-->
+        <velocity-version>1.7</velocity-version>
 
-        <!--    <tomcat-port.version>8083</tomcat-port.version>
-            <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
-            <tomcat-path.version>/</tomcat-path.version>
-            <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>-->
+
+
+
     </properties>
     <dependencies>
         <dependency>
@@ -142,7 +136,7 @@
         <dependency>
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
-            <version>1.9.22</version>
+            <version>${nekohtml-version}</version>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>com.fasterxml.jackson</groupId>-->
@@ -351,7 +345,13 @@
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
-                <version>3.1</version>
+                <version>${cglib.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!--shiro安全权限-->
             <dependency>
@@ -486,11 +486,8 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
                 <version>${pagehelper.version}</version>
-                <!--<version>5.1.8</version>-->
-
             </dependency>
             <!---->
-
             <!--tk通用MyBatis和spring-boot整合 -->
 
             <!--<dependency>-->
@@ -530,10 +527,10 @@
             <!--&lt;!&ndash;<version>1.1.2</version>&ndash;&gt;-->
             <!--</dependency>-->
             <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-reflect</artifactId>
-            <!--<version>1.1.2</version>-->
-            <version>${kotlin.version}</version>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <!--<version>1.1.2</version>-->
+                <version>${kotlin.version}</version>
             </dependency>
             <!--<dependency>-->
             <!--<groupId>com.fasterxml.jackson.module</groupId>-->
@@ -561,6 +558,25 @@
             <!--<artifactId>kotlin-stdlib</artifactId>-->
             <!--<version>${kotlin.version}</version>-->
             <!--</dependency>-->
+            <!--gson解析-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+         <!--   &lt;!&ndash;redis缓存序列化需要&ndash;&gt;
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
@@ -621,9 +637,9 @@
                 </configuration>
             </plugin>
             <!--<plugin>-->
-                <!--<groupId>org.projectlombok</groupId>-->
-                <!--<artifactId>lombok-maven-plugin</artifactId>-->
-                <!--<version>1.16.6.1</version> &lt;!&ndash;1.16.6.1&ndash;&gt;-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok-maven-plugin</artifactId>-->
+            <!--<version>1.16.6.1</version> &lt;!&ndash;1.16.6.1&ndash;&gt;-->
             <!--</plugin>-->
             <!--该插件可以生成querysdl需要的查询对象，执行mvn compile即可-->
             <!--<plugin>-->

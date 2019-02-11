@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+//@Service("TybLiveService")    //不要name属性也可以
 @Service
 public class TybLiveServiceImp extends BaseServiceImpl<TybTeacherMapper, TybTeacher> implements TybLiveService {
 //    private Log logger = LogFactory.getLog(getClass());
@@ -28,8 +28,8 @@ public class TybLiveServiceImp extends BaseServiceImpl<TybTeacherMapper, TybTeac
 
     @Override
     public TybHanDanPaiHang selectHanDanByPrimaryKey(Integer id) {
-        TybHanDanPaiHang handanPaiHang = handanPaiHangMapper.selectByPrimaryKey(id);
-        return handanPaiHang;
+        TybHanDanPaiHang hanDanPaiHang = handanPaiHangMapper.selectByPrimaryKey(id);
+        return hanDanPaiHang;
     }
 
     /**
