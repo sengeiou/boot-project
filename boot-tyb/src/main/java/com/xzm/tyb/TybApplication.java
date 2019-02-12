@@ -27,7 +27,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 //        HibernateJpaAutoConfiguration.class})
 @SpringBootApplication
 //@MapperScan("com.xzm.tyb.dao")
-@ComponentScan(basePackages = "com.xzm.tyb")
+@ComponentScan(basePackages = "com.xzm")
 //@MapperScan(basePackages ={"com.xzm.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class TybApplication {

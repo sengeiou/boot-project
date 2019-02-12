@@ -84,6 +84,7 @@ public class TybLiveServiceImp extends BaseServiceImpl<TybTeacherMapper, TybTeac
      */
     @Override
     public TybTeacher selectTeacherByTeacherId(Integer teacherId) {
+
         int count = tybTeacherMapper.selectTeacherByPrimaryKey(teacherId);
         logger.debug("===查询老师数量===" + count);
         if (count < 1) {
