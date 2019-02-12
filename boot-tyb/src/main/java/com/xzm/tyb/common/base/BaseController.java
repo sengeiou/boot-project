@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
  * Controller公共组件
  */
 public abstract class BaseController {
+	//logback
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	protected String TAG = getClass().getName();
 

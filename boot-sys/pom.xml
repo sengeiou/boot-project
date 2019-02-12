@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>boot-sys</artifactId>
-    <!--<description>sys</description>-->
     <name>sys</name>
+    <packaging>jar</packaging>
     <dependencies>
         <!--<dependency>-->
             <!--<groupId>com.xzm</groupId>-->
@@ -31,18 +31,6 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
-            <!--&lt;!&ndash;   &lt;!&ndash;   &lt;!&ndash; 从依赖信息里移除 Tomcat配置 &ndash;&gt;&ndash;&gt;-->
-                  <!--<exclusions>-->
-                      <!--<exclusion>-->
-                          <!--<groupId>org.springframework.boot</groupId>-->
-                          <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-                      <!--</exclusion>-->
-                  <!--</exclusions>&ndash;&gt;-->
-        <!--</dependency>-->
 
     </dependencies>
 

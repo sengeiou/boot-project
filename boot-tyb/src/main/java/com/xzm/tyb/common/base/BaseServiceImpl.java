@@ -10,13 +10,13 @@ import org.apache.commons.logging.LogFactory;
 public class BaseServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements IBaseService<T> {
     public Log logger = LogFactory.getLog(getClass());
 
-    @Override
-    public IPage<T> page(IPage<T> page) {
-        return null;
-    }
-
-    @Override
-    public IPage<T> page(IPage<T> page, Wrapper<T> queryWrapper) {
-        return super.page(page, queryWrapper);
-    }
+////    @Override
+////    public IPage<T> page(IPage<T> page) {
+////        return null;
+////    }
+//
+//    @Override
+//    public IPage<T> page(IPage<T> page, Wrapper<T> queryWrapper) {
+//        return super.page(page, queryWrapper);
+//    }
 }
