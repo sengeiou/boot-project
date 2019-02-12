@@ -18,7 +18,6 @@
         <!--分割-->
         <module>boot-dp</module>
         <module>boot-single</module>
-        <module>boot-SSM</module>
     </modules>
 
     <parent>

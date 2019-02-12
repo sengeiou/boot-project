@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/boot-SSM/boot-SSM.iml" filepath="$PROJECT_DIR$/boot-SSM/boot-SSM.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-common/boot-common.iml" filepath="$PROJECT_DIR$/boot-common/boot-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-dp/boot-dp.iml" filepath="$PROJECT_DIR$/boot-dp/boot-dp.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-jdt/boot-jdt.iml" filepath="$PROJECT_DIR$/boot-jdt/boot-jdt.iml" />
