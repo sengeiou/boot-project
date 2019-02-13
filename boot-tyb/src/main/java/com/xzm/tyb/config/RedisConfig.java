@@ -1,5 +1,6 @@
 package com.xzm.tyb.config;
 
+import io.swagger.annotations.Api;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -51,7 +52,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         JedisPoolConfig config = new JedisPoolConfig();
         return config;
     }
-
     @Bean
     @ConfigurationProperties(prefix="spring.redis")
     public JedisConnectionFactory getConnectionFactory(){

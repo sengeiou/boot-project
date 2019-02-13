@@ -73,9 +73,6 @@
         <querydsl.version>4.1.4</querydsl.version>
         <quartz-version>2.2.3</quartz-version>
         <redis-spring-boot.version>1.4.5.RELEASE</redis-spring-boot.version> <!--1.4.5.RELEASE-->
-        <!-- spring版本号 -->
-        <!--<spring.version>4.3.7.RELEASE</spring.version>-->
-        <spring-boot-starter-websocket.version>1.3.5.RELEASE</spring-boot-starter-websocket.version>
         <shiro-version>1.3.2</shiro-version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <springfox-swagger2-springboot.version>1.8.8</springfox-swagger2-springboot.version>
@@ -155,11 +152,6 @@
                 <version>${javax.websocket-api.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-websocket</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
             <!--核心是@ServerEndpoint这个注解。这个注解是Javaee标准里的注解，
             tomcat7以上已经对其进行了实现，如果是用传统方法使用tomcat发布项目，
             只要在pom文件中引入javaee标准即可使用-->
@@ -221,12 +213,7 @@
                 <artifactId>swagger-bootstrap-ui</artifactId>
                 <version>${springfox-swagger2-springboot.version}</version>
             </dependency>
-            <!--Lombok-->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
+
 
             <!--jackson序列化-->
             <dependency>
@@ -235,12 +222,6 @@
                 <version>${jackson-mapper-asl.version}</version>
             </dependency>
 
-            <!--aop切面处理-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-aop</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
@@ -301,18 +282,13 @@
             </dependency>
             <!--但使用springboot的内置tomcat时，就不需要引入javaee-api了，
        spring-boot已经包含了。使用springboot的websocket功能首先引入springboot组件。-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-websocket</artifactId>
-                <version>${spring-boot-starter-websocket.version}</version>
-            </dependency>
             <!--velocity模板-->
             <dependency>
                 <artifactId>velocity</artifactId>
                 <groupId>org.apache.velocity</groupId>
                 <version>${velocity-version}</version>
             </dependency>
-            <!--定时任务-->
+            <!--定时任务调度-->
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
@@ -351,7 +327,6 @@
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-reflect</artifactId>
-                <!--<version>1.1.2</version>-->
                 <version>${kotlin.version}</version>
             </dependency>
 
@@ -361,13 +336,6 @@
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
-            <!--gson解析-->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${gson.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 

@@ -54,34 +54,32 @@ public class Swagger2 {
                 .build();
     }
     @Bean
-    public Docket createRestApi() {
+    public Docket tybApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("投油宝API")
+                .groupName("投油宝APP")
                 .apiInfo(apiInfo())
                 .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
                 .apis(RequestHandlerSelectors.basePackage("com.xzm.tyb.controller"))
-//                .apis(RequestHandlerSelectors.basePackage("com.xzm.sys.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
-//    @Bean
-//    public Docket createTestApi() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("测试xxx")
-//                .apiInfo(apiInfo())
-//                .select()
-////                .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.api"))
-//                .apis(RequestHandlerSelectors.basePackage("com.xzm.test.controller"))
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
+
+    @Bean
+    public Docket sysApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("系统模块")
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.xzm.sys.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
     @Bean("test")
     public Docket userApis() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("测试模块")
                 .select()
-//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .apis(RequestHandlerSelectors.basePackage("com.xzm.modules.test.controller"))
                 .paths(PathSelectors.regex("/test.*"))
                 .build()
@@ -89,50 +87,16 @@ public class Swagger2 {
                 .enable(enable);
     }
 
-    //    @Bean("system")
-    @Bean
-    public Docket system() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("系统模块")
-                .select()
-                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-                .paths(PathSelectors.regex("/system.*"))
-                .build()
-                .apiInfo(apiInfo())
-                .enable(enable);
-    }
-
-//    @Bean("UserApis")
-//    public Docket userApis() {
+//    @Bean
+//    public Docket system() {
 //        return new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("用户模块")
+//                .groupName("系统模块")
 //                .select()
 //                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-//                .paths(PathSelectors.regex("/user.*"))
+//                .paths(PathSelectors.regex("/system.*"))
 //                .build()
 //                .apiInfo(apiInfo())
 //                .enable(enable);
-//    }
-//
-//    @Bean("CustomApis")
-//    public Docket customApis() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("客户模块")
-//                .select()
-//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-//                .paths(PathSelectors.regex("/custom.*"))
-//                .build()
-//                .apiInfo(apiInfo())
-//                .enable(enable);
-//    }
-
-//    private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder()
-//                .title("XXXXX系统平台接口文档")
-//                .description("提供子模块1/子模块2/子模块3的文档, 更多请关注公众号: 随行享阅")
-//                .termsOfServiceUrl("https://xingtian.github.io/trace.github.io/")
-//                .version("1.0")
-//                .build();
 //    }
 
 }
