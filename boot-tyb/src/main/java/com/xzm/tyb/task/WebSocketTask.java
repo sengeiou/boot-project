@@ -4,9 +4,11 @@ package com.xzm.tyb.task;
 import com.xzm.tyb.bean.HangQing;
 import com.xzm.tyb.common.utils.JSONUtils;
 import com.xzm.tyb.websocket.SocketServer;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 import java.util.Date;
 import java.util.Random;
@@ -14,41 +16,11 @@ import java.util.Random;
 /**
  * 模拟webSocket 定时推送
  */
+//@EnableWebSocketMessageBroker
 //@EnableScheduling//开启定时任务
 @Component
 public class WebSocketTask {
-
-
-    /**
-     * 每小时的10分执行该方法
-     */
-    //@Scheduled(cron = "0 10 * * * *")
-    public void cron() throws Exception {
-        System.out.println("执行测试cron时间：" + new Date(System.currentTimeMillis()));
-    }
-
-
-    /**
-     * 是上一个调用开始后再次调用的延时（不用等待上一次调用完成）
-     */
-    //@Scheduled(fixedRate = 1000 * 1)
-    public void fixedRate() throws Exception {
-        Thread.sleep(2000);
-        System.out.println("执行测试fixedRate时间：" + new Date(System.currentTimeMillis()));
-    }
-
-    /**
-     * 上一个调用完成后再次调用的延时调用
-     */
-    //@Scheduled(fixedDelay = 1000 * 1)
-    public void fixedDelay() throws Exception {
-        Thread.sleep(3000);
-        System.out.println("执行测试fixedDelay时间：" + new Date(System.currentTimeMillis()));
-    }
-
-    /**
-     * 第一次被调用前的延时，单位毫秒
-     */
+    /*第一次被调用前的延时，单位毫秒*/
     @Scheduled(initialDelay = 1000 * 10, fixedDelay = 1000 * 5)
     public void initialDelay() throws Exception {
 //        System.out.println("====第一次被调用前的延时==");
@@ -85,4 +57,38 @@ public class WebSocketTask {
         Random random = new Random();
         return (Math.abs(random.nextInt()) % (BiggestNum - smallistNum + 1)) + smallistNum;
     }
+
+    @Scheduled(fixedRate = 5000) //： 表示 每隔 5000 毫秒执行一次
+    public void reportCurrentTime() {
+        System.out.println("每隔五秒钟执行一次： ");
+    }
+
+    /**
+     * 每小时的10分执行该方法
+     */
+    //@Scheduled(cron = "0 10 * * * *")
+    public void cron() throws Exception {
+        System.out.println("执行测试cron时间：" + new Date(System.currentTimeMillis()));
+    }
+
+
+    /**
+     * 是上一个调用开始后再次调用的延时（不用等待上一次调用完成）
+     */
+    //@Scheduled(fixedRate = 1000 * 1)
+    public void fixedRate() throws Exception {
+        Thread.sleep(2000);
+        System.out.println("执行测试fixedRate时间：" + new Date(System.currentTimeMillis()));
+    }
+
+    /**
+     * 上一个调用完成后再次调用的延时调用
+     */
+    //@Scheduled(fixedDelay = 1000 * 1)
+    public void fixedDelay() throws Exception {
+        Thread.sleep(3000);
+        System.out.println("执行测试fixedDelay时间：" + new Date(System.currentTimeMillis()));
+    }
+
+
 }

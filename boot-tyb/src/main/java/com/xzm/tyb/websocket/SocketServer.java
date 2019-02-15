@@ -14,7 +14,7 @@ import java.util.Map;
  * ws://127.0.0.1:8083/tyb/socketServer/121
  */
 @EnableWebSocket // 允许WebSocketSw
-@ServerEndpoint(value = "/tyb/socketServer/{userid}")
+@ServerEndpoint(value = "/socketServer/{userid}")
 @Component
 public class SocketServer {
 
