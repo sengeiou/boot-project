@@ -50,7 +50,7 @@ public class TybUserServiceImp extends BaseServiceImpl<TybUserMapper, TybUser> i
     private boolean checkUserValid(String phone) {
         int count = userMapper.checkUserValid(phone);
         logger.debug("===查询用户===" + count);
-        return count >= 1;
+        return count > 0;
     }
 
     /**

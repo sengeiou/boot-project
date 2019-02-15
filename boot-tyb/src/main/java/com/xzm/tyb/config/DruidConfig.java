@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * http://localhost:8001/single/druid/index.html
  */
 @Configuration
-public class DruidConfiguration {
+public class DruidConfig {
 
     @Bean
     public ServletRegistrationBean statViewServlet(){

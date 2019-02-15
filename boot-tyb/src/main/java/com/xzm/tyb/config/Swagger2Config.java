@@ -43,7 +43,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2 //开启Swagger文档
 @Configuration
-public class Swagger2 {
+public class Swagger2Config {
     private  boolean enable = true;
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()

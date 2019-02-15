@@ -35,7 +35,7 @@ import java.util.List;
 
 @Configuration
 @ConditionalOnClass(SpringfoxWebMvcConfiguration.class)
-public class WebConfiguration extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurerAdapter {
     /**
      * 允许跨域
      */
