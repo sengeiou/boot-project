@@ -27,8 +27,6 @@
         <!--<relativePath/>-->  <!-- lookup parent from repository  <relativePath></relativePath>-->
     </parent>
     <properties>
-        <!--项目版本属性-->
-        <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <thymeleaf-spring-boot.version>3.0.2.RELEASE</thymeleaf-spring-boot.version>

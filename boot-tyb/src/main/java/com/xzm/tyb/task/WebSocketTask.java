@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * 模拟webSocket 定时推送
  */
-@EnableScheduling//开启定时任务
+//@EnableScheduling//开启定时任务
 @Component
 public class WebSocketTask {
 
