@@ -1,4 +1,4 @@
-//package com.xzm.common.utils;
+//package com.xzm.common.util;
 //
 //
 //import com.xzm.modules.sys.entity.SysUserEntity;

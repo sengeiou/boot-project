@@ -6,9 +6,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.TybZiXun;
-import com.xzm.tyb.service.TybLiveService;
-import com.xzm.tyb.service.TybZiXunService;
 import com.xzm.tyb.pojo.vo.*;
+import com.xzm.tyb.service.LiveService;
+import com.xzm.tyb.service.ZiXunService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +23,9 @@ import javax.annotation.Resource;
 public class LiveController extends BaseController {
     //
     @Autowired
-    private TybLiveService liveService;
+    private LiveService liveService;
     @Autowired
-    private TybZiXunService ziXunService;
+    private ZiXunService ziXunService;
 //    @Autowired
 //    private TybUserGenDanMapper userGenDanMapper;
 //    @Resource(name = "TybLiveService")

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 //import io.renren.common.exception.RRException;
 //import io.renren.modules.app.annotation.Login;
-//import io.renren.modules.app.utils.JwtUtils;
+//import io.renren.modules.app.util.JwtUtils;
 
 /**
  * 权限(Token)验证

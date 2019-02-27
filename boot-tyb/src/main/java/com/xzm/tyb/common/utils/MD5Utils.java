@@ -1,4 +1,4 @@
-//package com.xzm.tyb.common.utils;
+//package com.xzm.tyb.common.util;
 //
 //import org.apache.shiro.crypto.hash.SimpleHash;
 //import org.apache.shiro.util.ByteSource;

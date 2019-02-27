@@ -6,7 +6,7 @@ package com.xzm.tyb.utils
  * User: Cuiyalei
  * Date: 2018/4/16
  * Time: 14:15
- * Pack: com.wuyu.config.utils.SpringContext
+ * Pack: com.wuyu.config.util.SpringContext
  * Description: the is SpringContext Description
  */
 lateinit var identity: Identity

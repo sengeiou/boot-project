@@ -1,9 +1,9 @@
 package com.xzm.mapper;
 
 
-import com.xzm.tyb.dao.TybTeacherHanDanMapper;
-import com.xzm.tyb.dao.TybTeacherMapper;
-import com.xzm.tyb.dao.TybUserGenDanMapper;
+import com.xzm.tyb.dao.TeacherHanDanMapper;
+import com.xzm.tyb.dao.TeacherMapper;
+import com.xzm.tyb.dao.UserGenDanMapper;
 import com.xzm.tyb.pojo.entity.TybTeacher;
 import com.xzm.tyb.pojo.entity.TybTeacherHanDan;
 import com.xzm.tyb.pojo.entity.TybUserGenDan;
@@ -43,11 +43,11 @@ public class TybUserGenDanMapperTest {
     private WebApplicationContext webApplicationContext; // 3
 
     @Autowired
-    private TybUserGenDanMapper userGenDanMapper;
+    private UserGenDanMapper userGenDanMapper;
     @Autowired
-    private TybTeacherMapper teacherMapper;
+    private TeacherMapper teacherMapper;
     @Autowired
-    private TybTeacherHanDanMapper teacherHanDanMapper;
+    private TeacherHanDanMapper teacherHanDanMapper;
     /**
      * 所有测试方法执行之前执行该方法
      */

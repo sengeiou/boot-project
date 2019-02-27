@@ -1,18 +1,14 @@
 package com.xzm.tyb.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.Employee;
-import com.xzm.tyb.pojo.entity.TybUser;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.pojo.vo.PageVo;
-import com.xzm.tyb.service.TybZiXunService;
-import com.xzm.tyb.utils.PageInfo;
+import com.xzm.tyb.service.ZiXunService;
 import com.xzm.tyb.utils.Resp;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +24,7 @@ import java.util.Map;
 @RequestMapping(value = "/test")
 public class TestController extends BaseController {
     @Autowired
-    private TybZiXunService ziXunService;
+    private ZiXunService ziXunService;
 
     /**
      * 获取咨询新闻列表

@@ -3,7 +3,7 @@ package com.xzm.tyb.controller;
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.vo.*;
-import com.xzm.tyb.service.TybUserService;
+import com.xzm.tyb.service.UserService;
 import com.xzm.tyb.websocket.SocketServer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController extends BaseController {
     //    private static final Log logger = LogFactory.getLog(TybUserController.class);
     @Autowired
-    private TybUserService userService;
+    private UserService userService;
 // @Autowired
 // SocketServer socketServer;
     /**
