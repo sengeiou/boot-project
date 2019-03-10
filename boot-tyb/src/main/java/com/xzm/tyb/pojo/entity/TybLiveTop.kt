@@ -1,8 +1,7 @@
 package com.xzm.tyb.pojo.entity
 import com.xzm.tyb.utils.identity
 import java.util.Date
-
-class TybLiveTop {
+open class TybLiveTop {
 
 //    @JvmStatic
 //    fun main(args: Array<String>) {

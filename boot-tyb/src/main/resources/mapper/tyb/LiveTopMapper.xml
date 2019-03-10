@@ -32,7 +32,7 @@
          from tyb_live_Top
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        delete from tyb_live_Top
+        delete from tyb_live_T op
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="insertSelective" parameterType="com.xzm.tyb.pojo.entity.TybLiveTop">
