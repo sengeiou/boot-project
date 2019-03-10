@@ -33,12 +33,13 @@ import javax.annotation.Resource;
 //        HibernateJpaAutoConfiguration.class})
 @SpringBootApplication
 //@MapperScan("com.xzm.tyb.dao")
-@ComponentScan(basePackages = "com.xzm")
+//@ComponentScan(basePackages = "com.xzm")
+@ComponentScan(basePackages ={"com.xzm","com.wujunshen"} )
 //@MapperScan(basePackages ={"com.xzm.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class TybApplication {
     @Resource
-    private Generate generate;
+//    private Generate generate;
 
     public static void main(String[] args) {
         SpringApplication.run(TybApplication.class, args);
@@ -62,9 +63,9 @@ public class TybApplication {
         return c;
     }
 
-    @Bean(name = "idService")
-    public IdService idService() {
-//        log.info("worker id is :{}", generate.getWorker());
-        return new IdServiceImpl(Long.parseLong(generate.getWorker()));
-    }
+//    @Bean(name = "idService")
+//    public IdService idService() {
+////        log.info("worker id is :{}", generate.getWorker());
+//        return new IdServiceImpl(Long.parseLong(generate.getWorker()));
+//    }
 }
