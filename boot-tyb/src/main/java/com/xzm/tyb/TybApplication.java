@@ -1,11 +1,16 @@
 package com.xzm.tyb;
 
+import com.wujunshen.core.service.IdService;
+import com.wujunshen.core.service.impl.IdServiceImpl;
+import com.xzm.tyb.bean.Generate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.scheduling.annotation.EnableScheduling;
+
+import javax.annotation.Resource;
 
 //import tk.mybatis.spring.annotation.MapperScan;
 
@@ -32,6 +37,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //@MapperScan(basePackages ={"com.xzm.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class TybApplication {
+    @Resource
+    private Generate generate;
 
     public static void main(String[] args) {
         SpringApplication.run(TybApplication.class, args);
@@ -53,5 +60,11 @@ public class TybApplication {
         PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
         c.setIgnoreUnresolvablePlaceholders(true);
         return c;
+    }
+
+    @Bean(name = "idService")
+    public IdService idService() {
+//        log.info("worker id is :{}", generate.getWorker());
+        return new IdServiceImpl(Long.parseLong(generate.getWorker()));
     }
 }

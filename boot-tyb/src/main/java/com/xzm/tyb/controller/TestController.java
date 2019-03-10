@@ -3,12 +3,14 @@ package com.xzm.tyb.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wujunshen.core.bean.ID;
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.Employee;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.pojo.vo.PageVo;
 import com.xzm.tyb.service.ZiXunService;
+import com.xzm.tyb.utils.IDUtil;
 import com.xzm.tyb.utils.Resp;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -181,5 +183,22 @@ public class TestController extends BaseController {
     @RequestMapping(value = "/emp21")
     public String saveEmp1() {
         return "login_jsp";
+    }
+
+    @GetMapping(value = "/genId")
+    public long genId() {
+        return IDUtil.genId();
+    }
+    @GetMapping(value = "/makeId")
+    public long makeId() {
+        return IDUtil.makeId(1111,222,23232);
+    }
+    @GetMapping(value = "/explainId")
+    public ID explainId() {
+        return IDUtil.explainId(12121);
+    }
+    @GetMapping(value = "/transTime")
+    public String transTime() {
+        return IDUtil.transTime(1212111212);
     }
 }
