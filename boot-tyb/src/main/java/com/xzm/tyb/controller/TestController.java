@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wujunshen.core.bean.ID;
+import com.wujunshen.core.service.IdService;
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.Employee;
@@ -16,6 +17,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
@@ -184,21 +186,22 @@ public class TestController extends BaseController {
     public String saveEmp1() {
         return "login_jsp";
     }
-
+    @Resource
+    private IdService idService;
     @GetMapping(value = "/genId")
     public long genId() {
-        return IDUtil.genId();
+        return idService.genId();
     }
-    @GetMapping(value = "/makeId")
-    public long makeId() {
-        return IDUtil.makeId(1111,222,23232);
-    }
-    @GetMapping(value = "/explainId")
-    public ID explainId() {
-        return IDUtil.explainId(12121);
-    }
-    @GetMapping(value = "/transTime")
-    public String transTime() {
-        return IDUtil.transTime(1212111212);
-    }
+//    @GetMapping(value = "/makeId")
+//    public long makeId() {
+//        return IDUtil.getInstance().makeId(1111,222,23232);
+//    }
+//    @GetMapping(value = "/explainId")
+//    public ID explainId() {
+//        return IDUtil.getInstance().explainId(12121);
+//    }
+//    @GetMapping(value = "/transTime")
+//    public String transTime() {
+//        return IDUtil.getInstance().transTime(1212111212);
+//    }
 }
