@@ -1,8 +1,5 @@
 package com.xzm.tyb;
 
-import com.wujunshen.core.service.IdService;
-import com.wujunshen.core.service.impl.IdServiceImpl;
-import com.xzm.tyb.bean.Generate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +31,7 @@ import javax.annotation.Resource;
 @SpringBootApplication
 //@MapperScan("com.xzm.tyb.dao")
 //@ComponentScan(basePackages = "com.xzm")
-@ComponentScan(basePackages ={"com.xzm","com.wujunshen"} )
+@ComponentScan(basePackages ={"com.xzm"} )
 //@MapperScan(basePackages ={"com.xzm.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class TybApplication {
