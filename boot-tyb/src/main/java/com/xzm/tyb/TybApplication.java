@@ -35,7 +35,7 @@ import javax.annotation.Resource;
 //@MapperScan(basePackages ={"com.xzm.tyb.dao","com.xzm.modules.sys.dao",
 //        "com.xzm.modules.common.dao","com.xzm.modules.test.dao"} )
 public class TybApplication {
-    @Resource
+//    @Resource
 //    private Generate generate;
 
     public static void main(String[] args) {
