@@ -3,15 +3,13 @@ package com.xzm.tyb.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wujunshen.core.bean.ID;
-import com.wujunshen.core.service.IdService;
+
 import com.xzm.tyb.common.base.BaseController;
 import com.xzm.tyb.common.entity.ServerResponse;
 import com.xzm.tyb.pojo.entity.Employee;
 import com.xzm.tyb.pojo.entity.TybZiXun;
 import com.xzm.tyb.pojo.vo.PageVo;
 import com.xzm.tyb.service.ZiXunService;
-import com.xzm.tyb.utils.IDUtil;
 import com.xzm.tyb.utils.Resp;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -182,16 +180,16 @@ public class TestController extends BaseController {
 //        return ServerResponse.createBySuccess(null);
 //    }
 
-    @RequestMapping(value = "/emp21")
-    public String saveEmp1() {
-        return "login_jsp";
-    }
-    @Resource
-    private IdService idService;
-    @GetMapping(value = "/genId")
-    public long genId() {
-        return idService.genId();
-    }
+//    @RequestMapping(value = "/emp21")
+//    public String saveEmp1() {
+//        return "login_jsp";
+//    }
+//    @Resource
+//    private IdService idService;
+//    @GetMapping(value = "/genId")
+//    public long genId() {
+//        return idService.genId();
+//    }
 //    @GetMapping(value = "/makeId")
 //    public long makeId() {
 //        return IDUtil.getInstance().makeId(1111,222,23232);
