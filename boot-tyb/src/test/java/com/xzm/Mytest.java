@@ -75,10 +75,10 @@ public class Mytest {
                     "旭尧", "炫明", "学真", "雪风", "雅昶", "阳曦", "烨熠", "英韶", "永贞", "咏德",
                     "宇寰", "雨泽", "玉韵", "越彬", "蕴和", "哲彦", "振海", "正志", "子晋", "自怡",
                     "德赫", "君平" };
-//            int a = (int) Math.abs(firsname.length * Math.random());
-//            int b = (int) Math.abs(namelist.length * Math.random());
-//            String name= firsname[a] + namelist[b];
-//            System.out.println(name);
+            int a = (int) Math.abs(firsname.length * Math.random());
+            int b = (int) Math.abs(namelist.length * Math.random());
+            String name= firsname[a] + namelist[b];
+            System.out.println(name);
         }
     }
 }
