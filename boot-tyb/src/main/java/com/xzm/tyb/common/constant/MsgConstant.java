@@ -9,17 +9,14 @@ package com.xzm.tyb.common.constant;
  * @date 2017年8月12日 下午1:33:18
  */
 public class MsgConstant {
-
 	/**
 	 * 操作成功
 	 */
 	public static final String MSG_OPERATION_SUCCESS = "操作成功！";
-	
 	/**
 	 * 操作失败
 	 */
 	public static final String MSG_OPERATION_FAILED = "操作失败！";
-	
 	/**
 	 * 删除时，提示有子节点无法删除
 	 */
@@ -29,7 +26,6 @@ public class MsgConstant {
 	 * 加载表单数据错误提示
 	 */
 	public static final String MSG_INIT_FORM = "初始化表单数据失败，请重试！";
-	
 	/**
 	 * 删除数据项不是全部所选
 	 * @param total
