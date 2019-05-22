@@ -167,6 +167,17 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.jetbrains.kotlinx</groupId>-->
+            <!--<artifactId>kotlinx-coroutines-core</artifactId>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-core</artifactId>
+            <version>1.2.1</version>
+        </dependency>
         <!--&lt;!&ndash;redis和springboot整合&ndash;&gt;-->
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->
