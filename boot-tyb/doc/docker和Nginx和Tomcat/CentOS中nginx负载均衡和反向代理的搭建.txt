@@ -33,11 +33,6 @@ vim /etc/inittab     id:5:initdefault:  --> 修改5为3
 4：安装nginx
     1)安装环境：
     顺序
-yum -y install openssl openssl-devel
-yum -y install zlib zlib-devel
-yum -y install pcre pcre-devel
-
-
               yum -y install gcc-c++
               yum -y install pcre pcre-devel
               yum -y install zlib zlib-devel
