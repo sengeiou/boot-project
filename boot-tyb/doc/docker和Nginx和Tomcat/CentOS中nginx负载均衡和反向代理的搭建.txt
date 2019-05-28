@@ -69,7 +69,6 @@ vim /etc/inittab     id:5:initdefault:  --> 修改5为3
         make install
 
     8)启动: cd /usr/local/nginx/sbin/
-       ./nginx
 		  cd /usr/local/nginx/sbin/   ./nginx
     9)查看进程：ps aux | grep nginx
     10)快速停止：./nginx -s stop
