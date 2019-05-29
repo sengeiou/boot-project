@@ -224,7 +224,6 @@ vim /etc/inittab     id:5:initdefault:  --> 修改5为3
 
                 location / {
                     #root html_port1;
-
                     proxy_pass http://tomcat_server_pool;
                     index index.html index.htm;
                 }
