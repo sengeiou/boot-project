@@ -86,32 +86,19 @@ SELinux status:                 enabled
 setenforce 0                  ##设置SELinux 成为permissive模式
 
                               ##setenforce 1 设置SELinux 成为enforcing模式
-
 2、修改配置文件需要重启机器：
-
 修改/etc/selinux/config 文件
-
 将SELINUX=enforcing改为SELINUX=disabled
-
 重启机器即可
-
 netstat -ntlp 查看进程
- 
 lsof -i tcp:80
- 
 列出所有端口
- 
 netstat -ntlp
-
 netstat -tunpl
-
 查看端口是否可访问：telnet ip 端口号 
 （如本机的35465：telnet localhost 35465）
-
 如果想开放端口（如：8889）
-
 （1）通过vi /etc/sysconfig/iptables 进入编辑增添一条-A INPUT -p tcp -m tcp --dport 8889 -j ACCEPT 即可
  -I INPUT -p tcp --dport 6379  -j ACCEPT 
 （2）执行 /etc/init.d/iptables restart 命令将iptables服务重启
-
 （3）保存 /etc/rc.d/init.d/iptables save
